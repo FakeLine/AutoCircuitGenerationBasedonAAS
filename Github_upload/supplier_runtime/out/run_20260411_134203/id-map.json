@@ -1,0 +1,2382 @@
+{
+  "run_id": "run_20260411_134203",
+  "generated_at": "2026-04-11T13:42:07.135822",
+  "items": [
+    {
+      "file": "A_ConstantPump1.aasx",
+      "idShort": "A_ConstantPump1",
+      "seed": "gaid::https://example.com/ids/asset/5560_5182_2152_5395",
+      "stableId": "urn:uuid:41bd4d51-0945-58b1-b054-98f36f1612e4",
+      "globalAssetId": "https://example.com/ids/asset/5560_5182_2152_5395",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::https://example.com/ids/asset/5560_5182_2152_5395::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:030bec02-2093-5fd1-bcaf-bf926bfe7563",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::https://example.com/ids/asset/5560_5182_2152_5395::submodel::TechnicalData",
+          "stableId": "urn:uuid:78a9af8c-32dc-5c7c-a933-be957fc87834",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::https://example.com/ids/asset/5560_5182_2152_5395::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:77628c47-ed65-5139-88cf-b33ba6de860a",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::https://example.com/ids/asset/5560_5182_2152_5395::submodel::SymbolKey",
+          "stableId": "urn:uuid:dbec6674-7d1f-5b44-9955-cda613a43026",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "A_ConstantPump2.aasx",
+      "idShort": "A_ConstantPump2",
+      "seed": "gaid::http://generated.local/asset/A/ConstantPump/2/e2acf72f9e574f7a",
+      "stableId": "urn:uuid:45b31365-bb17-526a-981f-4d6fe8650abb",
+      "globalAssetId": "http://generated.local/asset/A/ConstantPump/2/e2acf72f9e574f7a",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/A/ConstantPump/2/e2acf72f9e574f7a::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:eb22eef8-538c-56c5-b95e-a7203eca0076",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/A/ConstantPump/2/e2acf72f9e574f7a::submodel::TechnicalData",
+          "stableId": "urn:uuid:400edcfb-f360-53d8-9312-65eb3cc2b690",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/A/ConstantPump/2/e2acf72f9e574f7a::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:d776e27a-1400-523a-966a-c6d25f24c996",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/A/ConstantPump/2/e2acf72f9e574f7a::submodel::SymbolKey",
+          "stableId": "urn:uuid:6f20e8bd-b250-54ee-acd8-4df7a9e4415e",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "A_ConstantPump3.aasx",
+      "idShort": "A_ConstantPump3",
+      "seed": "gaid::http://generated.local/asset/A/ConstantPump/3/ab9099a435a240ae",
+      "stableId": "urn:uuid:72c43361-d4b1-5666-9a0c-f1f621e1dde0",
+      "globalAssetId": "http://generated.local/asset/A/ConstantPump/3/ab9099a435a240ae",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/A/ConstantPump/3/ab9099a435a240ae::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:67e2a1f9-f4fa-54f1-a2bd-62f92fe6243b",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/A/ConstantPump/3/ab9099a435a240ae::submodel::TechnicalData",
+          "stableId": "urn:uuid:fb67e166-ee5b-59e8-b040-dfb57aa8ec09",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/A/ConstantPump/3/ab9099a435a240ae::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:beba7174-6b98-51a8-9ee1-161a3a4eac2f",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/A/ConstantPump/3/ab9099a435a240ae::submodel::SymbolKey",
+          "stableId": "urn:uuid:2c7da00c-2104-5b2e-bd9f-7e0d7abff2ad",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "A_ConstantPump4.aasx",
+      "idShort": "A_ConstantPump4",
+      "seed": "gaid::http://generated.local/asset/A/ConstantPump/4/0e51f30dc6a7ee39",
+      "stableId": "urn:uuid:27177c90-2ee9-5113-ba33-ff78a14b6a48",
+      "globalAssetId": "http://generated.local/asset/A/ConstantPump/4/0e51f30dc6a7ee39",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/A/ConstantPump/4/0e51f30dc6a7ee39::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:8531becf-1770-5957-b77d-b16b361ff31c",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/A/ConstantPump/4/0e51f30dc6a7ee39::submodel::TechnicalData",
+          "stableId": "urn:uuid:6aef620a-c745-5a36-911a-994315098662",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/A/ConstantPump/4/0e51f30dc6a7ee39::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:8649604d-e7bc-59ec-b547-41328929b0a9",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/A/ConstantPump/4/0e51f30dc6a7ee39::submodel::SymbolKey",
+          "stableId": "urn:uuid:743aafb2-afb4-5d18-ba73-f0ac6f38d5e4",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "A_ConstantPump5.aasx",
+      "idShort": "A_ConstantPump5",
+      "seed": "gaid::http://generated.local/asset/A/ConstantPump/5/89fa6a688fb5d27b",
+      "stableId": "urn:uuid:43604400-2436-50bf-8e96-dc60fcefc71b",
+      "globalAssetId": "http://generated.local/asset/A/ConstantPump/5/89fa6a688fb5d27b",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/A/ConstantPump/5/89fa6a688fb5d27b::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:c7c16c0d-31b0-5343-8dd2-e30a1bf0cb8b",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/A/ConstantPump/5/89fa6a688fb5d27b::submodel::TechnicalData",
+          "stableId": "urn:uuid:feb336c2-cee6-58c4-94dc-2ff2c497deb1",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/A/ConstantPump/5/89fa6a688fb5d27b::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:340d3105-7927-50dd-9004-dd25408c0a26",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/A/ConstantPump/5/89fa6a688fb5d27b::submodel::SymbolKey",
+          "stableId": "urn:uuid:4e5ace98-6f0a-5cdb-99f3-a62e139e2a41",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "A_ConstantPump6.aasx",
+      "idShort": "A_ConstantPump6",
+      "seed": "gaid::http://generated.local/asset/A/ConstantPump/6/988c24c961b1cd22",
+      "stableId": "urn:uuid:2c3b9caf-04be-5a7b-9d16-357bff12b0cb",
+      "globalAssetId": "http://generated.local/asset/A/ConstantPump/6/988c24c961b1cd22",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/A/ConstantPump/6/988c24c961b1cd22::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:6b0d6f40-6a35-5fe3-9283-2e6c18031e35",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/A/ConstantPump/6/988c24c961b1cd22::submodel::TechnicalData",
+          "stableId": "urn:uuid:1e6bbca7-a828-54a7-a1fb-427a019398ea",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/A/ConstantPump/6/988c24c961b1cd22::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:71aa5e57-5f28-5b5a-8373-e92c0416ebe4",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/A/ConstantPump/6/988c24c961b1cd22::submodel::SymbolKey",
+          "stableId": "urn:uuid:929df975-c875-588d-85a6-f839bb59250f",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "A_HydraulicMotor1.aasx",
+      "idShort": "A_Motor1",
+      "seed": "gaid::https://example.com/ids/asset/5232_8130_1062_1848",
+      "stableId": "urn:uuid:3f24599b-6c23-5351-8a8f-f6c3336032d1",
+      "globalAssetId": "https://example.com/ids/asset/5232_8130_1062_1848",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::https://example.com/ids/asset/5232_8130_1062_1848::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:e5256d2e-a9c6-5a23-acd9-60bc8c6c04de",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::https://example.com/ids/asset/5232_8130_1062_1848::submodel::TechnicalData",
+          "stableId": "urn:uuid:5dc3430b-0c67-5388-9c3a-95da70235123",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::https://example.com/ids/asset/5232_8130_1062_1848::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:ce0dc8db-423c-57b1-9fcb-9fe183ce44d5",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::https://example.com/ids/asset/5232_8130_1062_1848::submodel::SymbolKey",
+          "stableId": "urn:uuid:ee3b3c83-6819-5481-b7c7-965657a913f9",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "A_HydraulicMotor2.aasx",
+      "idShort": "A_HydraulicMotor2",
+      "seed": "gaid::http://generated.local/asset/A/HydraulicMotor/2/b8db0672f42d47cc",
+      "stableId": "urn:uuid:fe80a899-8455-51ab-b684-6a4ba01db406",
+      "globalAssetId": "http://generated.local/asset/A/HydraulicMotor/2/b8db0672f42d47cc",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/A/HydraulicMotor/2/b8db0672f42d47cc::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:e3c86349-1d96-57e7-a46b-1807ba0b734e",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/A/HydraulicMotor/2/b8db0672f42d47cc::submodel::TechnicalData",
+          "stableId": "urn:uuid:8c3ff62e-5af8-5d3a-bb2a-d5ec73eef742",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/A/HydraulicMotor/2/b8db0672f42d47cc::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:5294a51e-9855-571c-97a8-be429bc40e3c",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/A/HydraulicMotor/2/b8db0672f42d47cc::submodel::SymbolKey",
+          "stableId": "urn:uuid:53560474-1d40-52b9-961d-6fb7ea585ce8",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "A_HydraulicMotor3.aasx",
+      "idShort": "A_HydraulicMotor3",
+      "seed": "gaid::http://generated.local/asset/A/HydraulicMotor/3/5fb8d16c2720797d",
+      "stableId": "urn:uuid:b4b804c5-dfb2-5299-89dd-608c73d3f8c3",
+      "globalAssetId": "http://generated.local/asset/A/HydraulicMotor/3/5fb8d16c2720797d",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/A/HydraulicMotor/3/5fb8d16c2720797d::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:7fb6d81c-b304-5926-847b-7fa04325e073",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/A/HydraulicMotor/3/5fb8d16c2720797d::submodel::TechnicalData",
+          "stableId": "urn:uuid:b3f3762f-8fe4-56bc-92b3-49004946b7ad",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/A/HydraulicMotor/3/5fb8d16c2720797d::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:1c4ee4ea-6cde-579e-84b9-7f6c063fa458",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/A/HydraulicMotor/3/5fb8d16c2720797d::submodel::SymbolKey",
+          "stableId": "urn:uuid:dcd6ccdc-1f73-5e10-a482-dcb542381b31",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "A_HydraulicMotor4.aasx",
+      "idShort": "A_HydraulicMotor4",
+      "seed": "gaid::http://generated.local/asset/A/HydraulicMotor/4/3d4cbf374eb93eff",
+      "stableId": "urn:uuid:2108f26e-2860-51d4-9796-46673faab181",
+      "globalAssetId": "http://generated.local/asset/A/HydraulicMotor/4/3d4cbf374eb93eff",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/A/HydraulicMotor/4/3d4cbf374eb93eff::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:df017da0-6fc2-545d-9778-c6ff989121e5",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/A/HydraulicMotor/4/3d4cbf374eb93eff::submodel::TechnicalData",
+          "stableId": "urn:uuid:94a0d665-03d6-504a-905f-48f92c416839",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/A/HydraulicMotor/4/3d4cbf374eb93eff::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:eb1fec74-2d91-5b95-8402-f117b39e7866",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/A/HydraulicMotor/4/3d4cbf374eb93eff::submodel::SymbolKey",
+          "stableId": "urn:uuid:29353139-bded-55fb-b41d-14617bc4370f",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "A_HydraulicMotor5.aasx",
+      "idShort": "A_HydraulicMotor5",
+      "seed": "gaid::http://generated.local/asset/A/HydraulicMotor/5/8715a10343dac043",
+      "stableId": "urn:uuid:e6cf2281-9a5b-5ab7-8bbe-23b27dbbbda1",
+      "globalAssetId": "http://generated.local/asset/A/HydraulicMotor/5/8715a10343dac043",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/A/HydraulicMotor/5/8715a10343dac043::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:009ca7e4-693e-572f-b6f4-0d7f26875f25",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/A/HydraulicMotor/5/8715a10343dac043::submodel::TechnicalData",
+          "stableId": "urn:uuid:77fa6dd6-044c-516a-a512-e72d6d28e752",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/A/HydraulicMotor/5/8715a10343dac043::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:6a82e7cd-37ed-55e6-846b-f593085512ad",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/A/HydraulicMotor/5/8715a10343dac043::submodel::SymbolKey",
+          "stableId": "urn:uuid:bfaf3a7b-5ebb-5c6f-aeaa-84c31ad3597a",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "A_HydraulicMotor6.aasx",
+      "idShort": "A_HydraulicMotor6",
+      "seed": "gaid::http://generated.local/asset/A/HydraulicMotor/6/e64d1bcb702753a1",
+      "stableId": "urn:uuid:6efca01e-d63b-59aa-8807-c555335435c1",
+      "globalAssetId": "http://generated.local/asset/A/HydraulicMotor/6/e64d1bcb702753a1",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/A/HydraulicMotor/6/e64d1bcb702753a1::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:784c78ed-73ab-55b4-9af3-ea0f6c9934be",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/A/HydraulicMotor/6/e64d1bcb702753a1::submodel::TechnicalData",
+          "stableId": "urn:uuid:321457e3-f0c2-5457-9bac-3d4426e99803",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/A/HydraulicMotor/6/e64d1bcb702753a1::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:567d5d08-fa54-53e4-8438-4619623aad8c",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/A/HydraulicMotor/6/e64d1bcb702753a1::submodel::SymbolKey",
+          "stableId": "urn:uuid:478babed-0210-5fd2-a7fc-499170e36ddc",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "A_Tank1.aasx",
+      "idShort": "A_Tank1",
+      "seed": "gaid::urn:uuid:420d8c3e-2a9a-48ca-93a2-f4924e0ea973",
+      "stableId": "urn:uuid:189f6493-babc-5d4f-a8aa-3e2c06268026",
+      "globalAssetId": "urn:uuid:420d8c3e-2a9a-48ca-93a2-f4924e0ea973",
+      "submodels": [
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::urn:uuid:420d8c3e-2a9a-48ca-93a2-f4924e0ea973::submodel::TechnicalData",
+          "stableId": "urn:uuid:550866cb-11e4-5fad-a574-79cbcbd92f41",
+          "oldId": "urn:uuid:f658d3a5-5b02-4304-951b-8b849d02e072"
+        },
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::urn:uuid:420d8c3e-2a9a-48ca-93a2-f4924e0ea973::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:8bc6f55b-ddc8-5f7a-aa64-60ba3a518b3e",
+          "oldId": "urn:uuid:43693824-0a45-4f0f-8afa-fe71bf93db50"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::urn:uuid:420d8c3e-2a9a-48ca-93a2-f4924e0ea973::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:ae071965-1532-5cc1-844a-00592fe3ae10",
+          "oldId": "urn:uuid:8f294b9d-ce41-4903-9a86-70fad02a3033"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::urn:uuid:420d8c3e-2a9a-48ca-93a2-f4924e0ea973::submodel::SymbolKey",
+          "stableId": "urn:uuid:dcee2b07-db10-5dff-8b35-786f7fa43030",
+          "oldId": "urn:uuid:abdec712-610b-4ed5-b957-3fdc34583dd6"
+        }
+      ]
+    },
+    {
+      "file": "A_Tank2.aasx",
+      "idShort": "A_Tank2",
+      "seed": "gaid::http://generated.local/asset/A/Tank/2/114125c63a9bedd4",
+      "stableId": "urn:uuid:d8b44d80-c00c-51e0-b790-0b44068743d1",
+      "globalAssetId": "http://generated.local/asset/A/Tank/2/114125c63a9bedd4",
+      "submodels": [
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/A/Tank/2/114125c63a9bedd4::submodel::TechnicalData",
+          "stableId": "urn:uuid:85b90f22-5229-5cc2-b58a-c539d21c7546",
+          "oldId": "urn:uuid:f658d3a5-5b02-4304-951b-8b849d02e072"
+        },
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/A/Tank/2/114125c63a9bedd4::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:1a2621b0-afca-51e8-b873-34fd8fffa7b3",
+          "oldId": "urn:uuid:43693824-0a45-4f0f-8afa-fe71bf93db50"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/A/Tank/2/114125c63a9bedd4::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:f52cac61-626d-5773-b310-da38cda55488",
+          "oldId": "urn:uuid:8f294b9d-ce41-4903-9a86-70fad02a3033"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/A/Tank/2/114125c63a9bedd4::submodel::SymbolKey",
+          "stableId": "urn:uuid:80d97b38-e858-55e9-8b0b-91a900697817",
+          "oldId": "urn:uuid:abdec712-610b-4ed5-b957-3fdc34583dd6"
+        }
+      ]
+    },
+    {
+      "file": "A_Tank3.aasx",
+      "idShort": "A_Tank3",
+      "seed": "gaid::http://generated.local/asset/A/Tank/3/e1e3db63ef7ddc76",
+      "stableId": "urn:uuid:75729c54-52e1-563e-aae6-a167e81a7e1d",
+      "globalAssetId": "http://generated.local/asset/A/Tank/3/e1e3db63ef7ddc76",
+      "submodels": [
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/A/Tank/3/e1e3db63ef7ddc76::submodel::TechnicalData",
+          "stableId": "urn:uuid:7db273e2-bc54-55b7-a973-4407da00a0bc",
+          "oldId": "urn:uuid:f658d3a5-5b02-4304-951b-8b849d02e072"
+        },
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/A/Tank/3/e1e3db63ef7ddc76::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:23092b99-f884-5d31-9e6a-7c5d1fa5c662",
+          "oldId": "urn:uuid:43693824-0a45-4f0f-8afa-fe71bf93db50"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/A/Tank/3/e1e3db63ef7ddc76::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:d0f27aee-756b-5212-aea9-b41bafe6109f",
+          "oldId": "urn:uuid:8f294b9d-ce41-4903-9a86-70fad02a3033"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/A/Tank/3/e1e3db63ef7ddc76::submodel::SymbolKey",
+          "stableId": "urn:uuid:744938b3-3a28-55b3-81a2-8f7af07aa495",
+          "oldId": "urn:uuid:abdec712-610b-4ed5-b957-3fdc34583dd6"
+        }
+      ]
+    },
+    {
+      "file": "A_Tank4.aasx",
+      "idShort": "A_Tank4",
+      "seed": "gaid::http://generated.local/asset/A/Tank/4/693dffbc6c6fa611",
+      "stableId": "urn:uuid:b0a85a38-92d6-50d6-9bd8-96cf37ce05e0",
+      "globalAssetId": "http://generated.local/asset/A/Tank/4/693dffbc6c6fa611",
+      "submodels": [
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/A/Tank/4/693dffbc6c6fa611::submodel::TechnicalData",
+          "stableId": "urn:uuid:28880b0a-5ed3-5e25-9578-f2ce8fc48250",
+          "oldId": "urn:uuid:f658d3a5-5b02-4304-951b-8b849d02e072"
+        },
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/A/Tank/4/693dffbc6c6fa611::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:e3acf17c-6775-5c5a-bbdb-9ef5ea843a4d",
+          "oldId": "urn:uuid:43693824-0a45-4f0f-8afa-fe71bf93db50"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/A/Tank/4/693dffbc6c6fa611::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:a850641c-92a9-5436-9c6a-68d30b3259d7",
+          "oldId": "urn:uuid:8f294b9d-ce41-4903-9a86-70fad02a3033"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/A/Tank/4/693dffbc6c6fa611::submodel::SymbolKey",
+          "stableId": "urn:uuid:9c8a287f-3011-53e8-bc3f-d98ef8c179d4",
+          "oldId": "urn:uuid:abdec712-610b-4ed5-b957-3fdc34583dd6"
+        }
+      ]
+    },
+    {
+      "file": "A_Tank5.aasx",
+      "idShort": "A_Tank5",
+      "seed": "gaid::http://generated.local/asset/A/Tank/5/1bf90e27dc96925e",
+      "stableId": "urn:uuid:15c22597-85b5-56f6-8a43-649c0da3eddd",
+      "globalAssetId": "http://generated.local/asset/A/Tank/5/1bf90e27dc96925e",
+      "submodels": [
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/A/Tank/5/1bf90e27dc96925e::submodel::TechnicalData",
+          "stableId": "urn:uuid:27e2f0a0-7ad0-5388-b1f9-32b65175a054",
+          "oldId": "urn:uuid:f658d3a5-5b02-4304-951b-8b849d02e072"
+        },
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/A/Tank/5/1bf90e27dc96925e::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:bec17ecf-bfe4-58ea-acbb-d2498fa89f49",
+          "oldId": "urn:uuid:43693824-0a45-4f0f-8afa-fe71bf93db50"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/A/Tank/5/1bf90e27dc96925e::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:a852a273-a89e-5dd4-94a3-d01fdc55bc3f",
+          "oldId": "urn:uuid:8f294b9d-ce41-4903-9a86-70fad02a3033"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/A/Tank/5/1bf90e27dc96925e::submodel::SymbolKey",
+          "stableId": "urn:uuid:1ff6e323-5509-5e2f-b767-add1f4500c1a",
+          "oldId": "urn:uuid:abdec712-610b-4ed5-b957-3fdc34583dd6"
+        }
+      ]
+    },
+    {
+      "file": "A_Tank6.aasx",
+      "idShort": "A_Tank6",
+      "seed": "gaid::http://generated.local/asset/A/Tank/6/ceda8bbb71710434",
+      "stableId": "urn:uuid:b838f530-3ac7-5a24-a4f7-af992587affe",
+      "globalAssetId": "http://generated.local/asset/A/Tank/6/ceda8bbb71710434",
+      "submodels": [
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/A/Tank/6/ceda8bbb71710434::submodel::TechnicalData",
+          "stableId": "urn:uuid:0f33067b-50f3-5eb8-8a66-63fa29acf6a5",
+          "oldId": "urn:uuid:f658d3a5-5b02-4304-951b-8b849d02e072"
+        },
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/A/Tank/6/ceda8bbb71710434::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:9b5026c5-6082-54bc-a4af-2b0a6884df27",
+          "oldId": "urn:uuid:43693824-0a45-4f0f-8afa-fe71bf93db50"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/A/Tank/6/ceda8bbb71710434::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:d648ef89-520a-5a69-b0d2-bd05ba93105c",
+          "oldId": "urn:uuid:8f294b9d-ce41-4903-9a86-70fad02a3033"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/A/Tank/6/ceda8bbb71710434::submodel::SymbolKey",
+          "stableId": "urn:uuid:f1a0da37-cf31-5741-b422-02beb39d8b3c",
+          "oldId": "urn:uuid:abdec712-610b-4ed5-b957-3fdc34583dd6"
+        }
+      ]
+    },
+    {
+      "file": "A_VariablePump1.aasx",
+      "idShort": "A_VariablePump1",
+      "seed": "gaid::https://example.com/ids/asset/0504_0192_2152_0258",
+      "stableId": "urn:uuid:18210be9-de95-536d-b7d6-aa37f0dabd3f",
+      "globalAssetId": "https://example.com/ids/asset/0504_0192_2152_0258",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::https://example.com/ids/asset/0504_0192_2152_0258::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:76a5aa94-7a06-5580-ace3-f895bfbdd4ab",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::https://example.com/ids/asset/0504_0192_2152_0258::submodel::TechnicalData",
+          "stableId": "urn:uuid:2c426c44-6bed-527e-a7a4-e7b6c568a2cd",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::https://example.com/ids/asset/0504_0192_2152_0258::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:516e8206-167a-57f2-9eeb-da84d1b0aa10",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::https://example.com/ids/asset/0504_0192_2152_0258::submodel::SymbolKey",
+          "stableId": "urn:uuid:e8b0c854-2a17-515d-b9be-1a9cc0be5adb",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "A_VariablePump2.aasx",
+      "idShort": "A_VariablePump2",
+      "seed": "gaid::http://generated.local/asset/A/VariablePump/2/3c835dc0d9441fa5",
+      "stableId": "urn:uuid:237135ec-7a4e-560f-9e8a-a4af08807e94",
+      "globalAssetId": "http://generated.local/asset/A/VariablePump/2/3c835dc0d9441fa5",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/A/VariablePump/2/3c835dc0d9441fa5::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:a11d54c8-cb99-5191-ae34-cd6ee5b4cb12",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/A/VariablePump/2/3c835dc0d9441fa5::submodel::TechnicalData",
+          "stableId": "urn:uuid:ef6aaf58-62eb-5009-8690-749868d543f8",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/A/VariablePump/2/3c835dc0d9441fa5::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:26dfe604-34ae-5200-a3f6-e1217f5e44c6",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/A/VariablePump/2/3c835dc0d9441fa5::submodel::SymbolKey",
+          "stableId": "urn:uuid:a5c97c3c-3e4c-5c1e-843b-7f1bb55f4856",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "A_VariablePump3.aasx",
+      "idShort": "A_VariablePump3",
+      "seed": "gaid::http://generated.local/asset/A/VariablePump/3/a97065e18e46d534",
+      "stableId": "urn:uuid:30c12800-d93c-5a43-98da-02a60fcd2f6f",
+      "globalAssetId": "http://generated.local/asset/A/VariablePump/3/a97065e18e46d534",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/A/VariablePump/3/a97065e18e46d534::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:d147657e-af94-5e41-a6a2-d9260b6b47fa",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/A/VariablePump/3/a97065e18e46d534::submodel::TechnicalData",
+          "stableId": "urn:uuid:b6bbb3a5-19a8-57b9-a083-e592b85def64",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/A/VariablePump/3/a97065e18e46d534::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:a4805487-6ef8-5bce-91dd-6225019952e1",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/A/VariablePump/3/a97065e18e46d534::submodel::SymbolKey",
+          "stableId": "urn:uuid:28749196-67c6-50f8-9308-3cd82ce697d5",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "A_VariablePump4.aasx",
+      "idShort": "A_VariablePump4",
+      "seed": "gaid::http://generated.local/asset/A/VariablePump/4/118a9d292f923996",
+      "stableId": "urn:uuid:badd1ed2-71f5-5ed3-95b1-405e0183e0d5",
+      "globalAssetId": "http://generated.local/asset/A/VariablePump/4/118a9d292f923996",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/A/VariablePump/4/118a9d292f923996::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:54a1553a-1cef-53e8-ac94-ae5ddfbe3365",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/A/VariablePump/4/118a9d292f923996::submodel::TechnicalData",
+          "stableId": "urn:uuid:e9f0070a-2d47-5346-ae91-f77e016c7491",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/A/VariablePump/4/118a9d292f923996::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:a3c66e51-faa0-5532-b173-38319e978bd1",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/A/VariablePump/4/118a9d292f923996::submodel::SymbolKey",
+          "stableId": "urn:uuid:9d65934e-bce2-5a03-a437-c0a9fdde94c8",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "A_VariablePump5.aasx",
+      "idShort": "A_VariablePump5",
+      "seed": "gaid::http://generated.local/asset/A/VariablePump/5/506e5a9ab758588d",
+      "stableId": "urn:uuid:2dc3c3b8-c5fa-5445-9598-5f1cfd8e91de",
+      "globalAssetId": "http://generated.local/asset/A/VariablePump/5/506e5a9ab758588d",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/A/VariablePump/5/506e5a9ab758588d::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:2f279525-4515-5646-a99e-97a219c0cf17",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/A/VariablePump/5/506e5a9ab758588d::submodel::TechnicalData",
+          "stableId": "urn:uuid:7d7f1b24-9dc1-5c68-9760-e99697f8c7b3",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/A/VariablePump/5/506e5a9ab758588d::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:9bdc57dc-7044-5c0a-9a94-edeb0506cf79",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/A/VariablePump/5/506e5a9ab758588d::submodel::SymbolKey",
+          "stableId": "urn:uuid:70a2a938-f1ae-5fb9-8914-4514668a7605",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "A_VariablePump6.aasx",
+      "idShort": "A_VariablePump6",
+      "seed": "gaid::http://generated.local/asset/A/VariablePump/6/3e896c64e117dac3",
+      "stableId": "urn:uuid:8e49ae50-e24e-5e47-885b-57315c45ed02",
+      "globalAssetId": "http://generated.local/asset/A/VariablePump/6/3e896c64e117dac3",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/A/VariablePump/6/3e896c64e117dac3::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:7ecac4e5-fc67-55cc-9f19-64f75aaf463e",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/A/VariablePump/6/3e896c64e117dac3::submodel::TechnicalData",
+          "stableId": "urn:uuid:4e61a8ec-f941-5e2f-99c6-ede4a5ca0d7c",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/A/VariablePump/6/3e896c64e117dac3::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:9eee13f0-3136-5fa9-ba57-80af4fe68452",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/A/VariablePump/6/3e896c64e117dac3::submodel::SymbolKey",
+          "stableId": "urn:uuid:9dec8a06-8b81-5d0f-a919-60b783aa0548",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "B_4_3DirectionalControlValve1.aasx",
+      "idShort": "B_4_3DirectionalControlValve1",
+      "seed": "gaid::https://example.com/ids/asset/9415_2192_2152_1788",
+      "stableId": "urn:uuid:13b1af7f-a6ca-5969-bac0-2e510b4b54e0",
+      "globalAssetId": "https://example.com/ids/asset/9415_2192_2152_1788",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::https://example.com/ids/asset/9415_2192_2152_1788::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:b3853e8a-27a2-5f0c-8f70-ecee56a4fcdc",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::https://example.com/ids/asset/9415_2192_2152_1788::submodel::TechnicalData",
+          "stableId": "urn:uuid:58472dd1-63dd-5bdc-9147-46b840e613fa",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::https://example.com/ids/asset/9415_2192_2152_1788::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:1cb71dc8-f10a-59ed-a9cb-6d32981f88dd",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::https://example.com/ids/asset/9415_2192_2152_1788::submodel::SymbolKey",
+          "stableId": "urn:uuid:e19c9ec4-40ca-53c4-8373-66978563c3e3",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "B_4_3DirectionalControlValve2.aasx",
+      "idShort": "B_4_3DirectionalControlValve2",
+      "seed": "gaid::http://generated.local/asset/B/4_3DirectionalControlValve/2/be0f051b1b66b5a9",
+      "stableId": "urn:uuid:55677ce1-f533-50ba-b66d-2848b4d6e922",
+      "globalAssetId": "http://generated.local/asset/B/4_3DirectionalControlValve/2/be0f051b1b66b5a9",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/B/4_3DirectionalControlValve/2/be0f051b1b66b5a9::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:b15c61b8-47c8-5ffc-802f-aa205e2c62bf",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/B/4_3DirectionalControlValve/2/be0f051b1b66b5a9::submodel::TechnicalData",
+          "stableId": "urn:uuid:c25717a8-43d2-54ed-9b90-66d417bb5221",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/B/4_3DirectionalControlValve/2/be0f051b1b66b5a9::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:73d9f305-5218-593b-8c59-69bf64ffd4f7",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/B/4_3DirectionalControlValve/2/be0f051b1b66b5a9::submodel::SymbolKey",
+          "stableId": "urn:uuid:8297a1a2-442b-5e6b-aff3-223c56749282",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "B_4_3DirectionalControlValve3.aasx",
+      "idShort": "B_4_3DirectionalControlValve3",
+      "seed": "gaid::http://generated.local/asset/B/4_3DirectionalControlValve/3/e87d1c78e7c421c7",
+      "stableId": "urn:uuid:cb3108a1-8be1-5f3b-9476-e5d95795affa",
+      "globalAssetId": "http://generated.local/asset/B/4_3DirectionalControlValve/3/e87d1c78e7c421c7",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/B/4_3DirectionalControlValve/3/e87d1c78e7c421c7::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:3c9e6db5-2bbd-50ee-a4e8-a4439611b6b4",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/B/4_3DirectionalControlValve/3/e87d1c78e7c421c7::submodel::TechnicalData",
+          "stableId": "urn:uuid:6a508598-d457-5d1f-b194-eb7dbeaee5cd",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/B/4_3DirectionalControlValve/3/e87d1c78e7c421c7::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:707d7360-165d-5002-9dc0-ad880c526d46",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/B/4_3DirectionalControlValve/3/e87d1c78e7c421c7::submodel::SymbolKey",
+          "stableId": "urn:uuid:3c230645-fa34-5561-887b-8b5f57a86710",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "B_4_3DirectionalControlValve4.aasx",
+      "idShort": "B_4_3DirectionalControlValve4",
+      "seed": "gaid::http://generated.local/asset/B/4_3DirectionalControlValve/4/711c21c9bdc14f1f",
+      "stableId": "urn:uuid:f14b0bba-c036-5cb2-8c0b-84827c7c89ef",
+      "globalAssetId": "http://generated.local/asset/B/4_3DirectionalControlValve/4/711c21c9bdc14f1f",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/B/4_3DirectionalControlValve/4/711c21c9bdc14f1f::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:144603af-47db-5669-acf3-3e103c6ff392",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/B/4_3DirectionalControlValve/4/711c21c9bdc14f1f::submodel::TechnicalData",
+          "stableId": "urn:uuid:a8575642-96e6-5e86-9809-bf17aa4d36a9",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/B/4_3DirectionalControlValve/4/711c21c9bdc14f1f::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:b8e270df-bb1b-5c57-b641-3c514b71f5c1",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/B/4_3DirectionalControlValve/4/711c21c9bdc14f1f::submodel::SymbolKey",
+          "stableId": "urn:uuid:aea10306-92cf-5ffb-aebd-3377e8ebc3b6",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "B_4_3DirectionalControlValve5.aasx",
+      "idShort": "B_4_3DirectionalControlValve5",
+      "seed": "gaid::http://generated.local/asset/B/4_3DirectionalControlValve/5/6e06809725e97977",
+      "stableId": "urn:uuid:cf84342d-ea33-54fb-b03c-36bd586c84f4",
+      "globalAssetId": "http://generated.local/asset/B/4_3DirectionalControlValve/5/6e06809725e97977",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/B/4_3DirectionalControlValve/5/6e06809725e97977::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:82ee9582-5f4a-52d5-8a17-80de5dc32280",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/B/4_3DirectionalControlValve/5/6e06809725e97977::submodel::TechnicalData",
+          "stableId": "urn:uuid:9f63d43d-c22c-5aa9-9760-1d9cbfc8c612",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/B/4_3DirectionalControlValve/5/6e06809725e97977::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:5c52763c-ad43-5c51-888e-5f0280cb681f",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/B/4_3DirectionalControlValve/5/6e06809725e97977::submodel::SymbolKey",
+          "stableId": "urn:uuid:45b87e4e-1fdd-593b-8fcd-09a1e78e62b3",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "B_4_3DirectionalControlValve6.aasx",
+      "idShort": "B_4_3DirectionalControlValve6",
+      "seed": "gaid::http://generated.local/asset/B/4_3DirectionalControlValve/6/8f5486b7c7b5b2bc",
+      "stableId": "urn:uuid:5539a266-f43c-5709-8f9f-c17ee7cf7123",
+      "globalAssetId": "http://generated.local/asset/B/4_3DirectionalControlValve/6/8f5486b7c7b5b2bc",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/B/4_3DirectionalControlValve/6/8f5486b7c7b5b2bc::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:18238b6e-ecd5-5c80-93f2-1c8ebdf55476",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/B/4_3DirectionalControlValve/6/8f5486b7c7b5b2bc::submodel::TechnicalData",
+          "stableId": "urn:uuid:ea4c3efa-6409-54b9-ada6-69fa07761cd6",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/B/4_3DirectionalControlValve/6/8f5486b7c7b5b2bc::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:a64702a5-1064-58e2-89ae-f5a592e05e42",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/B/4_3DirectionalControlValve/6/8f5486b7c7b5b2bc::submodel::SymbolKey",
+          "stableId": "urn:uuid:09e6169a-99e5-54e7-af57-b96fd2bad854",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "B_CheckValve1.aasx",
+      "idShort": "B_CheckValve1",
+      "seed": "gaid::https://example.com/ids/asset/7314_3130_1062_1866",
+      "stableId": "urn:uuid:eb219d08-c4bb-5805-b08f-b1331fa9df56",
+      "globalAssetId": "https://example.com/ids/asset/7314_3130_1062_1866",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::https://example.com/ids/asset/7314_3130_1062_1866::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:195fdc54-aed4-588c-aea3-173e8cf4cc89",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::https://example.com/ids/asset/7314_3130_1062_1866::submodel::TechnicalData",
+          "stableId": "urn:uuid:cac56814-259f-5cf2-a011-84c73cc94afc",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::https://example.com/ids/asset/7314_3130_1062_1866::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:b93a7f5d-c35b-5ef1-b81c-1f64ef78c34b",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::https://example.com/ids/asset/7314_3130_1062_1866::submodel::SymbolKey",
+          "stableId": "urn:uuid:4764b0bd-def8-5e09-83c7-cf288a68ea81",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "B_CheckValve2.aasx",
+      "idShort": "B_CheckValve2",
+      "seed": "gaid::http://generated.local/asset/B/CheckValve/2/2dea94930658663a",
+      "stableId": "urn:uuid:f79bd908-1a67-5c3a-8f3d-641e7c50aed3",
+      "globalAssetId": "http://generated.local/asset/B/CheckValve/2/2dea94930658663a",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/B/CheckValve/2/2dea94930658663a::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:8f88a515-5f11-5498-92ec-e8f40fefdbeb",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/B/CheckValve/2/2dea94930658663a::submodel::TechnicalData",
+          "stableId": "urn:uuid:5e57a881-fa9e-573f-9f84-aae6abf051a7",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/B/CheckValve/2/2dea94930658663a::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:7e9612bc-567b-5a1d-910d-e71527dda65c",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/B/CheckValve/2/2dea94930658663a::submodel::SymbolKey",
+          "stableId": "urn:uuid:811cc5d7-ce5c-561d-b4d7-25eb717f7322",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "B_CheckValve3.aasx",
+      "idShort": "B_CheckValve3",
+      "seed": "gaid::http://generated.local/asset/B/CheckValve/3/bc2cbb0ddd334cc7",
+      "stableId": "urn:uuid:cbc602d7-3255-5e03-9086-6c304cfcd859",
+      "globalAssetId": "http://generated.local/asset/B/CheckValve/3/bc2cbb0ddd334cc7",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/B/CheckValve/3/bc2cbb0ddd334cc7::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:d0275b74-8683-5e48-ae61-2109cce6d0e5",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/B/CheckValve/3/bc2cbb0ddd334cc7::submodel::TechnicalData",
+          "stableId": "urn:uuid:ab27bf2c-67d0-5d4b-88d9-0498024f1967",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/B/CheckValve/3/bc2cbb0ddd334cc7::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:7933653e-00c8-5be6-a0f1-9cd94765fc96",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/B/CheckValve/3/bc2cbb0ddd334cc7::submodel::SymbolKey",
+          "stableId": "urn:uuid:0fe1b646-e762-5660-8bc8-86b1b8a2d0a9",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "B_CheckValve4.aasx",
+      "idShort": "B_CheckValve4",
+      "seed": "gaid::http://generated.local/asset/B/CheckValve/4/09e9db0adf465290",
+      "stableId": "urn:uuid:486be37c-3c33-5ce0-b120-9d476e0f2030",
+      "globalAssetId": "http://generated.local/asset/B/CheckValve/4/09e9db0adf465290",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/B/CheckValve/4/09e9db0adf465290::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:7ac0ea64-80ba-5b79-bdef-f36762f2efe8",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/B/CheckValve/4/09e9db0adf465290::submodel::TechnicalData",
+          "stableId": "urn:uuid:e62e2310-75bf-5cb2-900f-dcfcb227b74f",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/B/CheckValve/4/09e9db0adf465290::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:66525d48-2e63-5029-a540-2508f31a2cbc",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/B/CheckValve/4/09e9db0adf465290::submodel::SymbolKey",
+          "stableId": "urn:uuid:02bd6787-66b4-542b-9843-0e88af7c125e",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "B_CheckValve5.aasx",
+      "idShort": "B_CheckValve5",
+      "seed": "gaid::http://generated.local/asset/B/CheckValve/5/d20eac174e20fd1a",
+      "stableId": "urn:uuid:2ac8d8bf-6585-51be-8102-8ade20e5dfcb",
+      "globalAssetId": "http://generated.local/asset/B/CheckValve/5/d20eac174e20fd1a",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/B/CheckValve/5/d20eac174e20fd1a::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:3b37e727-455f-54bd-bad5-865222daad53",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/B/CheckValve/5/d20eac174e20fd1a::submodel::TechnicalData",
+          "stableId": "urn:uuid:bc1e54ef-d7be-5829-aeab-fc1b38fb6568",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/B/CheckValve/5/d20eac174e20fd1a::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:e78119c3-6c1f-556d-8cad-d057e3374ed6",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/B/CheckValve/5/d20eac174e20fd1a::submodel::SymbolKey",
+          "stableId": "urn:uuid:12980b76-b52f-56c6-814e-be2642f53bd0",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "B_CheckValve6.aasx",
+      "idShort": "B_CheckValve6",
+      "seed": "gaid::http://generated.local/asset/B/CheckValve/6/475287aa5408f9ac",
+      "stableId": "urn:uuid:f9f1c7a0-16d3-507c-bf97-0a6e928420f4",
+      "globalAssetId": "http://generated.local/asset/B/CheckValve/6/475287aa5408f9ac",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/B/CheckValve/6/475287aa5408f9ac::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:aa9b0c14-b020-5e83-b204-5b1c40c11f5c",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/B/CheckValve/6/475287aa5408f9ac::submodel::TechnicalData",
+          "stableId": "urn:uuid:7f76e19d-829f-5d6a-a400-b69a393fdbab",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/B/CheckValve/6/475287aa5408f9ac::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:02d889a2-92ed-584e-8505-9c45299310ee",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/B/CheckValve/6/475287aa5408f9ac::submodel::SymbolKey",
+          "stableId": "urn:uuid:b46420d2-9ab1-5169-a308-0bef2db3b9d4",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "B_PressureReliefValve1.aasx",
+      "idShort": "B_PressureReliefValve1",
+      "seed": "gaid::https://example.com/ids/asset/8370_3130_1062_6361",
+      "stableId": "urn:uuid:4f4682fb-1da1-5282-a45a-ba8ae510dc1f",
+      "globalAssetId": "https://example.com/ids/asset/8370_3130_1062_6361",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::https://example.com/ids/asset/8370_3130_1062_6361::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:d870b516-4627-59ba-ae20-1a371c4d3f14",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::https://example.com/ids/asset/8370_3130_1062_6361::submodel::TechnicalData",
+          "stableId": "urn:uuid:daf3c048-e9a3-5859-8402-bb643f9a2f58",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::https://example.com/ids/asset/8370_3130_1062_6361::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:bb50300a-f32c-5197-928d-e0aaa0646b6b",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::https://example.com/ids/asset/8370_3130_1062_6361::submodel::SymbolKey",
+          "stableId": "urn:uuid:6172884f-35d9-5e26-aef4-48b07f9349a0",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "B_PressureReliefValve2.aasx",
+      "idShort": "B_PressureReliefValve2",
+      "seed": "gaid::http://generated.local/asset/B/PressureReliefValve/2/adf4e62d6651529e",
+      "stableId": "urn:uuid:eb2df776-f3df-5c4e-af1a-1aa1aa424180",
+      "globalAssetId": "http://generated.local/asset/B/PressureReliefValve/2/adf4e62d6651529e",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/B/PressureReliefValve/2/adf4e62d6651529e::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:dfbc5f04-2463-51d4-b5ee-1da4dd650e60",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/B/PressureReliefValve/2/adf4e62d6651529e::submodel::TechnicalData",
+          "stableId": "urn:uuid:ef3ab03f-4fe4-5ec4-b999-ed49f970ba82",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/B/PressureReliefValve/2/adf4e62d6651529e::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:d6781e27-898a-571a-86d9-9a9a686c750e",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/B/PressureReliefValve/2/adf4e62d6651529e::submodel::SymbolKey",
+          "stableId": "urn:uuid:0c1c0ef9-e0c6-56b1-b780-32781176faf0",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "B_PressureReliefValve3.aasx",
+      "idShort": "B_PressureReliefValve3",
+      "seed": "gaid::http://generated.local/asset/B/PressureReliefValve/3/42deffccf86c2ca2",
+      "stableId": "urn:uuid:f6869f95-1cc2-59f4-8b3a-c11ce2942d8a",
+      "globalAssetId": "http://generated.local/asset/B/PressureReliefValve/3/42deffccf86c2ca2",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/B/PressureReliefValve/3/42deffccf86c2ca2::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:f561a302-5c2c-52c8-a3c2-04b24b5cba36",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/B/PressureReliefValve/3/42deffccf86c2ca2::submodel::TechnicalData",
+          "stableId": "urn:uuid:c38e83f5-39c3-50d8-b235-5669ae4d9976",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/B/PressureReliefValve/3/42deffccf86c2ca2::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:8fbd6373-7d84-5cbc-a0dc-2940cdab4425",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/B/PressureReliefValve/3/42deffccf86c2ca2::submodel::SymbolKey",
+          "stableId": "urn:uuid:2f2ea053-c0d0-5393-bd6d-d196d32b7d64",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "B_PressureReliefValve4.aasx",
+      "idShort": "B_PressureReliefValve4",
+      "seed": "gaid::http://generated.local/asset/B/PressureReliefValve/4/587ef3446f3f920c",
+      "stableId": "urn:uuid:69e99bff-44ef-571e-884f-673b7e539dec",
+      "globalAssetId": "http://generated.local/asset/B/PressureReliefValve/4/587ef3446f3f920c",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/B/PressureReliefValve/4/587ef3446f3f920c::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:9c6894e5-fd23-5166-9d25-3591810251a6",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/B/PressureReliefValve/4/587ef3446f3f920c::submodel::TechnicalData",
+          "stableId": "urn:uuid:593b2cc4-1342-51b7-bad9-0199067902fa",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/B/PressureReliefValve/4/587ef3446f3f920c::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:9da11810-718a-56eb-960c-7bf127788298",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/B/PressureReliefValve/4/587ef3446f3f920c::submodel::SymbolKey",
+          "stableId": "urn:uuid:a9cf433c-1049-5001-893b-99f92bf531bc",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "B_PressureReliefValve5.aasx",
+      "idShort": "B_PressureReliefValve5",
+      "seed": "gaid::http://generated.local/asset/B/PressureReliefValve/5/e645f129629c2ae3",
+      "stableId": "urn:uuid:2409d801-3a72-5b32-b73e-891fd560b9c9",
+      "globalAssetId": "http://generated.local/asset/B/PressureReliefValve/5/e645f129629c2ae3",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/B/PressureReliefValve/5/e645f129629c2ae3::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:d659920c-d921-51be-af75-de88791e87e7",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/B/PressureReliefValve/5/e645f129629c2ae3::submodel::TechnicalData",
+          "stableId": "urn:uuid:ecf06a37-4568-56bb-9af4-0735627881b8",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/B/PressureReliefValve/5/e645f129629c2ae3::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:d984c2b5-9ed7-58cb-8c57-62da02779838",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/B/PressureReliefValve/5/e645f129629c2ae3::submodel::SymbolKey",
+          "stableId": "urn:uuid:787a6c66-1e59-52d7-ad44-1b8ccc40c168",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "B_PressureReliefValve6.aasx",
+      "idShort": "B_PressureReliefValve6",
+      "seed": "gaid::http://generated.local/asset/B/PressureReliefValve/6/ce777f00ecf27e76",
+      "stableId": "urn:uuid:afaaefab-7bc6-5e66-95fa-3b65e23fb1ec",
+      "globalAssetId": "http://generated.local/asset/B/PressureReliefValve/6/ce777f00ecf27e76",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/B/PressureReliefValve/6/ce777f00ecf27e76::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:5e7c7038-4228-52c0-9bca-33aff3d4ebe8",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/B/PressureReliefValve/6/ce777f00ecf27e76::submodel::TechnicalData",
+          "stableId": "urn:uuid:a0c8dfe0-2d73-5bcf-b56e-4b57e5f06565",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/B/PressureReliefValve/6/ce777f00ecf27e76::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:0692dc03-6fd4-5422-a4e3-81bad3e226fd",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/B/PressureReliefValve/6/ce777f00ecf27e76::submodel::SymbolKey",
+          "stableId": "urn:uuid:56a8ace7-1e6c-50ef-99a4-7d95f8301a47",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "B_ThrottleCheckValve1.aasx",
+      "idShort": "B_ThrottleCheckValve1",
+      "seed": "gaid::https://example.com/ids/asset/7530_8130_1062_1841",
+      "stableId": "urn:uuid:8687377f-b9bf-5220-bfc1-bb29eb524ea4",
+      "globalAssetId": "https://example.com/ids/asset/7530_8130_1062_1841",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::https://example.com/ids/asset/7530_8130_1062_1841::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:f4996bde-e927-50e6-9754-339436e74506",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::https://example.com/ids/asset/7530_8130_1062_1841::submodel::TechnicalData",
+          "stableId": "urn:uuid:dfd81f74-f5a1-5914-a0f5-9bbd3b2c2b35",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::https://example.com/ids/asset/7530_8130_1062_1841::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:5b3707a2-ddc1-59dd-a4b4-4869d1653445",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::https://example.com/ids/asset/7530_8130_1062_1841::submodel::SymbolKey",
+          "stableId": "urn:uuid:113d75f4-4121-55aa-b637-919c5cef8cf0",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "B_ThrottleCheckValve2.aasx",
+      "idShort": "B_ThrottleCheckValve2",
+      "seed": "gaid::http://generated.local/asset/B/ThrottleCheckValve/2/6e6981a35d3d9e56",
+      "stableId": "urn:uuid:b9642049-48c0-507c-be33-f65a1047f164",
+      "globalAssetId": "http://generated.local/asset/B/ThrottleCheckValve/2/6e6981a35d3d9e56",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/B/ThrottleCheckValve/2/6e6981a35d3d9e56::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:2e201a1d-31b7-5498-9b70-9cf97a8297e2",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/B/ThrottleCheckValve/2/6e6981a35d3d9e56::submodel::TechnicalData",
+          "stableId": "urn:uuid:34694622-2891-5d62-bb32-bd99bd164352",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/B/ThrottleCheckValve/2/6e6981a35d3d9e56::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:548e8f52-3073-5944-a0ee-26e4dbfeaced",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/B/ThrottleCheckValve/2/6e6981a35d3d9e56::submodel::SymbolKey",
+          "stableId": "urn:uuid:4f2b8b25-07b6-58ea-a549-18945c6588d5",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "B_ThrottleCheckValve3.aasx",
+      "idShort": "B_ThrottleCheckValve3",
+      "seed": "gaid::http://generated.local/asset/B/ThrottleCheckValve/3/1fe771d6d9178793",
+      "stableId": "urn:uuid:cc63fbbf-f3d2-577e-9f4c-7c549fce803d",
+      "globalAssetId": "http://generated.local/asset/B/ThrottleCheckValve/3/1fe771d6d9178793",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/B/ThrottleCheckValve/3/1fe771d6d9178793::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:871343cb-bad7-57fc-a270-1a86bf171038",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/B/ThrottleCheckValve/3/1fe771d6d9178793::submodel::TechnicalData",
+          "stableId": "urn:uuid:457014f0-4598-5e25-920a-885a6353dac4",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/B/ThrottleCheckValve/3/1fe771d6d9178793::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:5194d7f7-8f28-54fd-b2c1-e995db838677",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/B/ThrottleCheckValve/3/1fe771d6d9178793::submodel::SymbolKey",
+          "stableId": "urn:uuid:5fe911d3-e1e7-5762-bac0-659bfb2f9d5c",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "B_ThrottleCheckValve4.aasx",
+      "idShort": "B_ThrottleCheckValve4",
+      "seed": "gaid::http://generated.local/asset/B/ThrottleCheckValve/4/b27c40266703b636",
+      "stableId": "urn:uuid:dd25ca03-c359-53be-9052-0881c79c8258",
+      "globalAssetId": "http://generated.local/asset/B/ThrottleCheckValve/4/b27c40266703b636",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/B/ThrottleCheckValve/4/b27c40266703b636::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:974776a5-9946-5b99-9e2e-f564e5cfdb89",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/B/ThrottleCheckValve/4/b27c40266703b636::submodel::TechnicalData",
+          "stableId": "urn:uuid:353bcdba-3d0c-5f39-a7d3-536f7cb0c040",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/B/ThrottleCheckValve/4/b27c40266703b636::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:4a2c4692-abee-5054-92f3-abb2815263df",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/B/ThrottleCheckValve/4/b27c40266703b636::submodel::SymbolKey",
+          "stableId": "urn:uuid:edcf20a6-0163-5dc0-900c-448175d26601",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "B_ThrottleCheckValve5.aasx",
+      "idShort": "B_ThrottleCheckValve5",
+      "seed": "gaid::http://generated.local/asset/B/ThrottleCheckValve/5/bf85bf0ead64b56c",
+      "stableId": "urn:uuid:e8069add-d27f-5d37-9666-f4ef811c97fe",
+      "globalAssetId": "http://generated.local/asset/B/ThrottleCheckValve/5/bf85bf0ead64b56c",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/B/ThrottleCheckValve/5/bf85bf0ead64b56c::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:da068cd0-cb73-5284-a84a-7a15b01b6f7f",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/B/ThrottleCheckValve/5/bf85bf0ead64b56c::submodel::TechnicalData",
+          "stableId": "urn:uuid:42164196-3bba-58ae-80ee-a7a528861d7b",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/B/ThrottleCheckValve/5/bf85bf0ead64b56c::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:7aafd397-a80d-57b7-ae91-01b3f557f31a",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/B/ThrottleCheckValve/5/bf85bf0ead64b56c::submodel::SymbolKey",
+          "stableId": "urn:uuid:560c15c2-f65e-56de-aa2c-7b71d69c1604",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "B_ThrottleCheckValve6.aasx",
+      "idShort": "B_ThrottleCheckValve6",
+      "seed": "gaid::http://generated.local/asset/B/ThrottleCheckValve/6/4dcabfb7001a9a8b",
+      "stableId": "urn:uuid:e2de60f0-1606-50be-a57c-9cf07bf3c405",
+      "globalAssetId": "http://generated.local/asset/B/ThrottleCheckValve/6/4dcabfb7001a9a8b",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/B/ThrottleCheckValve/6/4dcabfb7001a9a8b::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:3506fec9-aae5-57cd-b99f-9a2b13a5675e",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/B/ThrottleCheckValve/6/4dcabfb7001a9a8b::submodel::TechnicalData",
+          "stableId": "urn:uuid:deae5ba7-99d6-547a-93ce-39b4675f9459",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/B/ThrottleCheckValve/6/4dcabfb7001a9a8b::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:a42bbbb5-3915-52f2-93ad-1f5cef853780",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/B/ThrottleCheckValve/6/4dcabfb7001a9a8b::submodel::SymbolKey",
+          "stableId": "urn:uuid:767c04d3-22c0-5773-87da-7e65148ec50c",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "C_DoubleActingCylinder1.aasx",
+      "idShort": "C_DoubleActingCylinder1",
+      "seed": "gaid::https://example.com/ids/asset/4274_2130_1062_3580",
+      "stableId": "urn:uuid:fdec2a22-401d-5ea0-87d9-4ed28e47f85c",
+      "globalAssetId": "https://example.com/ids/asset/4274_2130_1062_3580",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::https://example.com/ids/asset/4274_2130_1062_3580::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:92db68f7-8aac-5e77-ab13-751897246715",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::https://example.com/ids/asset/4274_2130_1062_3580::submodel::TechnicalData",
+          "stableId": "urn:uuid:c8d5b08f-a748-54e2-9322-6f9623ddc1e7",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::https://example.com/ids/asset/4274_2130_1062_3580::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:94d6884f-6011-5826-acae-38533b6a3dc0",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::https://example.com/ids/asset/4274_2130_1062_3580::submodel::SymbolKey",
+          "stableId": "urn:uuid:be237a6c-26e6-5fcf-a414-c10829dc33e3",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "C_DoubleActingCylinder2.aasx",
+      "idShort": "C_DoubleActingCylinder2",
+      "seed": "gaid::http://generated.local/asset/C/DoubleActingCylinder/2/7118e36477097749",
+      "stableId": "urn:uuid:010e572b-ecfe-5516-85bf-3c65ad586cd8",
+      "globalAssetId": "http://generated.local/asset/C/DoubleActingCylinder/2/7118e36477097749",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/C/DoubleActingCylinder/2/7118e36477097749::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:dfde2a06-eb9b-5835-b033-fc2b654d2a05",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/C/DoubleActingCylinder/2/7118e36477097749::submodel::TechnicalData",
+          "stableId": "urn:uuid:63bdf7d1-d959-52ef-ae65-eef411e12f46",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/C/DoubleActingCylinder/2/7118e36477097749::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:2a3bac53-6211-5684-9c29-a7d32f03cca0",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/C/DoubleActingCylinder/2/7118e36477097749::submodel::SymbolKey",
+          "stableId": "urn:uuid:6117746f-6d9a-5ea9-8ed0-a16b7600b437",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "C_DoubleActingCylinder3.aasx",
+      "idShort": "C_DoubleActingCylinder3",
+      "seed": "gaid::http://generated.local/asset/C/DoubleActingCylinder/3/17e8392a55cee5db",
+      "stableId": "urn:uuid:c7b07ab3-13b6-5992-9d68-937bb10754d2",
+      "globalAssetId": "http://generated.local/asset/C/DoubleActingCylinder/3/17e8392a55cee5db",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/C/DoubleActingCylinder/3/17e8392a55cee5db::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:3b942cd1-d6ce-5636-aac5-ed1c4004d03f",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/C/DoubleActingCylinder/3/17e8392a55cee5db::submodel::TechnicalData",
+          "stableId": "urn:uuid:b3b5c9df-d44f-58d5-8d1d-24e00be27048",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/C/DoubleActingCylinder/3/17e8392a55cee5db::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:898bf41f-daba-5998-97e7-3be89c114f66",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/C/DoubleActingCylinder/3/17e8392a55cee5db::submodel::SymbolKey",
+          "stableId": "urn:uuid:f81d4ac2-1e76-5c2a-b080-bfeaed2771a4",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "C_DoubleActingCylinder4.aasx",
+      "idShort": "C_DoubleActingCylinder4",
+      "seed": "gaid::http://generated.local/asset/C/DoubleActingCylinder/4/7496276412a4def0",
+      "stableId": "urn:uuid:71d07521-29af-5b3b-b273-0a2e53900f23",
+      "globalAssetId": "http://generated.local/asset/C/DoubleActingCylinder/4/7496276412a4def0",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/C/DoubleActingCylinder/4/7496276412a4def0::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:ac172394-b826-5d7e-ac7f-d754b5a6a5e8",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/C/DoubleActingCylinder/4/7496276412a4def0::submodel::TechnicalData",
+          "stableId": "urn:uuid:cbf9d5ec-24ad-51d2-b531-5765fc5144c6",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/C/DoubleActingCylinder/4/7496276412a4def0::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:5ab39240-e786-5a31-9d02-aec67f9350cb",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/C/DoubleActingCylinder/4/7496276412a4def0::submodel::SymbolKey",
+          "stableId": "urn:uuid:a47c2ece-38ce-5fd0-b093-4bc7338c4024",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "C_DoubleActingCylinder5.aasx",
+      "idShort": "C_DoubleActingCylinder5",
+      "seed": "gaid::http://generated.local/asset/C/DoubleActingCylinder/5/e2add909c521bf2d",
+      "stableId": "urn:uuid:7246e6eb-789d-56b9-bee9-72b59b6e557e",
+      "globalAssetId": "http://generated.local/asset/C/DoubleActingCylinder/5/e2add909c521bf2d",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/C/DoubleActingCylinder/5/e2add909c521bf2d::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:6b27a134-14b4-5fa3-a0a0-720b3aae1d1d",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/C/DoubleActingCylinder/5/e2add909c521bf2d::submodel::TechnicalData",
+          "stableId": "urn:uuid:719b1c29-2995-570b-b9df-e6d981b513a5",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/C/DoubleActingCylinder/5/e2add909c521bf2d::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:439ad80d-7959-5b07-9b86-5a0eaaea5264",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/C/DoubleActingCylinder/5/e2add909c521bf2d::submodel::SymbolKey",
+          "stableId": "urn:uuid:be1194ac-111a-51e9-b8d0-35cb2e03c0b9",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "C_DoubleActingCylinder6.aasx",
+      "idShort": "C_DoubleActingCylinder6",
+      "seed": "gaid::http://generated.local/asset/C/DoubleActingCylinder/6/76f2dbfecd29a36f",
+      "stableId": "urn:uuid:ae5376ae-e434-53e9-948f-e79078acd281",
+      "globalAssetId": "http://generated.local/asset/C/DoubleActingCylinder/6/76f2dbfecd29a36f",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/C/DoubleActingCylinder/6/76f2dbfecd29a36f::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:9e9ba1ec-d7a5-5df3-a057-14eec7e3a1a8",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/C/DoubleActingCylinder/6/76f2dbfecd29a36f::submodel::TechnicalData",
+          "stableId": "urn:uuid:f36fc277-dfe8-5f07-9dd5-bd64e09c920f",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/C/DoubleActingCylinder/6/76f2dbfecd29a36f::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:5474baea-90ec-520d-b162-dd987cf2d270",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/C/DoubleActingCylinder/6/76f2dbfecd29a36f::submodel::SymbolKey",
+          "stableId": "urn:uuid:1611d667-8157-5721-9853-3806a57d5933",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "C_SynchronousCylinder1.aasx",
+      "idShort": "C_SynchronousCylinder1",
+      "seed": "gaid::https://example.com/ids/asset/7453_1130_1062_6462",
+      "stableId": "urn:uuid:ade7ba9a-61d2-54ed-a45d-34d331796140",
+      "globalAssetId": "https://example.com/ids/asset/7453_1130_1062_6462",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::https://example.com/ids/asset/7453_1130_1062_6462::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:939c446e-a489-5c11-b20c-ac6024ac73a3",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::https://example.com/ids/asset/7453_1130_1062_6462::submodel::TechnicalData",
+          "stableId": "urn:uuid:0a8755eb-ed80-5266-9af1-1ee87fbbc17a",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::https://example.com/ids/asset/7453_1130_1062_6462::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:7d0fa8e8-af91-5889-8f95-d7ae0bc9c4fe",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::https://example.com/ids/asset/7453_1130_1062_6462::submodel::SymbolKey",
+          "stableId": "urn:uuid:24a40ea4-0076-5256-a939-6e3ccb9001b0",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "C_SynchronousCylinder2.aasx",
+      "idShort": "C_SynchronousCylinder2",
+      "seed": "gaid::http://generated.local/asset/C/SynchronousCylinder/2/722764e68c41561b",
+      "stableId": "urn:uuid:12b09697-49b7-5112-a3b0-855e1d287667",
+      "globalAssetId": "http://generated.local/asset/C/SynchronousCylinder/2/722764e68c41561b",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/C/SynchronousCylinder/2/722764e68c41561b::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:7ca1aa8f-930e-5034-81c3-77872e53d5c2",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/C/SynchronousCylinder/2/722764e68c41561b::submodel::TechnicalData",
+          "stableId": "urn:uuid:55847f43-e502-5da6-b01b-461f3b84589c",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/C/SynchronousCylinder/2/722764e68c41561b::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:de62261e-4d33-506e-8b6a-96da8cf8d397",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/C/SynchronousCylinder/2/722764e68c41561b::submodel::SymbolKey",
+          "stableId": "urn:uuid:2644cc2d-95d5-5df1-a250-62c3dbb75a46",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "C_SynchronousCylinder3.aasx",
+      "idShort": "C_SynchronousCylinder3",
+      "seed": "gaid::http://generated.local/asset/C/SynchronousCylinder/3/709b7d97464c04af",
+      "stableId": "urn:uuid:9b07f45f-e3a7-57fa-8e62-9ee742ed9e84",
+      "globalAssetId": "http://generated.local/asset/C/SynchronousCylinder/3/709b7d97464c04af",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/C/SynchronousCylinder/3/709b7d97464c04af::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:f36fd931-4958-58f2-91c3-1ed476117fb3",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/C/SynchronousCylinder/3/709b7d97464c04af::submodel::TechnicalData",
+          "stableId": "urn:uuid:aae75b41-3448-5f2f-990d-2e25156e1016",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/C/SynchronousCylinder/3/709b7d97464c04af::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:ccba3c3d-68c7-5c14-85ed-fea1bf41a3c8",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/C/SynchronousCylinder/3/709b7d97464c04af::submodel::SymbolKey",
+          "stableId": "urn:uuid:e495eeb9-47d4-5c33-ad0a-9d18b116c071",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "C_SynchronousCylinder4.aasx",
+      "idShort": "C_SynchronousCylinder4",
+      "seed": "gaid::http://generated.local/asset/C/SynchronousCylinder/4/6a34c85410714d51",
+      "stableId": "urn:uuid:ffe42bb8-f98f-5838-bd9a-85d87d4b3667",
+      "globalAssetId": "http://generated.local/asset/C/SynchronousCylinder/4/6a34c85410714d51",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/C/SynchronousCylinder/4/6a34c85410714d51::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:67f9358c-7f05-54f3-9e60-b3ac4e119ab1",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/C/SynchronousCylinder/4/6a34c85410714d51::submodel::TechnicalData",
+          "stableId": "urn:uuid:97d93d94-e6e3-5929-9489-d9f01cd6cf0b",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/C/SynchronousCylinder/4/6a34c85410714d51::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:5633f0f5-9741-5865-bb54-df53241961c1",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/C/SynchronousCylinder/4/6a34c85410714d51::submodel::SymbolKey",
+          "stableId": "urn:uuid:30847017-0364-56d2-a5d7-d4300deb71e2",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "C_SynchronousCylinder5.aasx",
+      "idShort": "C_SynchronousCylinder5",
+      "seed": "gaid::http://generated.local/asset/C/SynchronousCylinder/5/9360715fc3fe0183",
+      "stableId": "urn:uuid:4c0829d4-2ef7-51a6-a5fc-7bb2885ac1b7",
+      "globalAssetId": "http://generated.local/asset/C/SynchronousCylinder/5/9360715fc3fe0183",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/C/SynchronousCylinder/5/9360715fc3fe0183::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:f010ccfb-df54-53ce-8ed7-fcd4ea7346e8",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/C/SynchronousCylinder/5/9360715fc3fe0183::submodel::TechnicalData",
+          "stableId": "urn:uuid:06861df6-5e2e-5c00-bd72-66bf1fded6fc",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/C/SynchronousCylinder/5/9360715fc3fe0183::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:f6114996-e45f-5bf8-89b8-7dd45703794e",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/C/SynchronousCylinder/5/9360715fc3fe0183::submodel::SymbolKey",
+          "stableId": "urn:uuid:3f1ae22f-b9e6-5ee5-a545-0801997bad80",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "C_SynchronousCylinder6.aasx",
+      "idShort": "C_SynchronousCylinder6",
+      "seed": "gaid::http://generated.local/asset/C/SynchronousCylinder/6/e5d6f6e69a6ec2f5",
+      "stableId": "urn:uuid:bf5aea60-9d18-573d-a76f-ed7bd020ee54",
+      "globalAssetId": "http://generated.local/asset/C/SynchronousCylinder/6/e5d6f6e69a6ec2f5",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/C/SynchronousCylinder/6/e5d6f6e69a6ec2f5::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:5bca0d48-dc8b-5e03-a768-cc6273fc37bd",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/C/SynchronousCylinder/6/e5d6f6e69a6ec2f5::submodel::TechnicalData",
+          "stableId": "urn:uuid:00093c40-6e11-5c7f-98fc-a1293fa32ed1",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/C/SynchronousCylinder/6/e5d6f6e69a6ec2f5::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:d9bb805c-1e04-571f-8910-789b14115b59",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/C/SynchronousCylinder/6/e5d6f6e69a6ec2f5::submodel::SymbolKey",
+          "stableId": "urn:uuid:11d32e3e-013f-56bf-864b-3abb06cb980d",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "D_BladderAccumlator1.aasx",
+      "idShort": "D_BladderAccumulator1",
+      "seed": "gaid::https://example.com/ids/asset/9220_6130_1062_8911",
+      "stableId": "urn:uuid:c4d7965b-323f-5309-a51e-60d855c8c3aa",
+      "globalAssetId": "https://example.com/ids/asset/9220_6130_1062_8911",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::https://example.com/ids/asset/9220_6130_1062_8911::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:0202d801-7538-57bd-a350-a427b7da3abc",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::https://example.com/ids/asset/9220_6130_1062_8911::submodel::TechnicalData",
+          "stableId": "urn:uuid:6a722844-144e-5376-b9eb-5300931cec5b",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::https://example.com/ids/asset/9220_6130_1062_8911::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:11a1ace7-a4e9-5346-b247-7b9e10e8ea22",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::https://example.com/ids/asset/9220_6130_1062_8911::submodel::SymbolKey",
+          "stableId": "urn:uuid:5dcc5c77-43b2-5bed-a2df-7513bb3e06e5",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "D_BladderAccumlator2.aasx",
+      "idShort": "D_BladderAccumlator2",
+      "seed": "gaid::http://generated.local/asset/D/BladderAccumlator/2/fb10987f20ac3703",
+      "stableId": "urn:uuid:e4b849cc-7585-50a0-befe-498ed3162920",
+      "globalAssetId": "http://generated.local/asset/D/BladderAccumlator/2/fb10987f20ac3703",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/D/BladderAccumlator/2/fb10987f20ac3703::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:bc1263f7-7a66-5245-a428-8be7742f991b",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/D/BladderAccumlator/2/fb10987f20ac3703::submodel::TechnicalData",
+          "stableId": "urn:uuid:99387437-c799-5626-bcf4-f7596950a1f2",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/D/BladderAccumlator/2/fb10987f20ac3703::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:c34edeed-87d2-53e7-9f70-13c47e991045",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/D/BladderAccumlator/2/fb10987f20ac3703::submodel::SymbolKey",
+          "stableId": "urn:uuid:dc64a45c-6737-53bb-8fb0-373131ca4b51",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "D_BladderAccumlator3.aasx",
+      "idShort": "D_BladderAccumlator3",
+      "seed": "gaid::http://generated.local/asset/D/BladderAccumlator/3/42999aa40cdf742b",
+      "stableId": "urn:uuid:aec9e8f9-02e2-5866-a557-7ec8299a73a1",
+      "globalAssetId": "http://generated.local/asset/D/BladderAccumlator/3/42999aa40cdf742b",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/D/BladderAccumlator/3/42999aa40cdf742b::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:3be22112-e3a4-5e95-915b-eff38039bc53",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/D/BladderAccumlator/3/42999aa40cdf742b::submodel::TechnicalData",
+          "stableId": "urn:uuid:c151a165-521c-5685-be9f-b661bb741e2d",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/D/BladderAccumlator/3/42999aa40cdf742b::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:50cf38f5-da51-5dd4-9d77-e71b293265a0",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/D/BladderAccumlator/3/42999aa40cdf742b::submodel::SymbolKey",
+          "stableId": "urn:uuid:418f000e-273b-513f-8e8b-8c275863bed3",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "D_BladderAccumlator4.aasx",
+      "idShort": "D_BladderAccumlator4",
+      "seed": "gaid::http://generated.local/asset/D/BladderAccumlator/4/7866076514f7ce8d",
+      "stableId": "urn:uuid:2d8be0ea-ba3e-5ebc-a8c7-388bb063362a",
+      "globalAssetId": "http://generated.local/asset/D/BladderAccumlator/4/7866076514f7ce8d",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/D/BladderAccumlator/4/7866076514f7ce8d::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:f9fded2b-8e07-57d1-85e1-2321a3114809",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/D/BladderAccumlator/4/7866076514f7ce8d::submodel::TechnicalData",
+          "stableId": "urn:uuid:0ab4f359-b22d-5bd5-af07-82a8f24b9cfc",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/D/BladderAccumlator/4/7866076514f7ce8d::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:0fd97719-9782-53b5-b6d8-bfc946e5eb99",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/D/BladderAccumlator/4/7866076514f7ce8d::submodel::SymbolKey",
+          "stableId": "urn:uuid:ead7a57f-01bb-5cb3-917b-126783004575",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "D_BladderAccumlator5.aasx",
+      "idShort": "D_BladderAccumlator5",
+      "seed": "gaid::http://generated.local/asset/D/BladderAccumlator/5/3f4df561f319c125",
+      "stableId": "urn:uuid:72b7732c-4cae-581a-814c-0af582c6cce6",
+      "globalAssetId": "http://generated.local/asset/D/BladderAccumlator/5/3f4df561f319c125",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/D/BladderAccumlator/5/3f4df561f319c125::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:d0596a08-dfe6-5c2e-9de8-92f493039041",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/D/BladderAccumlator/5/3f4df561f319c125::submodel::TechnicalData",
+          "stableId": "urn:uuid:dbb1884c-1ad5-5bf7-9090-26ca979acbca",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/D/BladderAccumlator/5/3f4df561f319c125::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:0395d3ea-e915-5321-b9e2-48c522fde067",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/D/BladderAccumlator/5/3f4df561f319c125::submodel::SymbolKey",
+          "stableId": "urn:uuid:b10a2979-f5a6-5c3d-90d6-cdfb0db4ea28",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "D_BladderAccumlator6.aasx",
+      "idShort": "D_BladderAccumlator6",
+      "seed": "gaid::http://generated.local/asset/D/BladderAccumlator/6/5e6fea07c4536f1d",
+      "stableId": "urn:uuid:4d5170d9-619c-5fac-9bfd-54463c06b3c2",
+      "globalAssetId": "http://generated.local/asset/D/BladderAccumlator/6/5e6fea07c4536f1d",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/D/BladderAccumlator/6/5e6fea07c4536f1d::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:9146159e-462a-59bf-85ac-f975fb5e5698",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/D/BladderAccumlator/6/5e6fea07c4536f1d::submodel::TechnicalData",
+          "stableId": "urn:uuid:065d5712-de55-550a-a028-59281b9f5985",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/D/BladderAccumlator/6/5e6fea07c4536f1d::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:bf1d3149-43d7-543d-a364-80a2ab3b04e7",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/D/BladderAccumlator/6/5e6fea07c4536f1d::submodel::SymbolKey",
+          "stableId": "urn:uuid:8002ac50-52bb-5694-8bf0-d4c94ddb3ff6",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "E_BladderAccumlator1.aasx",
+      "idShort": "E_BladderAccumulator1",
+      "seed": "gaid::https://example.com/ids/asset/5275_9180_1062_4892",
+      "stableId": "urn:uuid:aad51102-b1b9-5b34-ad36-f7e8782c31b4",
+      "globalAssetId": "https://example.com/ids/asset/5275_9180_1062_4892",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::https://example.com/ids/asset/5275_9180_1062_4892::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:b7a6aab3-df2f-5b65-91ef-42ad1cf37d24",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::https://example.com/ids/asset/5275_9180_1062_4892::submodel::TechnicalData",
+          "stableId": "urn:uuid:b6240b78-14e6-58a6-9670-dfb447e386bf",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::https://example.com/ids/asset/5275_9180_1062_4892::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:d1e89b73-04f6-569b-a92c-29f8dc51b800",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::https://example.com/ids/asset/5275_9180_1062_4892::submodel::SymbolKey",
+          "stableId": "urn:uuid:2240504e-e24a-50c0-9ae8-812bb3031d6e",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "E_BladderAccumlator2.aasx",
+      "idShort": "E_BladderAccumlator2",
+      "seed": "gaid::http://generated.local/asset/E/BladderAccumlator/2/93676a024fdc6e1b",
+      "stableId": "urn:uuid:6891cb2f-9308-5564-9326-e741f6615eca",
+      "globalAssetId": "http://generated.local/asset/E/BladderAccumlator/2/93676a024fdc6e1b",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/E/BladderAccumlator/2/93676a024fdc6e1b::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:f0f15619-ccc7-5314-8c41-8eeaff63cba1",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/E/BladderAccumlator/2/93676a024fdc6e1b::submodel::TechnicalData",
+          "stableId": "urn:uuid:0eb89519-e50c-5046-832f-ab87c609d3c9",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/E/BladderAccumlator/2/93676a024fdc6e1b::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:2c25f98b-2de1-5e93-a985-da229be4615e",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/E/BladderAccumlator/2/93676a024fdc6e1b::submodel::SymbolKey",
+          "stableId": "urn:uuid:9ed107dc-a71f-5924-a241-dd9796dffd79",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "E_BladderAccumlator3.aasx",
+      "idShort": "E_BladderAccumlator3",
+      "seed": "gaid::http://generated.local/asset/E/BladderAccumlator/3/4d3485c5c5c14eb4",
+      "stableId": "urn:uuid:2206e58a-0e3a-5c89-9020-0ececa92ac9e",
+      "globalAssetId": "http://generated.local/asset/E/BladderAccumlator/3/4d3485c5c5c14eb4",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/E/BladderAccumlator/3/4d3485c5c5c14eb4::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:d609a7ba-616f-5a5d-8f0e-d5ff5dcef4aa",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/E/BladderAccumlator/3/4d3485c5c5c14eb4::submodel::TechnicalData",
+          "stableId": "urn:uuid:c4c072be-505d-5f11-9a97-2f792e69284e",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/E/BladderAccumlator/3/4d3485c5c5c14eb4::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:c593ad98-b186-5fc1-bcff-d9e44dd40550",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/E/BladderAccumlator/3/4d3485c5c5c14eb4::submodel::SymbolKey",
+          "stableId": "urn:uuid:2e3a31e6-face-59b9-abe5-e037b356d08e",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "E_BladderAccumlator4.aasx",
+      "idShort": "E_BladderAccumlator4",
+      "seed": "gaid::http://generated.local/asset/E/BladderAccumlator/4/a5c5650c8186a576",
+      "stableId": "urn:uuid:840f08c5-a1d3-52dc-83d5-8f751ea4eb42",
+      "globalAssetId": "http://generated.local/asset/E/BladderAccumlator/4/a5c5650c8186a576",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/E/BladderAccumlator/4/a5c5650c8186a576::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:55363dc1-98e5-5c43-9c56-fe61090f4e6f",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/E/BladderAccumlator/4/a5c5650c8186a576::submodel::TechnicalData",
+          "stableId": "urn:uuid:504ec341-df30-5ba8-b337-b2397cd68f66",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/E/BladderAccumlator/4/a5c5650c8186a576::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:dd50380a-14f4-5847-b0a3-017e30a1aae8",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/E/BladderAccumlator/4/a5c5650c8186a576::submodel::SymbolKey",
+          "stableId": "urn:uuid:5db92265-e5e8-5fb7-ab79-99b058ac7079",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "E_BladderAccumlator5.aasx",
+      "idShort": "E_BladderAccumlator5",
+      "seed": "gaid::http://generated.local/asset/E/BladderAccumlator/5/2d174fc96f7c15ea",
+      "stableId": "urn:uuid:23617544-4d54-54e8-8390-726a16495e77",
+      "globalAssetId": "http://generated.local/asset/E/BladderAccumlator/5/2d174fc96f7c15ea",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/E/BladderAccumlator/5/2d174fc96f7c15ea::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:b3776fc3-deb3-5be5-a167-9f07b0ce3330",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/E/BladderAccumlator/5/2d174fc96f7c15ea::submodel::TechnicalData",
+          "stableId": "urn:uuid:5b295e8a-589f-5f41-bc15-4bb3131f4cf8",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/E/BladderAccumlator/5/2d174fc96f7c15ea::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:790a7960-da4d-57a5-8ce0-1be698d70e5a",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/E/BladderAccumlator/5/2d174fc96f7c15ea::submodel::SymbolKey",
+          "stableId": "urn:uuid:503978f7-dc1a-57cc-8058-ad1e0e20dc38",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    },
+    {
+      "file": "E_BladderAccumlator6.aasx",
+      "idShort": "E_BladderAccumlator6",
+      "seed": "gaid::http://generated.local/asset/E/BladderAccumlator/6/52828d8044b591f7",
+      "stableId": "urn:uuid:69a96d37-ae4c-5403-a1d3-103b7d7bf54c",
+      "globalAssetId": "http://generated.local/asset/E/BladderAccumlator/6/52828d8044b591f7",
+      "submodels": [
+        {
+          "idShort": "DigitalNameplate",
+          "seed": "gaid::http://generated.local/asset/E/BladderAccumlator/6/52828d8044b591f7::submodel::DigitalNameplate",
+          "stableId": "urn:uuid:186916d2-5d07-56ab-8d4d-2781e07bb81d",
+          "oldId": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+        },
+        {
+          "idShort": "TechnicalData",
+          "seed": "gaid::http://generated.local/asset/E/BladderAccumlator/6/52828d8044b591f7::submodel::TechnicalData",
+          "stableId": "urn:uuid:80cfd280-af67-516b-a775-f3b532c3c9b2",
+          "oldId": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "idShort": "HydraulicInterfaces",
+          "seed": "gaid::http://generated.local/asset/E/BladderAccumlator/6/52828d8044b591f7::submodel::HydraulicInterfaces",
+          "stableId": "urn:uuid:8852d2f7-2233-5684-b4d1-032562d479df",
+          "oldId": "https://example.com/ids/sm/2573_2131_2152_2843"
+        },
+        {
+          "idShort": "SymbolKey",
+          "seed": "gaid::http://generated.local/asset/E/BladderAccumlator/6/52828d8044b591f7::submodel::SymbolKey",
+          "stableId": "urn:uuid:b72b4fd4-6227-5bb7-ada9-154ad51529f9",
+          "oldId": "https://example.com/ids/sm/5385_3131_2152_2671"
+        }
+      ]
+    }
+  ]
+}

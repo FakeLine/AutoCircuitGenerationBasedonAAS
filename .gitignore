@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+output/
+Github_upload/output/
+Github_upload/node_modules/

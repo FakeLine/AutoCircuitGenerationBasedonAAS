@@ -1,0 +1,1801 @@
+{
+  "run_id": "run_20260411_134203",
+  "outputs": {
+    "semantic_dictionary": "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\semantic-dictionary.aasx",
+    "id_map": "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\id-map.json",
+    "cleaned": {
+      "supplierA": [
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierA_clean\\A_ConstantPump1.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierA_clean\\A_ConstantPump2.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierA_clean\\A_ConstantPump3.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierA_clean\\A_ConstantPump4.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierA_clean\\A_ConstantPump5.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierA_clean\\A_ConstantPump6.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierA_clean\\A_HydraulicMotor1.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierA_clean\\A_HydraulicMotor2.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierA_clean\\A_HydraulicMotor3.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierA_clean\\A_HydraulicMotor4.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierA_clean\\A_HydraulicMotor5.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierA_clean\\A_HydraulicMotor6.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierA_clean\\A_Tank1.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierA_clean\\A_Tank2.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierA_clean\\A_Tank3.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierA_clean\\A_Tank4.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierA_clean\\A_Tank5.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierA_clean\\A_Tank6.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierA_clean\\A_VariablePump1.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierA_clean\\A_VariablePump2.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierA_clean\\A_VariablePump3.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierA_clean\\A_VariablePump4.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierA_clean\\A_VariablePump5.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierA_clean\\A_VariablePump6.aasx"
+      ],
+      "supplierB": [
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierB_clean\\B_4_3DirectionalControlValve1.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierB_clean\\B_4_3DirectionalControlValve2.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierB_clean\\B_4_3DirectionalControlValve3.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierB_clean\\B_4_3DirectionalControlValve4.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierB_clean\\B_4_3DirectionalControlValve5.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierB_clean\\B_4_3DirectionalControlValve6.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierB_clean\\B_CheckValve1.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierB_clean\\B_CheckValve2.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierB_clean\\B_CheckValve3.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierB_clean\\B_CheckValve4.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierB_clean\\B_CheckValve5.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierB_clean\\B_CheckValve6.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierB_clean\\B_PressureReliefValve1.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierB_clean\\B_PressureReliefValve2.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierB_clean\\B_PressureReliefValve3.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierB_clean\\B_PressureReliefValve4.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierB_clean\\B_PressureReliefValve5.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierB_clean\\B_PressureReliefValve6.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierB_clean\\B_ThrottleCheckValve1.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierB_clean\\B_ThrottleCheckValve2.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierB_clean\\B_ThrottleCheckValve3.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierB_clean\\B_ThrottleCheckValve4.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierB_clean\\B_ThrottleCheckValve5.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierB_clean\\B_ThrottleCheckValve6.aasx"
+      ],
+      "supplierC": [
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierC_clean\\C_DoubleActingCylinder1.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierC_clean\\C_DoubleActingCylinder2.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierC_clean\\C_DoubleActingCylinder3.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierC_clean\\C_DoubleActingCylinder4.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierC_clean\\C_DoubleActingCylinder5.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierC_clean\\C_DoubleActingCylinder6.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierC_clean\\C_SynchronousCylinder1.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierC_clean\\C_SynchronousCylinder2.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierC_clean\\C_SynchronousCylinder3.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierC_clean\\C_SynchronousCylinder4.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierC_clean\\C_SynchronousCylinder5.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierC_clean\\C_SynchronousCylinder6.aasx"
+      ],
+      "supplierD": [
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierD_clean\\D_BladderAccumlator1.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierD_clean\\D_BladderAccumlator2.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierD_clean\\D_BladderAccumlator3.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierD_clean\\D_BladderAccumlator4.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierD_clean\\D_BladderAccumlator5.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierD_clean\\D_BladderAccumlator6.aasx"
+      ],
+      "supplierE": [
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierE_clean\\E_BladderAccumlator1.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierE_clean\\E_BladderAccumlator2.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierE_clean\\E_BladderAccumlator3.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierE_clean\\E_BladderAccumlator4.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierE_clean\\E_BladderAccumlator5.aasx",
+        "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\supplierE_clean\\E_BladderAccumlator6.aasx"
+      ]
+    }
+  },
+  "runtime": {
+    "mode": "direct",
+    "suppliers": {
+      "supplierA": "http://localhost:8091",
+      "supplierB": "http://localhost:8092",
+      "supplierC": "http://localhost:8093",
+      "supplierD": "http://localhost:8094",
+      "supplierE": "http://localhost:8095"
+    },
+    "semantic": "http://localhost:8090"
+  },
+  "upload": {
+    "suppliers": {
+      "supplierA": [
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        }
+      ],
+      "supplierB": [
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        }
+      ],
+      "supplierC": [
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        }
+      ],
+      "supplierD": [
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        }
+      ],
+      "supplierE": [
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        },
+        {
+          "status": "uploaded",
+          "code": 200,
+          "body": "true"
+        }
+      ]
+    },
+    "cleanup": {
+      "semantic": {
+        "shells_found": 0,
+        "shells_deleted": 0,
+        "submodels_found": 0,
+        "submodels_deleted": 0
+      },
+      "suppliers": {
+        "supplierA": {
+          "shells_found": 0,
+          "shells_deleted": 0,
+          "submodels_found": 0,
+          "submodels_deleted": 0
+        },
+        "supplierB": {
+          "shells_found": 0,
+          "shells_deleted": 0,
+          "submodels_found": 0,
+          "submodels_deleted": 0
+        },
+        "supplierC": {
+          "shells_found": 0,
+          "shells_deleted": 0,
+          "submodels_found": 0,
+          "submodels_deleted": 0
+        },
+        "supplierD": {
+          "shells_found": 0,
+          "shells_deleted": 0,
+          "submodels_found": 0,
+          "submodels_deleted": 0
+        },
+        "supplierE": {
+          "shells_found": 0,
+          "shells_deleted": 0,
+          "submodels_found": 0,
+          "submodels_deleted": 0
+        }
+      }
+    }
+  },
+  "verification": {
+    "payloads": {
+      "status": "ok",
+      "suppliers": {
+        "supplierA": [
+          {
+            "file": "A_ConstantPump1.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "A_ConstantPump2.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "A_ConstantPump3.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "A_ConstantPump4.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "A_ConstantPump5.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "A_ConstantPump6.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "A_HydraulicMotor1.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "A_HydraulicMotor2.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "A_HydraulicMotor3.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "A_HydraulicMotor4.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "A_HydraulicMotor5.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "A_HydraulicMotor6.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "A_Tank1.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 33
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "A_Tank2.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 33
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "A_Tank3.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 33
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "A_Tank4.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 33
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "A_Tank5.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 33
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "A_Tank6.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 33
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "A_VariablePump1.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "A_VariablePump2.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "A_VariablePump3.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "A_VariablePump4.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "A_VariablePump5.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "A_VariablePump6.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          }
+        ],
+        "supplierB": [
+          {
+            "file": "B_4_3DirectionalControlValve1.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "B_4_3DirectionalControlValve2.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "B_4_3DirectionalControlValve3.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "B_4_3DirectionalControlValve4.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "B_4_3DirectionalControlValve5.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "B_4_3DirectionalControlValve6.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "B_CheckValve1.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "B_CheckValve2.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "B_CheckValve3.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "B_CheckValve4.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "B_CheckValve5.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "B_CheckValve6.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "B_PressureReliefValve1.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "B_PressureReliefValve2.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "B_PressureReliefValve3.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "B_PressureReliefValve4.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "B_PressureReliefValve5.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "B_PressureReliefValve6.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "B_ThrottleCheckValve1.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "B_ThrottleCheckValve2.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "B_ThrottleCheckValve3.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "B_ThrottleCheckValve4.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "B_ThrottleCheckValve5.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "B_ThrottleCheckValve6.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          }
+        ],
+        "supplierC": [
+          {
+            "file": "C_DoubleActingCylinder1.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "C_DoubleActingCylinder2.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "C_DoubleActingCylinder3.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "C_DoubleActingCylinder4.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "C_DoubleActingCylinder5.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "C_DoubleActingCylinder6.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "C_SynchronousCylinder1.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "C_SynchronousCylinder2.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "C_SynchronousCylinder3.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "C_SynchronousCylinder4.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "C_SynchronousCylinder5.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "C_SynchronousCylinder6.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 38
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          }
+        ],
+        "supplierD": [
+          {
+            "file": "D_BladderAccumlator1.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 42
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "D_BladderAccumlator2.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 42
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "D_BladderAccumlator3.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 42
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "D_BladderAccumlator4.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 42
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "D_BladderAccumlator5.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 42
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "D_BladderAccumlator6.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 42
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          }
+        ],
+        "supplierE": [
+          {
+            "file": "E_BladderAccumlator1.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 42
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "E_BladderAccumlator2.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 42
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "E_BladderAccumlator3.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 42
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "E_BladderAccumlator4.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 42
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "E_BladderAccumlator5.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 42
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          },
+          {
+            "file": "E_BladderAccumlator6.aasx",
+            "raw": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 42
+            },
+            "output": {
+              "format": "xml",
+              "payload": "aasx/A_Tank1/A_Tank1.aas.xml",
+              "shells": 1,
+              "submodels": 4,
+              "conceptDescriptions": 0
+            }
+          }
+        ]
+      },
+      "failures": [],
+      "warnings": []
+    },
+    "runtime": {
+      "shell_counts": {
+        "supplierA": {
+          "count": 0
+        },
+        "supplierB": {
+          "count": 0
+        },
+        "supplierC": {
+          "count": 0
+        },
+        "supplierD": {
+          "count": 0
+        },
+        "supplierE": {
+          "count": 0
+        },
+        "semantic": {
+          "count": 0
+        }
+      },
+      "registry_routes": {
+        "supplierA": false,
+        "supplierB": false,
+        "supplierC": false,
+        "supplierD": false,
+        "supplierE": false
+      },
+      "semantic_check": {
+        "has_irdi_prefix": false,
+        "sample_supplier": null,
+        "note": "no shells available for semantic check"
+      }
+    }
+  },
+  "semanticUpload": {
+    "enabled": true,
+    "semanticUrl": "http://localhost:8090",
+    "file": "D:\\RWTH\\MasterThesis\\MyThesisProject\\Thesis\\AutoCircuitGenerationBasedonAAS\\Github_upload\\supplier_runtime\\out\\run_20260411_134203\\semantic-dictionary.aasx",
+    "status": "success",
+    "httpStatus": 200,
+    "shellsStatus": 200
+  }
+}

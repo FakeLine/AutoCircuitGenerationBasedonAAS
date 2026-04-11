@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="30.848528mm"
+   height="59.6138mm"
+   viewBox="0 0 8.1620658 15.772932"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   sodipodi:docname="CheckValve.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="true"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="true"
+     inkscape:zoom="2.8284271"
+     inkscape:cx="187.56008"
+     inkscape:cy="94.221979"
+     inkscape:window-width="2560"
+     inkscape:window-height="1369"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       id="grid1"
+       units="mm"
+       originx="0.11225371"
+       originy="7.2224384"
+       spacingx="0.26458526"
+       spacingy="0.26458525"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="5"
+       enabled="true"
+       visible="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="图层 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0.15194047,7.2753557)">
+    <circle
+       style="fill:none;stroke:#000000;stroke-width:0.317502;stroke-dashoffset:6.80314"
+       id="path2"
+       cx="3.9290917"
+       cy="-0.052916825"
+       r="2.6458526" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.317502;stroke-dashoffset:6.80314"
+       d="M -0.03968656,-0.05291664 3.9290924,3.9158627 7.897871,-0.05291664"
+       id="path3" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.317502;stroke-dashoffset:6.80314"
+       d="M 3.9290923,3.9158625 V 7.8846408"
+       id="path4" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.317502;stroke-dashoffset:6.80314"
+       d="M 3.9290925,-2.6987694 V -6.6675487"
+       id="path5" />
+    <circle
+       style="fill:none;stroke:none;stroke-width:0.317502;stroke-dashoffset:6.80314"
+       id="P"
+       cx="3.9290917"
+       cy="-6.6138926"
+       r="0.66146314"
+       data-direction="north" />
+    <circle
+       style="fill:none;stroke:none;stroke-width:0.317502;stroke-dashoffset:6.80314"
+       cx="3.9290917"
+       cy="7.8361135"
+       r="0.66146314"
+       id="A"
+       data-direction="south" />
+  </g>
+</svg>

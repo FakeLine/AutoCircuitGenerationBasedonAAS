@@ -1,0 +1,16 @@
+# Python dependencies for this repository.
+#
+# Main use:
+# - required for the BaSyx upload/validation workflow under
+#   `Github_upload/supplier_runtime/semantic-governance/`
+#
+# In practice:
+# - if you run the recommended BaSyx workflow, install this file
+# - if you only run the split pipeline in fallback `local` mode,
+#   the main pipeline mostly uses the Python standard library
+#   and this file is usually not the blocking dependency
+#
+# Install with:
+#   pip install -r requirements.txt
+
+requests>=2.31.0

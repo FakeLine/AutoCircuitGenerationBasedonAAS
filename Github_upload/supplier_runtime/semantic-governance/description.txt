@@ -1,0 +1,45 @@
+Semantic Governance Pipeline (aasx_pipeline.py)
+
+What the script does
+- Scans supplier input folders (data/supplier*_raw by default) and reads all .aasx packages.
+- Rewrites AAS and Submodel IDs to stable UUIDv5-based urn:uuid:... values (no random UUIDs).
+- Extracts and deduplicates ConceptDescriptions into a shared semantic dictionary AASX.
+- Produces cleaned supplier packages with ConceptDescriptions removed (semanticId values are never changed).
+- Optionally uploads the dictionary and supplier packages to the gateway endpoints.
+- Upload is enabled by default; use --no-upload for a dry run.
+- Verifies outputs by comparing raw vs cleaned payload counts and can check runtime endpoints.
+
+How it works (high level flow)
+1) Supplier discovery
+   - Default: scan data/ for directories named supplier*_raw.
+   - Legacy mode: use only supplierA_raw and supplierB_raw if --no-scan-suppliers is set.
+2) For each supplier package
+   - Locate the AAS environment payload inside the AASX using the relationship file.
+   - Parse the payload (XML or JSON), then update AAS/Submodel IDs using UUIDv5.
+   - Persist ID mappings in semantic-governance/id-map-store.json for stability across runs.
+   - Remove ConceptDescriptions from the supplier package.
+   - Repack the AASX by keeping all original files and replacing only the payload file.
+3) Build semantic dictionary
+   - Merge ConceptDescriptions from all inputs, deduplicate by ConceptDescription.id,
+     and write a minimal dictionary AASX containing only ConceptDescriptions.
+4) Verification
+   - For each supplier, compare raw vs cleaned payload counts (shells/submodels/conceptDescriptions).
+   - Fail if any raw package had shells/submodels but the output dropped to zero.
+   - Optional runtime check: query gateway /{supplier}/shells and registry /shell-descriptors.
+5) Optional upload
+   - Upload dictionary to /semantic/upload (409 is treated as already exists).
+   - Upload each supplier package to /{supplier}/upload (409 aborts for conflicts).
+
+Key inputs and outputs
+- Inputs: data/supplier*_raw/*.aasx
+- Outputs (per run): out/run_<timestamp>/
+  - semantic-dictionary.aasx
+  - <supplier>_clean/*.aasx
+  - id-map.json
+  - report.json
+
+Stable ID policy summary
+- AAS.id and Submodel.id are generated via UUIDv5 (namespace-based).
+- AAS seed: assetInformation.globalAssetId if present, otherwise file name + idShort + assetType.
+- Submodel seed: AAS seed + submodel idShort (or original submodel id).
+- The persistent id-map-store.json keeps IDs stable across re-runs.

@@ -1,0 +1,73 @@
+{
+  "name": "Chapter 8 volume-node demo",
+  "slots": [
+    {
+      "slotId": "PUMP",
+      "componentLabel": "Verstell_Pumpe"
+    },
+    {
+      "slotId": "CYL",
+      "componentLabel": "Differential_Zylinder"
+    },
+    {
+      "slotId": "PRV_A2B",
+      "componentLabel": "Druckbegrenzungsventil"
+    },
+    {
+      "slotId": "PRV_B2A",
+      "componentLabel": "Druckbegrenzungsventil"
+    },
+    {
+      "slotId": "ACC",
+      "componentLabel": "Druckspeicher"
+    }
+  ],
+  "volumeNodes": [
+    {
+      "id": "VN_HIGH",
+      "bindings": [
+        {
+          "slotId": "PUMP",
+          "portId": "VK_aus"
+        },
+        {
+          "slotId": "CYL",
+          "portId": "VK_a"
+        },
+        {
+          "slotId": "PRV_A2B",
+          "portId": "VK_ein"
+        },
+        {
+          "slotId": "PRV_B2A",
+          "portId": "VK_aus"
+        }
+      ]
+    },
+    {
+      "id": "VN_LOW",
+      "bindings": [
+        {
+          "slotId": "PUMP",
+          "portId": "VK_ein"
+        },
+        {
+          "slotId": "CYL",
+          "portId": "VK_b"
+        },
+        {
+          "slotId": "PRV_A2B",
+          "portId": "VK_aus"
+        },
+        {
+          "slotId": "PRV_B2A",
+          "portId": "VK_ein"
+        },
+        {
+          "slotId": "ACC",
+          "portId": "VK_p"
+        }
+      ]
+    }
+  ]
+}

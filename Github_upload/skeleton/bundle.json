@@ -1,0 +1,1937 @@
+{
+  "schema": "urn:sdf:hydraulic:bundle:1.0",
+  "generatedAt": "2026-01-14T23:42:57",
+  "library": {
+    "schema": "urn:sdf:hydraulic:skeleton-library:1.0",
+    "generatedAt": "2026-01-14T16:04:41",
+    "constraints": {
+      "componentTypesAllowed": [
+        "4-3DirectionalControlValve",
+        "ConstantPump",
+        "VariablePump",
+        "Double-ActingCylinder",
+        "SynchronousCylinder",
+        "Tank",
+        "PressureReliefValve",
+        "CheckValve",
+        "BladderAccumulator",
+        "ThrottleCheckValve",
+        "HydraulicMotor"
+      ],
+      "excludedComponentTypes": [
+        "FlowControlValve"
+      ],
+      "note": "All skeletons are slot-level. They reference component types and PortRole IDs; they do not instantiate concrete component instances."
+    },
+    "componentCatalog": [
+      {
+        "componentType": "4-3DirectionalControlValve",
+        "assetType": "urn:sdf:cc:hydraulic:4-3DirectionalControlValve:1.0"
+      },
+      {
+        "componentType": "ConstantPump",
+        "assetType": "0173-1#01-AGW108#006"
+      },
+      {
+        "componentType": "VariablePump",
+        "assetType": "0173-1#01-AGW109#006"
+      },
+      {
+        "componentType": "Double-ActingCylinder",
+        "assetType": "0173-1#01-AKE877#018"
+      },
+      {
+        "componentType": "SynchronousCylinder",
+        "assetType": "0173-1#01-AGW484#006"
+      },
+      {
+        "componentType": "Tank",
+        "assetType": "0173-1#01-AKE989#019"
+      },
+      {
+        "componentType": "PressureReliefValve",
+        "assetType": "0173-1#01-AKE887#018"
+      },
+      {
+        "componentType": "CheckValve",
+        "assetType": "0173-1#01-AGU942#003"
+      },
+      {
+        "componentType": "BladderAccumulator",
+        "assetType": "0173-1#01-AGU966#004"
+      },
+      {
+        "componentType": "ThrottleCheckValve",
+        "assetType": "0173-1#01-AGW479#006"
+      },
+      {
+        "componentType": "HydraulicMotor",
+        "assetType": "0173-1#01-AGU125#004"
+      }
+    ],
+    "portSchemas": [
+      {
+        "componentType": "Tank",
+        "ports": [
+          {
+            "portKey": "S",
+            "roleId": "urn:sdf:cv:hydraulic:PortRole:TANK_SUCTION"
+          },
+          {
+            "portKey": "T1",
+            "roleId": "urn:sdf:cv:hydraulic:PortRole:TANK_RETURN_RV"
+          },
+          {
+            "portKey": "T2",
+            "roleId": "urn:sdf:cv:hydraulic:PortRole:TANK_RETURN_SYSTEM"
+          }
+        ]
+      },
+      {
+        "componentType": "ConstantPump",
+        "ports": [
+          {
+            "portKey": "S",
+            "roleId": "urn:sdf:cv:hydraulic:PortRole:COSTPUMP_SUCTION"
+          },
+          {
+            "portKey": "P",
+            "roleId": "urn:sdf:cv:hydraulic:PortRole:COSTPUMP_PRESSURE"
+          }
+        ]
+      },
+      {
+        "componentType": "VariablePump",
+        "ports": [
+          {
+            "portKey": "S",
+            "roleId": "urn:sdf:cv:hydraulic:PortRole:VARIPUMP_SUCTION"
+          },
+          {
+            "portKey": "P",
+            "roleId": "urn:sdf:cv:hydraulic:PortRole:VARIPUMP_PRESSURE"
+          },
+          {
+            "portKey": "A",
+            "roleId": "urn:sdf:cv:hydraulic:PortRole:VARIPUMP_LOOP_A"
+          },
+          {
+            "portKey": "B",
+            "roleId": "urn:sdf:cv:hydraulic:PortRole:VARIPUMP_LOOP_B"
+          }
+        ]
+      },
+      {
+        "componentType": "4-3DirectionalControlValve",
+        "ports": [
+          {
+            "portKey": "P",
+            "roleId": "urn:sdf:cv:hydraulic:PortRole:4-3DCV_PRESSURE"
+          },
+          {
+            "portKey": "T",
+            "roleId": "urn:sdf:cv:hydraulic:PortRole:4-3DCV_RETURN"
+          },
+          {
+            "portKey": "A",
+            "roleId": "urn:sdf:cv:hydraulic:PortRole:4-3DCV_WORKA"
+          },
+          {
+            "portKey": "B",
+            "roleId": "urn:sdf:cv:hydraulic:PortRole:4-3DCV_WORKB"
+          }
+        ]
+      },
+      {
+        "componentType": "PressureReliefValve",
+        "ports": [
+          {
+            "portKey": "P",
+            "roleId": "urn:sdf:cv:hydraulic:PortRole:PRESSRV_PRESSURE"
+          },
+          {
+            "portKey": "T",
+            "roleId": "urn:sdf:cv:hydraulic:PortRole:PRESSRV_RETURN"
+          }
+        ]
+      },
+      {
+        "componentType": "Double-ActingCylinder",
+        "ports": [
+          {
+            "portKey": "A",
+            "roleId": "urn:sdf:cv:hydraulic:PortRole:2ACTCYLIN_CAP"
+          },
+          {
+            "portKey": "B",
+            "roleId": "urn:sdf:cv:hydraulic:PortRole:2ACTCYLIN_ROD"
+          }
+        ]
+      },
+      {
+        "componentType": "SynchronousCylinder",
+        "ports": [
+          {
+            "portKey": "A",
+            "roleId": "urn:sdf:cv:hydraulic:PortRole:SYNCYLIN_CAP"
+          },
+          {
+            "portKey": "B",
+            "roleId": "urn:sdf:cv:hydraulic:PortRole:SYNCYLIN_ROD"
+          }
+        ]
+      },
+      {
+        "componentType": "BladderAccumulator",
+        "ports": [
+          {
+            "portKey": "P",
+            "roleId": "urn:sdf:cv:hydraulic:PortRole:BA_PRESSURE"
+          }
+        ]
+      },
+      {
+        "componentType": "CheckValve",
+        "ports": [
+          {
+            "portKey": "IN",
+            "roleId": "urn:sdf:cv:hydraulic:PortRole:CHECKVAL_IN"
+          },
+          {
+            "portKey": "OUT",
+            "roleId": "urn:sdf:cv:hydraulic:PortRole:CHECKVAL_OUT"
+          }
+        ]
+      },
+      {
+        "componentType": "ThrottleCheckValve",
+        "ports": [
+          {
+            "portKey": "IN",
+            "roleId": "urn:sdf:cv:hydraulic:PortRole:THROCHECKVAL_IN"
+          },
+          {
+            "portKey": "OUT",
+            "roleId": "urn:sdf:cv:hydraulic:PortRole:THROCHECKVAL_OUT"
+          }
+        ]
+      },
+      {
+        "componentType": "HydraulicMotor",
+        "ports": [
+          {
+            "portKey": "A",
+            "roleId": "urn:sdf:cv:hydraulic:PortRole:HYMO_WORKA"
+          },
+          {
+            "portKey": "B",
+            "roleId": "urn:sdf:cv:hydraulic:PortRole:HYMO_WORKB"
+          }
+        ]
+      }
+    ],
+    "skeletons": [
+      {
+        "skeletonId": "skeleton1_utility_chassis_fixed_pump_open_center_dcv",
+        "title": "Utility Chassis (Fixed Displacement Pump + Open-Center 4/3 DCV + Double-Acting Cylinder)",
+        "constraints": {
+          "componentSet": "11-types-only",
+          "noFlowControlValve": true
+        },
+        "componentSlots": [
+          {
+            "slotId": "TANK",
+            "name": "Tank",
+            "componentType": "Tank",
+            "assetType": "0173-1#01-AKE989#019",
+            "ports": [
+              {
+                "portKey": "S",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:TANK_SUCTION"
+              },
+              {
+                "portKey": "T1",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:TANK_RETURN_RV"
+              },
+              {
+                "portKey": "T2",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:TANK_RETURN_SYSTEM"
+              }
+            ]
+          },
+          {
+            "slotId": "PUMP",
+            "name": "Fixed Displacement Pump",
+            "componentType": "ConstantPump",
+            "assetType": "0173-1#01-AGW108#006",
+            "ports": [
+              {
+                "portKey": "S",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:COSTPUMP_SUCTION"
+              },
+              {
+                "portKey": "P",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:COSTPUMP_PRESSURE"
+              }
+            ]
+          },
+          {
+            "slotId": "DCV",
+            "name": "4/3 Directional Control Valve",
+            "componentType": "4-3DirectionalControlValve",
+            "assetType": "urn:sdf:cc:hydraulic:4-3DirectionalControlValve:1.0",
+            "ports": [
+              {
+                "portKey": "P",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:4-3DCV_PRESSURE"
+              },
+              {
+                "portKey": "T",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:4-3DCV_RETURN"
+              },
+              {
+                "portKey": "A",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:4-3DCV_WORKA"
+              },
+              {
+                "portKey": "B",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:4-3DCV_WORKB"
+              }
+            ]
+          },
+          {
+            "slotId": "CYL",
+            "name": "Double-Acting Cylinder",
+            "componentType": "Double-ActingCylinder",
+            "assetType": "0173-1#01-AKE877#018",
+            "ports": [
+              {
+                "portKey": "A",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:2ACTCYLIN_CAP"
+              },
+              {
+                "portKey": "B",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:2ACTCYLIN_ROD"
+              }
+            ]
+          },
+          {
+            "slotId": "PRV",
+            "name": "Pressure Relief Valve",
+            "componentType": "PressureReliefValve",
+            "assetType": "0173-1#01-AKE887#018",
+            "ports": [
+              {
+                "portKey": "P",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:PRESSRV_PRESSURE"
+              },
+              {
+                "portKey": "T",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:PRESSRV_RETURN"
+              }
+            ]
+          }
+        ],
+        "connections": [
+          {
+            "from": {
+              "slotId": "TANK",
+              "portKey": "S"
+            },
+            "to": {
+              "slotId": "PUMP",
+              "portKey": "S"
+            }
+          },
+          {
+            "from": {
+              "slotId": "PUMP",
+              "portKey": "P"
+            },
+            "to": {
+              "slotId": "DCV",
+              "portKey": "P"
+            }
+          },
+          {
+            "from": {
+              "slotId": "DCV",
+              "portKey": "T"
+            },
+            "to": {
+              "slotId": "TANK",
+              "portKey": "T2"
+            }
+          },
+          {
+            "from": {
+              "slotId": "DCV",
+              "portKey": "A"
+            },
+            "to": {
+              "slotId": "CYL",
+              "portKey": "A"
+            }
+          },
+          {
+            "from": {
+              "slotId": "DCV",
+              "portKey": "B"
+            },
+            "to": {
+              "slotId": "CYL",
+              "portKey": "B"
+            }
+          },
+          {
+            "from": {
+              "slotId": "PRV",
+              "portKey": "P"
+            },
+            "to": {
+              "slotId": "PUMP",
+              "portKey": "P"
+            },
+            "note": "Relief valve taps the main pressure line"
+          },
+          {
+            "from": {
+              "slotId": "PRV",
+              "portKey": "T"
+            },
+            "to": {
+              "slotId": "TANK",
+              "portKey": "T1"
+            }
+          }
+        ],
+        "notes": [
+          "DCV center condition is intended as open-center for low-cost open-circuit systems.",
+          "If your downstream pipeline requires a junction/net node for multi-branch on pressure line, insert an implicit NET node at PUMP.P."
+        ]
+      },
+      {
+        "skeletonId": "skeleton2_variable_pump_closed_center_dcv_cylinder",
+        "title": "Efficient Open Circuit (Variable Pump + Closed-Center 4/3 DCV + Double-Acting Cylinder)",
+        "constraints": {
+          "componentSet": "11-types-only",
+          "noFlowControlValve": true
+        },
+        "componentSlots": [
+          {
+            "slotId": "TANK",
+            "name": "Tank",
+            "componentType": "Tank",
+            "assetType": "0173-1#01-AKE989#019",
+            "ports": [
+              {
+                "portKey": "S",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:TANK_SUCTION"
+              },
+              {
+                "portKey": "T1",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:TANK_RETURN_RV"
+              },
+              {
+                "portKey": "T2",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:TANK_RETURN_SYSTEM"
+              }
+            ]
+          },
+          {
+            "slotId": "PUMP",
+            "name": "Variable Displacement Pump",
+            "componentType": "VariablePump",
+            "assetType": "0173-1#01-AGW109#006",
+            "ports": [
+              {
+                "portKey": "S",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:VARIPUMP_SUCTION"
+              },
+              {
+                "portKey": "P",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:VARIPUMP_PRESSURE"
+              }
+            ]
+          },
+          {
+            "slotId": "DCV",
+            "name": "4/3 Directional Control Valve",
+            "componentType": "4-3DirectionalControlValve",
+            "assetType": "urn:sdf:cc:hydraulic:4-3DirectionalControlValve:1.0",
+            "ports": [
+              {
+                "portKey": "P",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:4-3DCV_PRESSURE"
+              },
+              {
+                "portKey": "T",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:4-3DCV_RETURN"
+              },
+              {
+                "portKey": "A",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:4-3DCV_WORKA"
+              },
+              {
+                "portKey": "B",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:4-3DCV_WORKB"
+              }
+            ]
+          },
+          {
+            "slotId": "CYL",
+            "name": "Double-Acting Cylinder",
+            "componentType": "Double-ActingCylinder",
+            "assetType": "0173-1#01-AKE877#018",
+            "ports": [
+              {
+                "portKey": "A",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:2ACTCYLIN_CAP"
+              },
+              {
+                "portKey": "B",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:2ACTCYLIN_ROD"
+              }
+            ]
+          },
+          {
+            "slotId": "PRV",
+            "name": "Pressure Relief Valve",
+            "componentType": "PressureReliefValve",
+            "assetType": "0173-1#01-AKE887#018",
+            "ports": [
+              {
+                "portKey": "P",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:PRESSRV_PRESSURE"
+              },
+              {
+                "portKey": "T",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:PRESSRV_RETURN"
+              }
+            ]
+          }
+        ],
+        "connections": [
+          {
+            "from": {
+              "slotId": "TANK",
+              "portKey": "S"
+            },
+            "to": {
+              "slotId": "PUMP",
+              "portKey": "S"
+            }
+          },
+          {
+            "from": {
+              "slotId": "PUMP",
+              "portKey": "P"
+            },
+            "to": {
+              "slotId": "DCV",
+              "portKey": "P"
+            }
+          },
+          {
+            "from": {
+              "slotId": "DCV",
+              "portKey": "T"
+            },
+            "to": {
+              "slotId": "TANK",
+              "portKey": "T2"
+            }
+          },
+          {
+            "from": {
+              "slotId": "DCV",
+              "portKey": "A"
+            },
+            "to": {
+              "slotId": "CYL",
+              "portKey": "A"
+            }
+          },
+          {
+            "from": {
+              "slotId": "DCV",
+              "portKey": "B"
+            },
+            "to": {
+              "slotId": "CYL",
+              "portKey": "B"
+            }
+          },
+          {
+            "from": {
+              "slotId": "PRV",
+              "portKey": "P"
+            },
+            "to": {
+              "slotId": "PUMP",
+              "portKey": "P"
+            }
+          },
+          {
+            "from": {
+              "slotId": "PRV",
+              "portKey": "T"
+            },
+            "to": {
+              "slotId": "TANK",
+              "portKey": "T1"
+            }
+          }
+        ],
+        "notes": [
+          "DCV center condition is intended as closed-center to allow pump destroking/standby in neutral (conceptual; valve variant selected at instantiation).",
+          "This template is recommended when energy efficiency and thermal management are priorities."
+        ]
+      },
+      {
+        "skeletonId": "skeleton3_fixed_pump_dcv_hydraulic_motor_open_circuit",
+        "title": "Rotary Drive (Fixed Pump + 4/3 DCV + Hydraulic Motor)",
+        "constraints": {
+          "componentSet": "11-types-only",
+          "noFlowControlValve": true
+        },
+        "componentSlots": [
+          {
+            "slotId": "TANK",
+            "name": "Tank",
+            "componentType": "Tank",
+            "assetType": "0173-1#01-AKE989#019",
+            "ports": [
+              {
+                "portKey": "S",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:TANK_SUCTION"
+              },
+              {
+                "portKey": "T1",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:TANK_RETURN_RV"
+              },
+              {
+                "portKey": "T2",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:TANK_RETURN_SYSTEM"
+              }
+            ]
+          },
+          {
+            "slotId": "PUMP",
+            "name": "Fixed Displacement Pump",
+            "componentType": "ConstantPump",
+            "assetType": "0173-1#01-AGW108#006",
+            "ports": [
+              {
+                "portKey": "S",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:COSTPUMP_SUCTION"
+              },
+              {
+                "portKey": "P",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:COSTPUMP_PRESSURE"
+              }
+            ]
+          },
+          {
+            "slotId": "DCV",
+            "name": "4/3 Directional Control Valve",
+            "componentType": "4-3DirectionalControlValve",
+            "assetType": "urn:sdf:cc:hydraulic:4-3DirectionalControlValve:1.0",
+            "ports": [
+              {
+                "portKey": "P",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:4-3DCV_PRESSURE"
+              },
+              {
+                "portKey": "T",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:4-3DCV_RETURN"
+              },
+              {
+                "portKey": "A",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:4-3DCV_WORKA"
+              },
+              {
+                "portKey": "B",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:4-3DCV_WORKB"
+              }
+            ]
+          },
+          {
+            "slotId": "MOTOR",
+            "name": "Hydraulic Motor",
+            "componentType": "HydraulicMotor",
+            "assetType": "0173-1#01-AGU125#004",
+            "ports": [
+              {
+                "portKey": "A",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:HYMO_WORKA"
+              },
+              {
+                "portKey": "B",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:HYMO_WORKB"
+              }
+            ]
+          },
+          {
+            "slotId": "PRV",
+            "name": "Pressure Relief Valve",
+            "componentType": "PressureReliefValve",
+            "assetType": "0173-1#01-AKE887#018",
+            "ports": [
+              {
+                "portKey": "P",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:PRESSRV_PRESSURE"
+              },
+              {
+                "portKey": "T",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:PRESSRV_RETURN"
+              }
+            ]
+          }
+        ],
+        "connections": [
+          {
+            "from": {
+              "slotId": "TANK",
+              "portKey": "S"
+            },
+            "to": {
+              "slotId": "PUMP",
+              "portKey": "S"
+            }
+          },
+          {
+            "from": {
+              "slotId": "PUMP",
+              "portKey": "P"
+            },
+            "to": {
+              "slotId": "DCV",
+              "portKey": "P"
+            }
+          },
+          {
+            "from": {
+              "slotId": "DCV",
+              "portKey": "T"
+            },
+            "to": {
+              "slotId": "TANK",
+              "portKey": "T2"
+            }
+          },
+          {
+            "from": {
+              "slotId": "DCV",
+              "portKey": "A"
+            },
+            "to": {
+              "slotId": "MOTOR",
+              "portKey": "A"
+            }
+          },
+          {
+            "from": {
+              "slotId": "DCV",
+              "portKey": "B"
+            },
+            "to": {
+              "slotId": "MOTOR",
+              "portKey": "B"
+            }
+          },
+          {
+            "from": {
+              "slotId": "PRV",
+              "portKey": "P"
+            },
+            "to": {
+              "slotId": "PUMP",
+              "portKey": "P"
+            }
+          },
+          {
+            "from": {
+              "slotId": "PRV",
+              "portKey": "T"
+            },
+            "to": {
+              "slotId": "TANK",
+              "portKey": "T1"
+            }
+          }
+        ],
+        "notes": [
+          "Motor ports A/B represent the two motor work ports; direction is determined by which port is pressurized."
+        ]
+      },
+      {
+        "skeletonId": "skeleton4_variable_pump_check_accumulator_peak_flow",
+        "title": "Accumulator-Assisted Supply (Variable Pump + Check Valve + Bladder Accumulator + DCV + Cylinder)",
+        "constraints": {
+          "componentSet": "11-types-only",
+          "noFlowControlValve": true
+        },
+        "componentSlots": [
+          {
+            "slotId": "TANK",
+            "name": "Tank",
+            "componentType": "Tank",
+            "assetType": "0173-1#01-AKE989#019",
+            "ports": [
+              {
+                "portKey": "S",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:TANK_SUCTION"
+              },
+              {
+                "portKey": "T1",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:TANK_RETURN_RV"
+              },
+              {
+                "portKey": "T2",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:TANK_RETURN_SYSTEM"
+              }
+            ]
+          },
+          {
+            "slotId": "PUMP",
+            "name": "Variable Pump",
+            "componentType": "VariablePump",
+            "assetType": "0173-1#01-AGW109#006",
+            "ports": [
+              {
+                "portKey": "S",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:VARIPUMP_SUCTION"
+              },
+              {
+                "portKey": "P",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:VARIPUMP_PRESSURE"
+              }
+            ]
+          },
+          {
+            "slotId": "CV_ACC",
+            "name": "Charge Check Valve",
+            "componentType": "CheckValve",
+            "assetType": "0173-1#01-AGU942#003",
+            "ports": [
+              {
+                "portKey": "IN",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:CHECKVAL_IN"
+              },
+              {
+                "portKey": "OUT",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:CHECKVAL_OUT"
+              }
+            ]
+          },
+          {
+            "slotId": "ACC",
+            "name": "Bladder Accumulator",
+            "componentType": "BladderAccumulator",
+            "assetType": "0173-1#01-AGU966#004",
+            "ports": [
+              {
+                "portKey": "P",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:BA_PRESSURE"
+              }
+            ]
+          },
+          {
+            "slotId": "DCV",
+            "name": "4/3 DCV",
+            "componentType": "4-3DirectionalControlValve",
+            "assetType": "urn:sdf:cc:hydraulic:4-3DirectionalControlValve:1.0",
+            "ports": [
+              {
+                "portKey": "P",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:4-3DCV_PRESSURE"
+              },
+              {
+                "portKey": "T",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:4-3DCV_RETURN"
+              },
+              {
+                "portKey": "A",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:4-3DCV_WORKA"
+              },
+              {
+                "portKey": "B",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:4-3DCV_WORKB"
+              }
+            ]
+          },
+          {
+            "slotId": "CYL",
+            "name": "Double-Acting Cylinder",
+            "componentType": "Double-ActingCylinder",
+            "assetType": "0173-1#01-AKE877#018",
+            "ports": [
+              {
+                "portKey": "A",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:2ACTCYLIN_CAP"
+              },
+              {
+                "portKey": "B",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:2ACTCYLIN_ROD"
+              }
+            ]
+          },
+          {
+            "slotId": "PRV",
+            "name": "Pressure Relief Valve",
+            "componentType": "PressureReliefValve",
+            "assetType": "0173-1#01-AKE887#018",
+            "ports": [
+              {
+                "portKey": "P",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:PRESSRV_PRESSURE"
+              },
+              {
+                "portKey": "T",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:PRESSRV_RETURN"
+              }
+            ]
+          }
+        ],
+        "connections": [
+          {
+            "from": {
+              "slotId": "TANK",
+              "portKey": "S"
+            },
+            "to": {
+              "slotId": "PUMP",
+              "portKey": "S"
+            }
+          },
+          {
+            "from": {
+              "slotId": "PUMP",
+              "portKey": "P"
+            },
+            "to": {
+              "slotId": "CV_ACC",
+              "portKey": "IN"
+            },
+            "note": "Charge line to accumulator via check valve"
+          },
+          {
+            "from": {
+              "slotId": "CV_ACC",
+              "portKey": "OUT"
+            },
+            "to": {
+              "slotId": "ACC",
+              "portKey": "P"
+            }
+          },
+          {
+            "from": {
+              "slotId": "CV_ACC",
+              "portKey": "OUT"
+            },
+            "to": {
+              "slotId": "DCV",
+              "portKey": "P"
+            },
+            "note": "Pressure bus feeds DCV"
+          },
+          {
+            "from": {
+              "slotId": "CV_ACC",
+              "portKey": "OUT"
+            },
+            "to": {
+              "slotId": "PRV",
+              "portKey": "P"
+            },
+            "note": "Relief valve on pressure bus"
+          },
+          {
+            "from": {
+              "slotId": "PRV",
+              "portKey": "T"
+            },
+            "to": {
+              "slotId": "TANK",
+              "portKey": "T1"
+            }
+          },
+          {
+            "from": {
+              "slotId": "DCV",
+              "portKey": "T"
+            },
+            "to": {
+              "slotId": "TANK",
+              "portKey": "T2"
+            }
+          },
+          {
+            "from": {
+              "slotId": "DCV",
+              "portKey": "A"
+            },
+            "to": {
+              "slotId": "CYL",
+              "portKey": "A"
+            }
+          },
+          {
+            "from": {
+              "slotId": "DCV",
+              "portKey": "B"
+            },
+            "to": {
+              "slotId": "CYL",
+              "portKey": "B"
+            }
+          }
+        ],
+        "notes": [
+          "Accumulator port P is connected to the pressure bus; in this 11-type scope, explicit unloading/dump valves are not represented.",
+          "For strict graph constraints (one edge per port), insert an implicit NET node at CV_ACC.OUT."
+        ]
+      },
+      {
+        "skeletonId": "skeleton5_parallel_constant_pumps_with_isolation_check",
+        "title": "Redundant/Stepwise Supply (Two Constant Pumps + Isolation Check Valves + DCV + Cylinder)",
+        "constraints": {
+          "componentSet": "11-types-only",
+          "noFlowControlValve": true
+        },
+        "componentSlots": [
+          {
+            "slotId": "TANK",
+            "name": "Tank",
+            "componentType": "Tank",
+            "assetType": "0173-1#01-AKE989#019",
+            "ports": [
+              {
+                "portKey": "S",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:TANK_SUCTION"
+              },
+              {
+                "portKey": "T1",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:TANK_RETURN_RV"
+              },
+              {
+                "portKey": "T2",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:TANK_RETURN_SYSTEM"
+              }
+            ]
+          },
+          {
+            "slotId": "PUMP1",
+            "name": "Constant Pump 1",
+            "componentType": "ConstantPump",
+            "assetType": "0173-1#01-AGW108#006",
+            "ports": [
+              {
+                "portKey": "S",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:COSTPUMP_SUCTION"
+              },
+              {
+                "portKey": "P",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:COSTPUMP_PRESSURE"
+              }
+            ]
+          },
+          {
+            "slotId": "PUMP2",
+            "name": "Constant Pump 2",
+            "componentType": "ConstantPump",
+            "assetType": "0173-1#01-AGW108#006",
+            "ports": [
+              {
+                "portKey": "S",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:COSTPUMP_SUCTION"
+              },
+              {
+                "portKey": "P",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:COSTPUMP_PRESSURE"
+              }
+            ]
+          },
+          {
+            "slotId": "CV1",
+            "name": "Isolation Check Valve 1",
+            "componentType": "CheckValve",
+            "assetType": "0173-1#01-AGU942#003",
+            "ports": [
+              {
+                "portKey": "IN",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:CHECKVAL_IN"
+              },
+              {
+                "portKey": "OUT",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:CHECKVAL_OUT"
+              }
+            ]
+          },
+          {
+            "slotId": "CV2",
+            "name": "Isolation Check Valve 2",
+            "componentType": "CheckValve",
+            "assetType": "0173-1#01-AGU942#003",
+            "ports": [
+              {
+                "portKey": "IN",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:CHECKVAL_IN"
+              },
+              {
+                "portKey": "OUT",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:CHECKVAL_OUT"
+              }
+            ]
+          },
+          {
+            "slotId": "DCV",
+            "name": "4/3 DCV",
+            "componentType": "4-3DirectionalControlValve",
+            "assetType": "urn:sdf:cc:hydraulic:4-3DirectionalControlValve:1.0",
+            "ports": [
+              {
+                "portKey": "P",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:4-3DCV_PRESSURE"
+              },
+              {
+                "portKey": "T",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:4-3DCV_RETURN"
+              },
+              {
+                "portKey": "A",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:4-3DCV_WORKA"
+              },
+              {
+                "portKey": "B",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:4-3DCV_WORKB"
+              }
+            ]
+          },
+          {
+            "slotId": "CYL",
+            "name": "Double-Acting Cylinder",
+            "componentType": "Double-ActingCylinder",
+            "assetType": "0173-1#01-AKE877#018",
+            "ports": [
+              {
+                "portKey": "A",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:2ACTCYLIN_CAP"
+              },
+              {
+                "portKey": "B",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:2ACTCYLIN_ROD"
+              }
+            ]
+          },
+          {
+            "slotId": "PRV",
+            "name": "Pressure Relief Valve",
+            "componentType": "PressureReliefValve",
+            "assetType": "0173-1#01-AKE887#018",
+            "ports": [
+              {
+                "portKey": "P",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:PRESSRV_PRESSURE"
+              },
+              {
+                "portKey": "T",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:PRESSRV_RETURN"
+              }
+            ]
+          }
+        ],
+        "connections": [
+          {
+            "from": {
+              "slotId": "TANK",
+              "portKey": "S"
+            },
+            "to": {
+              "slotId": "PUMP1",
+              "portKey": "S"
+            }
+          },
+          {
+            "from": {
+              "slotId": "TANK",
+              "portKey": "S"
+            },
+            "to": {
+              "slotId": "PUMP2",
+              "portKey": "S"
+            }
+          },
+          {
+            "from": {
+              "slotId": "PUMP1",
+              "portKey": "P"
+            },
+            "to": {
+              "slotId": "CV1",
+              "portKey": "IN"
+            }
+          },
+          {
+            "from": {
+              "slotId": "PUMP2",
+              "portKey": "P"
+            },
+            "to": {
+              "slotId": "CV2",
+              "portKey": "IN"
+            }
+          },
+          {
+            "from": {
+              "slotId": "CV1",
+              "portKey": "OUT"
+            },
+            "to": {
+              "slotId": "DCV",
+              "portKey": "P"
+            },
+            "note": "Common pressure bus"
+          },
+          {
+            "from": {
+              "slotId": "CV2",
+              "portKey": "OUT"
+            },
+            "to": {
+              "slotId": "DCV",
+              "portKey": "P"
+            },
+            "note": "Common pressure bus"
+          },
+          {
+            "from": {
+              "slotId": "CV1",
+              "portKey": "OUT"
+            },
+            "to": {
+              "slotId": "PRV",
+              "portKey": "P"
+            }
+          },
+          {
+            "from": {
+              "slotId": "PRV",
+              "portKey": "T"
+            },
+            "to": {
+              "slotId": "TANK",
+              "portKey": "T1"
+            }
+          },
+          {
+            "from": {
+              "slotId": "DCV",
+              "portKey": "T"
+            },
+            "to": {
+              "slotId": "TANK",
+              "portKey": "T2"
+            }
+          },
+          {
+            "from": {
+              "slotId": "DCV",
+              "portKey": "A"
+            },
+            "to": {
+              "slotId": "CYL",
+              "portKey": "A"
+            }
+          },
+          {
+            "from": {
+              "slotId": "DCV",
+              "portKey": "B"
+            },
+            "to": {
+              "slotId": "CYL",
+              "portKey": "B"
+            }
+          }
+        ],
+        "notes": [
+          "Check valves prevent backflow between parallel pump branches.",
+          "To model staged activation (Pump2 assists only at high demand), control logic is handled outside the hydraulic topology."
+        ]
+      },
+      {
+        "skeletonId": "skeleton6_closed_circuit_pump_controlled_cylinder_no_tank",
+        "title": "Closed System (Reversible Pump-Controlled Cylinder, No Tank Shown; Cross-Port Relief Protection)",
+        "constraints": {
+          "componentSet": "11-types-only",
+          "noFlowControlValve": true
+        },
+        "componentSlots": [
+          {
+            "slotId": "PUMP",
+            "name": "Reversible Variable Displacement Pump (Closed Circuit Ports)",
+            "componentType": "VariablePump",
+            "assetType": "0173-1#01-AGW109#006",
+            "ports": [
+              {
+                "portKey": "A",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:VARIPUMP_LOOP_A"
+              },
+              {
+                "portKey": "B",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:VARIPUMP_LOOP_B"
+              }
+            ]
+          },
+          {
+            "slotId": "CYL",
+            "name": "Double-Acting Cylinder",
+            "componentType": "Double-ActingCylinder",
+            "assetType": "0173-1#01-AKE877#018",
+            "ports": [
+              {
+                "portKey": "A",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:2ACTCYLIN_CAP"
+              },
+              {
+                "portKey": "B",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:2ACTCYLIN_ROD"
+              }
+            ]
+          },
+          {
+            "slotId": "PRV_A2B",
+            "name": "Cross-Port Relief Valve (A \u2192 B)",
+            "componentType": "PressureReliefValve",
+            "assetType": "0173-1#01-AKE887#018",
+            "ports": [
+              {
+                "portKey": "P",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:PRESSRV_PRESSURE"
+              },
+              {
+                "portKey": "T",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:PRESSRV_RETURN"
+              }
+            ]
+          },
+          {
+            "slotId": "PRV_B2A",
+            "name": "Cross-Port Relief Valve (B \u2192 A)",
+            "componentType": "PressureReliefValve",
+            "assetType": "0173-1#01-AKE887#018",
+            "ports": [
+              {
+                "portKey": "P",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:PRESSRV_PRESSURE"
+              },
+              {
+                "portKey": "T",
+                "roleId": "urn:sdf:cv:hydraulic:PortRole:PRESSRV_RETURN"
+              }
+            ]
+          }
+        ],
+        "connections": [
+          {
+            "from": {
+              "slotId": "PUMP",
+              "portKey": "A"
+            },
+            "to": {
+              "slotId": "CYL",
+              "portKey": "A"
+            }
+          },
+          {
+            "from": {
+              "slotId": "PUMP",
+              "portKey": "B"
+            },
+            "to": {
+              "slotId": "CYL",
+              "portKey": "B"
+            }
+          },
+          {
+            "from": {
+              "slotId": "PRV_A2B",
+              "portKey": "P"
+            },
+            "to": {
+              "slotId": "PUMP",
+              "portKey": "A"
+            },
+            "note": "Relief taps line A"
+          },
+          {
+            "from": {
+              "slotId": "PRV_A2B",
+              "portKey": "T"
+            },
+            "to": {
+              "slotId": "PUMP",
+              "portKey": "B"
+            },
+            "note": "Relief discharges into opposite line B (no tank shown)"
+          },
+          {
+            "from": {
+              "slotId": "PRV_B2A",
+              "portKey": "P"
+            },
+            "to": {
+              "slotId": "PUMP",
+              "portKey": "B"
+            },
+            "note": "Relief taps line B"
+          },
+          {
+            "from": {
+              "slotId": "PRV_B2A",
+              "portKey": "T"
+            },
+            "to": {
+              "slotId": "PUMP",
+              "portKey": "A"
+            },
+            "note": "Relief discharges into opposite line A (no tank shown)"
+          }
+        ],
+        "notes": [
+          "This template models a closed-circuit pump-controlled cylinder drive as shown in typical 'closed system / pump-controlled system' schematics: main loop is Pump(A/B) \u2194 Cylinder(A/B); no tank is drawn at system boundary.",
+          "Cross-port relief valves protect the loop against pressure peaks: PRV_A2B opens A\u2192B; PRV_B2A opens B\u2192A.",
+          "In real systems, charge/flush/case-drain oil management usually exists but is considered inside the power unit boundary here and not explicitly modeled in the 11-type skeleton library.",
+          "If your downstream pipeline requires explicit junction/net nodes for multi-branch on PUMP.A/PUMP.B, insert implicit NET nodes."
+        ]
+      }
+    ],
+    "qaTreeRef": "hydraulic_qa_tree_6_en.json"
+  },
+  "qaTree": {
+    "schema": "urn:sdf:hydraulic:qa-tree:1.3-nlp-aligned",
+    "generatedAt": "2026-01-14T16:04:41",
+    "language": "en",
+    "inputMode": "free_text",
+    "description": "Two-stage QA decision tree. Stage 1 selects a skeleton template from free-text input. Stage 2 collects only sizing constraints and system inputs needed for component selection.",
+    "libraryRef": "skeleton_library.json",
+    "skeletonIndex": {
+      "skeleton1_utility_chassis_fixed_pump_open_center_dcv": {
+        "title": "Utility Chassis (Fixed Displacement Pump + Open-Center 4/3 DCV + Double-Acting Cylinder)"
+      },
+      "skeleton2_variable_pump_closed_center_dcv_cylinder": {
+        "title": "Efficient Open Circuit (Variable Pump + Closed-Center 4/3 DCV + Double-Acting Cylinder)"
+      },
+      "skeleton3_fixed_pump_dcv_hydraulic_motor_open_circuit": {
+        "title": "Rotary Drive (Fixed Pump + 4/3 DCV + Hydraulic Motor)"
+      },
+      "skeleton4_variable_pump_check_accumulator_peak_flow": {
+        "title": "Accumulator-Assisted Supply (Variable Pump + Check Valve + Bladder Accumulator + DCV + Cylinder)"
+      },
+      "skeleton5_parallel_constant_pumps_with_isolation_check": {
+        "title": "Redundant/Stepwise Supply (Two Constant Pumps + Isolation Check Valves + DCV + Cylinder)"
+      },
+      "skeleton6_closed_circuit_pump_controlled_cylinder_no_tank": {
+        "title": "Closed System (Reversible Pump-Controlled Cylinder, No Tank Shown; Cross-Port Relief Protection)"
+      }
+    },
+    "nlpConventions": {
+      "confidencePolicy": {
+        "autoAcceptMin": 0.75,
+        "askClarificationBelow": 0.55,
+        "fallbackDefault": "ask_clarification"
+      },
+      "normalization": {
+        "units": "SI preferred; accept common engineering units and convert in post-processing if required.",
+        "boolean": "Accept yes/no, true/false, required/not required, as well as domain phrases."
+      }
+    },
+    "stage1": {
+      "goal": "Select exactly one skeletonId from the 6-template library.",
+      "nodes": [
+        {
+          "id": "S1_ACTUATOR",
+          "prompt": "Describe the main motion you need (linear cylinder or rotary motor).",
+          "expects": {
+            "entities": [
+              {
+                "name": "actuator_type",
+                "type": "enum",
+                "values": [
+                  "cylinder",
+                  "motor"
+                ],
+                "required": true
+              }
+            ]
+          },
+          "nlp": {
+            "intents": [
+              {
+                "name": "specify_actuator",
+                "description": "User specifies actuator type."
+              }
+            ],
+            "entityHints": {
+              "actuator_type": {
+                "synonyms": {
+                  "cylinder": [
+                    "cylinder",
+                    "hydraulic cylinder",
+                    "linear actuator",
+                    "ram",
+                    "piston",
+                    "lifting",
+                    "pressing",
+                    "extend",
+                    "retract"
+                  ],
+                  "motor": [
+                    "motor",
+                    "hydraulic motor",
+                    "rotary",
+                    "rotation",
+                    "turn",
+                    "spin",
+                    "winch",
+                    "slew",
+                    "drive shaft"
+                  ]
+                }
+              }
+            }
+          },
+          "routing": [
+            {
+              "when": {
+                "actuator_type": "motor"
+              },
+              "select": "skeleton3_fixed_pump_dcv_hydraulic_motor_open_circuit"
+            },
+            {
+              "when": {
+                "actuator_type": "cylinder"
+              },
+              "next": "S2_CONTROL_PRINCIPLE"
+            }
+          ],
+          "onLowConfidence": {
+            "action": "ask_clarification",
+            "clarificationPrompt": "Do you mean a hydraulic cylinder (linear motion) or a hydraulic motor (rotary motion)? Please describe briefly."
+          }
+        },
+        {
+          "id": "S2_CONTROL_PRINCIPLE",
+          "prompt": "Do you prefer pump-controlled motion (pump directly drives the cylinder chambers) or valve-controlled motion (4/3 directional valve)?",
+          "expects": {
+            "entities": [
+              {
+                "name": "control_principle",
+                "type": "enum",
+                "values": [
+                  "pump_controlled_closed",
+                  "valve_controlled_open"
+                ],
+                "required": true
+              }
+            ]
+          },
+          "nlp": {
+            "intents": [
+              {
+                "name": "choose_control_principle",
+                "description": "User states pump-controlled vs valve-controlled."
+              }
+            ],
+            "entityHints": {
+              "control_principle": {
+                "synonyms": {
+                  "pump_controlled_closed": [
+                    "pump controlled",
+                    "pump-controlled",
+                    "displacement control",
+                    "no directional valve",
+                    "closed system",
+                    "closed circuit cylinder",
+                    "hydrostatic cylinder drive",
+                    "A/B lines directly"
+                  ],
+                  "valve_controlled_open": [
+                    "valve controlled",
+                    "valve-controlled",
+                    "directional valve",
+                    "DCV",
+                    "open circuit",
+                    "with tank",
+                    "valve bank"
+                  ]
+                }
+              }
+            }
+          },
+          "routing": [
+            {
+              "when": {
+                "control_principle": "pump_controlled_closed"
+              },
+              "select": "skeleton6_closed_circuit_pump_controlled_cylinder_no_tank"
+            },
+            {
+              "when": {
+                "control_principle": "valve_controlled_open"
+              },
+              "next": "S3_SUPPLY_PRIORITY"
+            }
+          ],
+          "onLowConfidence": {
+            "action": "ask_clarification",
+            "clarificationPrompt": "Should the pump directly control cylinder motion (closed circuit) or use a 4/3 valve with a tank (open circuit)?"
+          }
+        },
+        {
+          "id": "S3_SUPPLY_PRIORITY",
+          "prompt": "Which supply priority best matches your system: lowest initial cost, higher efficiency, peak-flow support (accumulator), or redundant/staged supply (dual pumps)?",
+          "expects": {
+            "entities": [
+              {
+                "name": "priority",
+                "type": "enum",
+                "values": [
+                  "low_cost",
+                  "high_efficiency",
+                  "peak_flow",
+                  "redundancy"
+                ],
+                "required": true
+              }
+            ]
+          },
+          "nlp": {
+            "intents": [
+              {
+                "name": "choose_supply_priority",
+                "description": "User states cost/efficiency/accumulator/dual-pump preference."
+              }
+            ],
+            "entityHints": {
+              "priority": {
+                "synonyms": {
+                  "low_cost": [
+                    "lowest cost",
+                    "low cost",
+                    "simple",
+                    "basic",
+                    "fixed pump",
+                    "open center"
+                  ],
+                  "high_efficiency": [
+                    "high efficiency",
+                    "efficient",
+                    "low heat",
+                    "closed center",
+                    "variable pump"
+                  ],
+                  "peak_flow": [
+                    "accumulator",
+                    "peak flow",
+                    "buffer",
+                    "pressure stabilization"
+                  ],
+                  "redundancy": [
+                    "redundant",
+                    "dual pump",
+                    "two pumps",
+                    "staged supply",
+                    "parallel pumps"
+                  ]
+                }
+              }
+            }
+          },
+          "routing": [
+            {
+              "when": {
+                "priority": "redundancy"
+              },
+              "select": "skeleton5_parallel_constant_pumps_with_isolation_check"
+            },
+            {
+              "when": {
+                "priority": "peak_flow"
+              },
+              "select": "skeleton4_variable_pump_check_accumulator_peak_flow"
+            },
+            {
+              "when": {
+                "priority": "high_efficiency"
+              },
+              "select": "skeleton2_variable_pump_closed_center_dcv_cylinder"
+            },
+            {
+              "when": {
+                "priority": "low_cost"
+              },
+              "select": "skeleton1_utility_chassis_fixed_pump_open_center_dcv"
+            }
+          ],
+          "onLowConfidence": {
+            "action": "ask_clarification",
+            "clarificationPrompt": "Please choose one: lowest cost, higher efficiency, peak-flow support (accumulator), or redundant/staged supply (dual pumps)."
+          }
+        }
+      ]
+    },
+    "stage2": {
+      "goal": "Collect only sizing inputs needed for component selection after a skeleton is selected.",
+      "globalQuestions": [
+        {
+          "id": "G1_MAX_PRESSURE",
+          "prompt": "Enter the maximum operating pressure P_max (e.g., 210 bar).",
+          "expects": {
+            "entities": [
+              {
+                "name": "maxOperatingPressure",
+                "type": "quantity_pressure",
+                "required": true
+              }
+            ]
+          },
+          "alignment": {
+            "concept": "maxOperatingPressure"
+          },
+          "onLowConfidence": {
+            "action": "ask_clarification",
+            "clarificationPrompt": "Please provide the maximum operating pressure with unit (e.g., 210 bar)."
+          }
+        },
+        {
+          "id": "G2_RATED_FLOW",
+          "prompt": "Enter the rated flow rate Q_rated (e.g., 25 L/min).",
+          "expects": {
+            "entities": [
+              {
+                "name": "ratedFlowRate",
+                "type": "quantity_flow",
+                "required": true
+              }
+            ]
+          },
+          "alignment": {
+            "concept": "ratedFlowRate"
+          },
+          "onLowConfidence": {
+            "action": "ask_clarification",
+            "clarificationPrompt": "Please provide the rated flow rate with unit (e.g., 25 L/min)."
+          }
+        },
+        {
+          "id": "G3_HYDRAULIC_FLUID",
+          "prompt": "Specify the hydraulic fluid (e.g., HLP 46 or ISO VG 46).",
+          "expects": {
+            "entities": [
+              {
+                "name": "hydraulicFluid",
+                "type": "string",
+                "required": true
+              }
+            ]
+          },
+          "alignment": {
+            "concept": "hydraulicFluid"
+          },
+          "onLowConfidence": {
+            "action": "ask_clarification",
+            "clarificationPrompt": "Please specify the hydraulic fluid grade (e.g., HLP 46)."
+          }
+        }
+      ],
+      "actuatorQuestions": {
+        "cylinder": [
+          {
+            "id": "C1_LOAD",
+            "prompt": "Enter the target load as force or mass (e.g., 15 kN or 1.2 t).",
+            "expects": {
+              "entities": [
+                {
+                  "name": "load",
+                  "type": "quantity_force_or_mass",
+                  "required": true
+                }
+              ]
+            },
+            "alignment": {
+              "concept": "cylinderLoad"
+            },
+            "onLowConfidence": {
+              "action": "ask_clarification",
+              "clarificationPrompt": "Please provide a load value as force or mass (e.g., 15 kN or 1.2 t)."
+            }
+          },
+          {
+            "id": "C2_STROKE",
+            "prompt": "Enter the cylinder stroke length (e.g., 0.50 m).",
+            "expects": {
+              "entities": [
+                {
+                  "name": "stroke",
+                  "type": "quantity_length",
+                  "required": true
+                }
+              ]
+            },
+            "alignment": {
+              "concept": "cylinderStroke"
+            },
+            "onLowConfidence": {
+              "action": "ask_clarification",
+              "clarificationPrompt": "Please provide the stroke length with unit (e.g., 0.50 m)."
+            }
+          }
+        ],
+        "motor": [
+          {
+            "id": "M1_TORQUE",
+            "prompt": "Enter the target torque (e.g., 120 Nm).",
+            "expects": {
+              "entities": [
+                {
+                  "name": "torque",
+                  "type": "quantity_torque",
+                  "required": true
+                }
+              ]
+            },
+            "alignment": {
+              "concept": "motorTorque"
+            },
+            "onLowConfidence": {
+              "action": "ask_clarification",
+              "clarificationPrompt": "Please provide the torque with unit (e.g., 120 Nm)."
+            }
+          },
+          {
+            "id": "M2_SPEED",
+            "prompt": "Enter the target rotational speed (e.g., 1500 rpm).",
+            "expects": {
+              "entities": [
+                {
+                  "name": "rotationalSpeed",
+                  "type": "quantity_speed_rotational",
+                  "required": true
+                }
+              ]
+            },
+            "alignment": {
+              "concept": "motorSpeed"
+            },
+            "onLowConfidence": {
+              "action": "ask_clarification",
+              "clarificationPrompt": "Please provide the rotational speed with unit (e.g., 1500 rpm)."
+            }
+          }
+        ]
+      },
+      "conditionalQuestions": [
+        {
+          "id": "TANK_LEVELS",
+          "when": {
+            "requiresTank": true
+          },
+          "questions": [
+            {
+              "id": "T0_TANK_VOLUME",
+              "prompt": "Enter the required tank volume in L (e.g., 80 L).",
+              "expects": {
+                "entities": [
+                  {
+                    "name": "tank_volume",
+                    "type": "quantity_volume",
+                    "required": true
+                  }
+                ]
+              },
+              "alignment": {
+                "concept": "tankNominalVolume"
+              },
+              "onLowConfidence": {
+                "action": "ask_clarification",
+                "clarificationPrompt": "Please provide the required tank volume with unit (e.g., 80 L)."
+              }
+            },
+            {
+              "id": "T1_TANK_LEVEL_MAX",
+              "prompt": "Enter the maximum tank level in mm (e.g., 800 mm).",
+              "expects": {
+                "entities": [
+                  {
+                    "name": "tank_level_max",
+                    "type": "quantity_length",
+                    "required": true
+                  }
+                ]
+              },
+              "alignment": {
+                "concept": "tankLevelMax"
+              },
+              "onLowConfidence": {
+                "action": "ask_clarification",
+                "clarificationPrompt": "Please provide the maximum tank level with unit (e.g., 0.80 m)."
+              }
+            },
+            {
+              "id": "T2_TANK_LEVEL_MIN",
+              "prompt": "Enter the minimum tank level in mm (e.g., 200 mm).",
+              "expects": {
+                "entities": [
+                  {
+                    "name": "tank_level_min",
+                    "type": "quantity_length",
+                    "required": true
+                  }
+                ]
+              },
+              "alignment": {
+                "concept": "tankLevelMin"
+              },
+              "onLowConfidence": {
+                "action": "ask_clarification",
+                "clarificationPrompt": "Please provide the minimum tank level with unit (e.g., 0.20 m)."
+              }
+            }
+          ]
+        },
+        {
+          "id": "PRV_SETPOINT",
+          "when": {
+            "requiresPrv": true
+          },
+          "questions": [
+            {
+              "id": "PRV1_SETPOINT",
+              "prompt": "Enter the pressure protection setpoint in bar (e.g., 180 bar).",
+              "expects": {
+                "entities": [
+                  {
+                    "name": "prv_setpoint",
+                    "type": "quantity_pressure",
+                    "required": true
+                  }
+                ]
+              },
+              "alignment": {
+                "concept": "prvSetpoint"
+              },
+              "onLowConfidence": {
+                "action": "ask_clarification",
+                "clarificationPrompt": "Please provide the pressure protection setpoint with unit (e.g., 180 bar)."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="21.085077mm"
+   height="71.109337mm"
+   viewBox="0 0 5.5788007 18.814481"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   sodipodi:docname="BladderAccumulator.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="true"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="true"
+     inkscape:zoom="4"
+     inkscape:cx="-33.875"
+     inkscape:cy="138.125"
+     inkscape:window-width="2560"
+     inkscape:window-height="1511"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       id="grid1"
+       units="mm"
+       originx="-1.1641759"
+       originy="7.5083413"
+       spacingx="0.26458526"
+       spacingy="0.26458525"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="5"
+       enabled="true"
+       visible="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="图层 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-1.124489,7.5612588)">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.317501;stroke-dashoffset:6.80314"
+       id="path1"
+       sodipodi:type="arc"
+       sodipodi:cx="3.9158504"
+       sodipodi:cy="-4.5508671"
+       sodipodi:rx="2.6286883"
+       sodipodi:ry="2.8516412"
+       sodipodi:start="3.1415927"
+       sodipodi:end="0"
+       sodipodi:arc-type="arc"
+       d="m 1.2871621,-4.5508671 a 2.6286883,2.8516412 0 0 1 2.6286883,-2.8516412 2.6286883,2.8516412 0 0 1 2.6286883,2.8516412"
+       sodipodi:open="true" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.317501;stroke-dashoffset:6.80314"
+       id="path1-8"
+       sodipodi:type="arc"
+       sodipodi:cx="3.9158504"
+       sodipodi:cy="5.5594969"
+       sodipodi:rx="2.6286883"
+       sodipodi:ry="2.7220211"
+       sodipodi:start="0"
+       sodipodi:end="3.1415927"
+       sodipodi:arc-type="arc"
+       d="m 6.5445387,5.5594969 a 2.6286883,2.7220211 0 0 1 -1.3143442,2.3573394 2.6286883,2.7220211 0 0 1 -2.6286883,0 2.6286883,2.7220211 0 0 1 -1.3143441,-2.3573394"
+       sodipodi:open="true" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.317501;stroke-dashoffset:6.80314"
+       d="M 1.2832395,-4.7085488 V 5.6610555"
+       id="path2" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.317501;stroke-dashoffset:6.80314"
+       d="M 6.5445387,-4.5508671 V 5.8187372"
+       id="path3" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.317501;stroke-dashoffset:6.80314"
+       d="M 1.2527886,-1.6404288 H 6.6053952"
+       id="path4" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.317502;stroke-dashoffset:6.80314"
+       d="M 3.9290922,-1.9188385 2.5364033,-4.0078717 h 2.7853775 z"
+       id="path5"
+       sodipodi:nodetypes="cccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.317502;stroke-dashoffset:6.80314"
+       d="M 3.9290924,8.4138117 V 10.795079"
+       id="path6" />
+    <circle
+       style="fill:none;stroke:none;stroke-width:0.317502;stroke-dashoffset:6.80314"
+       id="A"
+       cx="3.9290924"
+       cy="10.724051"
+       r="0.52917051"
+       data-direction="south" />
+  </g>
+</svg>

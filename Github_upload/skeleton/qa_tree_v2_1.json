@@ -1,0 +1,982 @@
+{
+  "schema": "urn:sdf:hydraulic:qa-tree:2.0-nlp-aligned",
+  "generatedAt": "2026-01-31T16:16:21.966622+00:00",
+  "language": "en",
+  "inputMode": "free_text",
+  "description": "Two-stage QA decision tree (v2). Stage 1 selects exactly one skeleton template according to the updated QA tree (control principle \u2192 pressure/circuit \u2192 control strategy \u2192 cylinder type). Stage 2 collects only sizing constraints needed for component selection.",
+  "libraryRef": "skeleton_library_v2_1.json",
+  "skeletonIndex": {
+    "skeleton_v2_vc_li_differential": {
+      "title": "Valve-controlled, Load Independent (ConstantPump + 4/3 DCV + Double-Acting Cylinder)"
+    },
+    "skeleton_v2_vc_li_double_rod": {
+      "title": "Valve-controlled, Load Independent (ConstantPump + 4/3 DCV + Double-rod Cylinder)"
+    },
+    "skeleton_v2_vc_li_plunger": {
+      "title": "Valve-controlled, Load Independent (ConstantPump + 3/2 DCV + Plunger Cylinder (single-acting))"
+    },
+    "skeleton_v2_vc_li_telescopic": {
+      "title": "Valve-controlled, Load Independent (ConstantPump + 4/3 DCV + Telescopic Cylinder)"
+    },
+    "skeleton_v2_vc_ls_differential": {
+      "title": "Valve-controlled, Load Sensing (LS) (VariablePump + 4/3 DCV + Double-Acting Cylinder)"
+    },
+    "skeleton_v2_vc_ls_double_rod": {
+      "title": "Valve-controlled, Load Sensing (LS) (VariablePump + 4/3 DCV + Double-rod Cylinder)"
+    },
+    "skeleton_v2_vc_ls_plunger": {
+      "title": "Valve-controlled, Load Sensing (LS) (VariablePump + 3/2 DCV + Plunger Cylinder (single-acting))"
+    },
+    "skeleton_v2_vc_ls_telescopic": {
+      "title": "Valve-controlled, Load Sensing (LS) (VariablePump + 4/3 DCV + Telescopic Cylinder)"
+    },
+    "skeleton_v2_pc_oc_rs_differential": {
+      "title": "Pump-controlled, Open Circuit (Control of rotational speed + ConstantPump + 4/3 DCV + Double-Acting Cylinder)"
+    },
+    "skeleton_v2_pc_oc_rs_double_rod": {
+      "title": "Pump-controlled, Open Circuit (Control of rotational speed + ConstantPump + 4/3 DCV + Double-rod Cylinder)"
+    },
+    "skeleton_v2_pc_oc_rs_plunger": {
+      "title": "Pump-controlled, Open Circuit (Control of rotational speed + ConstantPump + 3/2 DCV + Plunger Cylinder (single-acting))"
+    },
+    "skeleton_v2_pc_oc_rs_telescopic": {
+      "title": "Pump-controlled, Open Circuit (Control of rotational speed + ConstantPump + 4/3 DCV + Telescopic Cylinder)"
+    },
+    "skeleton_v2_pc_oc_sa_differential": {
+      "title": "Pump-controlled, Open Circuit (Control of swivel angle + VariablePump + 4/3 DCV + Double-Acting Cylinder)"
+    },
+    "skeleton_v2_pc_oc_sa_double_rod": {
+      "title": "Pump-controlled, Open Circuit (Control of swivel angle + VariablePump + 4/3 DCV + Double-rod Cylinder)"
+    },
+    "skeleton_v2_pc_oc_sa_plunger": {
+      "title": "Pump-controlled, Open Circuit (Control of swivel angle + VariablePump + 3/2 DCV + Plunger Cylinder (single-acting))"
+    },
+    "skeleton_v2_pc_oc_sa_telescopic": {
+      "title": "Pump-controlled, Open Circuit (Control of swivel angle + VariablePump + 4/3 DCV + Telescopic Cylinder)"
+    },
+    "skeleton_v2_pc_oc_both_differential": {
+      "title": "Pump-controlled, Open Circuit (Control of both + VariablePump + 4/3 DCV + Double-Acting Cylinder)"
+    },
+    "skeleton_v2_pc_oc_both_double_rod": {
+      "title": "Pump-controlled, Open Circuit (Control of both + VariablePump + 4/3 DCV + Double-rod Cylinder)"
+    },
+    "skeleton_v2_pc_oc_both_plunger": {
+      "title": "Pump-controlled, Open Circuit (Control of both + VariablePump + 3/2 DCV + Plunger Cylinder (single-acting))"
+    },
+    "skeleton_v2_pc_oc_both_telescopic": {
+      "title": "Pump-controlled, Open Circuit (Control of both + VariablePump + 4/3 DCV + Telescopic Cylinder)"
+    },
+    "skeleton_v2_pc_cc_rs_differential": {
+      "title": "Pump-controlled, Closed Circuit (Control of rotational speed + Closed-circuit variable pump + Double-Acting Cylinder)"
+    },
+    "skeleton_v2_pc_cc_rs_double_rod": {
+      "title": "Pump-controlled, Closed Circuit (Control of rotational speed + Closed-circuit variable pump + Double-rod Cylinder)"
+    },
+    "skeleton_v2_pc_cc_rs_plunger": {
+      "title": "Pump-controlled, Closed Circuit (rotational speed control + reversible pump + 3/2 DCV + single-acting plunger + charge/make-up)"
+    },
+    "skeleton_v2_pc_cc_rs_telescopic": {
+      "title": "Pump-controlled, Closed Circuit (Control of rotational speed + Closed-circuit variable pump + Telescopic Cylinder)"
+    },
+    "skeleton_v2_pc_cc_sa_differential": {
+      "title": "Pump-controlled, Closed Circuit (Control of swivel angle + Closed-circuit variable pump + Double-Acting Cylinder)"
+    },
+    "skeleton_v2_pc_cc_sa_double_rod": {
+      "title": "Pump-controlled, Closed Circuit (Control of swivel angle + Closed-circuit variable pump + Double-rod Cylinder)"
+    },
+    "skeleton_v2_pc_cc_sa_plunger": {
+      "title": "Pump-controlled, Closed Circuit (swivel-angle control + reversible pump + 3/2 DCV + single-acting plunger + charge/make-up)"
+    },
+    "skeleton_v2_pc_cc_sa_telescopic": {
+      "title": "Pump-controlled, Closed Circuit (Control of swivel angle + Closed-circuit variable pump + Telescopic Cylinder)"
+    },
+    "skeleton_v2_pc_cc_both_differential": {
+      "title": "Pump-controlled, Closed Circuit (Control of both + Closed-circuit variable pump + Double-Acting Cylinder)"
+    },
+    "skeleton_v2_pc_cc_both_double_rod": {
+      "title": "Pump-controlled, Closed Circuit (Control of both + Closed-circuit variable pump + Double-rod Cylinder)"
+    },
+    "skeleton_v2_pc_cc_both_plunger": {
+      "title": "Pump-controlled, Closed Circuit (speed + swivel-angle control + reversible pump + 3/2 DCV + single-acting plunger + charge/make-up)"
+    },
+    "skeleton_v2_pc_cc_both_telescopic": {
+      "title": "Pump-controlled, Closed Circuit (Control of both + Closed-circuit variable pump + Telescopic Cylinder)"
+    }
+  },
+  "nlpConventions": {
+    "confidencePolicy": {
+      "autoAcceptMin": 0.75,
+      "askClarificationBelow": 0.55,
+      "fallbackDefault": "ask_clarification"
+    },
+    "normalization": {
+      "units": "SI preferred; accept common engineering units and convert in post-processing if required.",
+      "boolean": "Accept yes/no, true/false, required/not required, as well as domain phrases."
+    }
+  },
+  "stage1": {
+    "goal": "Select exactly one skeletonId from the v2 32-template library.",
+    "nodes": [
+      {
+        "id": "S1_CONTROL_PRINCIPLE",
+        "prompt": "Select the control principle: valve-controlled (directional valve is the main control element) or pump-controlled (motion is primarily controlled by pump/prime-mover control).",
+        "expects": {
+          "entities": [
+            {
+              "name": "control_principle",
+              "type": "enum",
+              "values": [
+                "valve_controlled",
+                "pump_controlled"
+              ],
+              "required": true
+            }
+          ]
+        },
+        "nlp": {
+          "intents": [
+            {
+              "name": "choose_control_principle",
+              "description": "User states valve-controlled vs pump-controlled."
+            }
+          ],
+          "entityHints": {
+            "control_principle": {
+              "synonyms": {
+                "valve_controlled": [
+                  "valve controlled",
+                  "valve-controlled",
+                  "directional valve",
+                  "dcv",
+                  "valve bank",
+                  "meter-in",
+                  "meter-out",
+                  "throttle",
+                  "load independent",
+                  "ls valve system"
+                ],
+                "pump_controlled": [
+                  "pump controlled",
+                  "pump-controlled",
+                  "hydrostatic",
+                  "pump drive",
+                  "displacement control",
+                  "variable speed pump",
+                  "swivel angle control",
+                  "closed circuit"
+                ]
+              }
+            }
+          }
+        },
+        "routing": [
+          {
+            "when": {
+              "control_principle": "valve_controlled"
+            },
+            "next": "S2V_PRESSURE_CONCEPT"
+          },
+          {
+            "when": {
+              "control_principle": "pump_controlled"
+            },
+            "next": "S2P_CIRCUIT_TYPE"
+          }
+        ],
+        "onLowConfidence": {
+          "action": "ask_clarification",
+          "clarificationPrompt": "Do you want valve-controlled motion (using a directional control valve as the main control element) or pump-controlled motion (using pump/prime-mover control as the main control element)?"
+        }
+      },
+      {
+        "id": "S2V_PRESSURE_CONCEPT",
+        "prompt": "For a valve-controlled system, select the system pressure concept: load independent (constant supply pressure) or load dependent (LS).",
+        "expects": {
+          "entities": [
+            {
+              "name": "pressure_concept",
+              "type": "enum",
+              "values": [
+                "load_independent",
+                "load_dependent_ls"
+              ],
+              "required": true
+            }
+          ]
+        },
+        "nlp": {
+          "intents": [
+            {
+              "name": "choose_pressure_concept",
+              "description": "User states load-independent vs load-sensing."
+            }
+          ],
+          "entityHints": {
+            "pressure_concept": {
+              "synonyms": {
+                "load_independent": [
+                  "load independent",
+                  "load-independent",
+                  "constant pressure",
+                  "open center",
+                  "fixed pump with relief",
+                  "constant supply pressure"
+                ],
+                "load_dependent_ls": [
+                  "load dependent",
+                  "load-dependent",
+                  "ls",
+                  "load sensing",
+                  "load-sensing",
+                  "ls pump",
+                  "pressure-flow control"
+                ]
+              }
+            }
+          }
+        },
+        "routing": [
+          {
+            "when": {
+              "pressure_concept": "load_independent"
+            },
+            "next": "S0_CYLINDER_TYPE"
+          },
+          {
+            "when": {
+              "pressure_concept": "load_dependent_ls"
+            },
+            "next": "S0_CYLINDER_TYPE"
+          }
+        ],
+        "onLowConfidence": {
+          "action": "ask_clarification",
+          "clarificationPrompt": "Please choose: load independent (constant supply pressure) or load dependent (LS/load sensing)."
+        }
+      },
+      {
+        "id": "S2P_CIRCUIT_TYPE",
+        "prompt": "For a pump-controlled system, select the circuit type: open circuit (with tank) or closed circuit (main loop A/B).",
+        "expects": {
+          "entities": [
+            {
+              "name": "circuit_type",
+              "type": "enum",
+              "values": [
+                "open_circuit",
+                "closed_circuit"
+              ],
+              "required": true
+            }
+          ]
+        },
+        "nlp": {
+          "intents": [
+            {
+              "name": "choose_circuit_type",
+              "description": "User states open vs closed circuit."
+            }
+          ],
+          "entityHints": {
+            "circuit_type": {
+              "synonyms": {
+                "open_circuit": [
+                  "open circuit",
+                  "open-circuit",
+                  "with tank",
+                  "reservoir",
+                  "suction line",
+                  "return line"
+                ],
+                "closed_circuit": [
+                  "closed circuit",
+                  "closed-circuit",
+                  "closed loop",
+                  "a/b lines",
+                  "hydrostatic transmission",
+                  "loop"
+                ]
+              }
+            }
+          }
+        },
+        "routing": [
+          {
+            "when": {
+              "circuit_type": "open_circuit"
+            },
+            "next": "S3_CONTROL_STRATEGY"
+          },
+          {
+            "when": {
+              "circuit_type": "closed_circuit"
+            },
+            "next": "S3_CONTROL_STRATEGY"
+          }
+        ],
+        "onLowConfidence": {
+          "action": "ask_clarification",
+          "clarificationPrompt": "Please choose one: open circuit (with tank) or closed circuit (A/B loop)."
+        }
+      },
+      {
+        "id": "S3_CONTROL_STRATEGY",
+        "prompt": "Select the pump\u2013motor control strategy: control of rotational speed, control of swivel angle (displacement), or control of both.",
+        "expects": {
+          "entities": [
+            {
+              "name": "control_strategy",
+              "type": "enum",
+              "values": [
+                "rotational_speed",
+                "swivel_angle",
+                "both"
+              ],
+              "required": true
+            }
+          ]
+        },
+        "nlp": {
+          "intents": [
+            {
+              "name": "choose_control_strategy",
+              "description": "User chooses rotational speed vs swivel angle vs both."
+            }
+          ],
+          "entityHints": {
+            "control_strategy": {
+              "synonyms": {
+                "rotational_speed": [
+                  "rotational speed",
+                  "speed control",
+                  "variable speed motor",
+                  "inverter drive",
+                  "rpm control"
+                ],
+                "swivel_angle": [
+                  "swivel angle",
+                  "displacement control",
+                  "variable displacement",
+                  "swash plate",
+                  "destroking"
+                ],
+                "both": [
+                  "both",
+                  "combined",
+                  "speed and displacement",
+                  "hybrid control"
+                ]
+              }
+            }
+          }
+        },
+        "routing": [
+          {
+            "when": {
+              "control_strategy": "rotational_speed"
+            },
+            "next": "S0_CYLINDER_TYPE"
+          },
+          {
+            "when": {
+              "control_strategy": "swivel_angle"
+            },
+            "next": "S0_CYLINDER_TYPE"
+          },
+          {
+            "when": {
+              "control_strategy": "both"
+            },
+            "next": "S0_CYLINDER_TYPE"
+          }
+        ],
+        "onLowConfidence": {
+          "action": "ask_clarification",
+          "clarificationPrompt": "Please choose one: rotational speed control, swivel-angle (displacement) control, or both."
+        }
+      },
+      {
+        "id": "S0_CYLINDER_TYPE",
+        "prompt": "Select the cylinder type: differential (single-rod), double-rod, plunger (single-acting), or telescopic.",
+        "expects": {
+          "entities": [
+            {
+              "name": "cylinder_type",
+              "type": "enum",
+              "values": [
+                "differential",
+                "double_rod",
+                "plunger",
+                "telescopic"
+              ],
+              "required": true
+            }
+          ]
+        },
+        "nlp": {
+          "intents": [
+            {
+              "name": "choose_cylinder_type",
+              "description": "User chooses cylinder type."
+            }
+          ],
+          "entityHints": {
+            "cylinder_type": {
+              "synonyms": {
+                "differential": [
+                  "differential cylinder",
+                  "single-rod",
+                  "standard cylinder",
+                  "double acting cylinder"
+                ],
+                "double_rod": [
+                  "double-rod",
+                  "double rod",
+                  "synchronous cylinder",
+                  "through-rod"
+                ],
+                "plunger": [
+                  "plunger",
+                  "ram",
+                  "single acting plunger",
+                  "single-acting cylinder"
+                ],
+                "telescopic": [
+                  "telescopic",
+                  "multi-stage",
+                  "telescopic cylinder"
+                ]
+              }
+            }
+          }
+        },
+        "routing": [
+          {
+            "when": {
+              "control_principle": "valve_controlled",
+              "pressure_concept": "load_independent",
+              "cylinder_type": "differential"
+            },
+            "select": "skeleton_v2_vc_li_differential"
+          },
+          {
+            "when": {
+              "control_principle": "valve_controlled",
+              "pressure_concept": "load_independent",
+              "cylinder_type": "double_rod"
+            },
+            "select": "skeleton_v2_vc_li_double_rod"
+          },
+          {
+            "when": {
+              "control_principle": "valve_controlled",
+              "pressure_concept": "load_independent",
+              "cylinder_type": "plunger"
+            },
+            "select": "skeleton_v2_vc_li_plunger"
+          },
+          {
+            "when": {
+              "control_principle": "valve_controlled",
+              "pressure_concept": "load_independent",
+              "cylinder_type": "telescopic"
+            },
+            "select": "skeleton_v2_vc_li_telescopic"
+          },
+          {
+            "when": {
+              "control_principle": "valve_controlled",
+              "pressure_concept": "load_dependent_ls",
+              "cylinder_type": "differential"
+            },
+            "select": "skeleton_v2_vc_ls_differential"
+          },
+          {
+            "when": {
+              "control_principle": "valve_controlled",
+              "pressure_concept": "load_dependent_ls",
+              "cylinder_type": "double_rod"
+            },
+            "select": "skeleton_v2_vc_ls_double_rod"
+          },
+          {
+            "when": {
+              "control_principle": "valve_controlled",
+              "pressure_concept": "load_dependent_ls",
+              "cylinder_type": "plunger"
+            },
+            "select": "skeleton_v2_vc_ls_plunger"
+          },
+          {
+            "when": {
+              "control_principle": "valve_controlled",
+              "pressure_concept": "load_dependent_ls",
+              "cylinder_type": "telescopic"
+            },
+            "select": "skeleton_v2_vc_ls_telescopic"
+          },
+          {
+            "when": {
+              "control_principle": "pump_controlled",
+              "circuit_type": "open_circuit",
+              "control_strategy": "rotational_speed",
+              "cylinder_type": "differential"
+            },
+            "select": "skeleton_v2_pc_oc_rs_differential"
+          },
+          {
+            "when": {
+              "control_principle": "pump_controlled",
+              "circuit_type": "open_circuit",
+              "control_strategy": "rotational_speed",
+              "cylinder_type": "double_rod"
+            },
+            "select": "skeleton_v2_pc_oc_rs_double_rod"
+          },
+          {
+            "when": {
+              "control_principle": "pump_controlled",
+              "circuit_type": "open_circuit",
+              "control_strategy": "rotational_speed",
+              "cylinder_type": "plunger"
+            },
+            "select": "skeleton_v2_pc_oc_rs_plunger"
+          },
+          {
+            "when": {
+              "control_principle": "pump_controlled",
+              "circuit_type": "open_circuit",
+              "control_strategy": "rotational_speed",
+              "cylinder_type": "telescopic"
+            },
+            "select": "skeleton_v2_pc_oc_rs_telescopic"
+          },
+          {
+            "when": {
+              "control_principle": "pump_controlled",
+              "circuit_type": "open_circuit",
+              "control_strategy": "swivel_angle",
+              "cylinder_type": "differential"
+            },
+            "select": "skeleton_v2_pc_oc_sa_differential"
+          },
+          {
+            "when": {
+              "control_principle": "pump_controlled",
+              "circuit_type": "open_circuit",
+              "control_strategy": "swivel_angle",
+              "cylinder_type": "double_rod"
+            },
+            "select": "skeleton_v2_pc_oc_sa_double_rod"
+          },
+          {
+            "when": {
+              "control_principle": "pump_controlled",
+              "circuit_type": "open_circuit",
+              "control_strategy": "swivel_angle",
+              "cylinder_type": "plunger"
+            },
+            "select": "skeleton_v2_pc_oc_sa_plunger"
+          },
+          {
+            "when": {
+              "control_principle": "pump_controlled",
+              "circuit_type": "open_circuit",
+              "control_strategy": "swivel_angle",
+              "cylinder_type": "telescopic"
+            },
+            "select": "skeleton_v2_pc_oc_sa_telescopic"
+          },
+          {
+            "when": {
+              "control_principle": "pump_controlled",
+              "circuit_type": "open_circuit",
+              "control_strategy": "both",
+              "cylinder_type": "differential"
+            },
+            "select": "skeleton_v2_pc_oc_both_differential"
+          },
+          {
+            "when": {
+              "control_principle": "pump_controlled",
+              "circuit_type": "open_circuit",
+              "control_strategy": "both",
+              "cylinder_type": "double_rod"
+            },
+            "select": "skeleton_v2_pc_oc_both_double_rod"
+          },
+          {
+            "when": {
+              "control_principle": "pump_controlled",
+              "circuit_type": "open_circuit",
+              "control_strategy": "both",
+              "cylinder_type": "plunger"
+            },
+            "select": "skeleton_v2_pc_oc_both_plunger"
+          },
+          {
+            "when": {
+              "control_principle": "pump_controlled",
+              "circuit_type": "open_circuit",
+              "control_strategy": "both",
+              "cylinder_type": "telescopic"
+            },
+            "select": "skeleton_v2_pc_oc_both_telescopic"
+          },
+          {
+            "when": {
+              "control_principle": "pump_controlled",
+              "circuit_type": "closed_circuit",
+              "control_strategy": "rotational_speed",
+              "cylinder_type": "differential"
+            },
+            "select": "skeleton_v2_pc_cc_rs_differential"
+          },
+          {
+            "when": {
+              "control_principle": "pump_controlled",
+              "circuit_type": "closed_circuit",
+              "control_strategy": "rotational_speed",
+              "cylinder_type": "double_rod"
+            },
+            "select": "skeleton_v2_pc_cc_rs_double_rod"
+          },
+          {
+            "when": {
+              "control_principle": "pump_controlled",
+              "circuit_type": "closed_circuit",
+              "control_strategy": "rotational_speed",
+              "cylinder_type": "plunger"
+            },
+            "select": "skeleton_v2_pc_cc_rs_plunger"
+          },
+          {
+            "when": {
+              "control_principle": "pump_controlled",
+              "circuit_type": "closed_circuit",
+              "control_strategy": "rotational_speed",
+              "cylinder_type": "telescopic"
+            },
+            "select": "skeleton_v2_pc_cc_rs_telescopic"
+          },
+          {
+            "when": {
+              "control_principle": "pump_controlled",
+              "circuit_type": "closed_circuit",
+              "control_strategy": "swivel_angle",
+              "cylinder_type": "differential"
+            },
+            "select": "skeleton_v2_pc_cc_sa_differential"
+          },
+          {
+            "when": {
+              "control_principle": "pump_controlled",
+              "circuit_type": "closed_circuit",
+              "control_strategy": "swivel_angle",
+              "cylinder_type": "double_rod"
+            },
+            "select": "skeleton_v2_pc_cc_sa_double_rod"
+          },
+          {
+            "when": {
+              "control_principle": "pump_controlled",
+              "circuit_type": "closed_circuit",
+              "control_strategy": "swivel_angle",
+              "cylinder_type": "plunger"
+            },
+            "select": "skeleton_v2_pc_cc_sa_plunger"
+          },
+          {
+            "when": {
+              "control_principle": "pump_controlled",
+              "circuit_type": "closed_circuit",
+              "control_strategy": "swivel_angle",
+              "cylinder_type": "telescopic"
+            },
+            "select": "skeleton_v2_pc_cc_sa_telescopic"
+          },
+          {
+            "when": {
+              "control_principle": "pump_controlled",
+              "circuit_type": "closed_circuit",
+              "control_strategy": "both",
+              "cylinder_type": "differential"
+            },
+            "select": "skeleton_v2_pc_cc_both_differential"
+          },
+          {
+            "when": {
+              "control_principle": "pump_controlled",
+              "circuit_type": "closed_circuit",
+              "control_strategy": "both",
+              "cylinder_type": "double_rod"
+            },
+            "select": "skeleton_v2_pc_cc_both_double_rod"
+          },
+          {
+            "when": {
+              "control_principle": "pump_controlled",
+              "circuit_type": "closed_circuit",
+              "control_strategy": "both",
+              "cylinder_type": "plunger"
+            },
+            "select": "skeleton_v2_pc_cc_both_plunger"
+          },
+          {
+            "when": {
+              "control_principle": "pump_controlled",
+              "circuit_type": "closed_circuit",
+              "control_strategy": "both",
+              "cylinder_type": "telescopic"
+            },
+            "select": "skeleton_v2_pc_cc_both_telescopic"
+          }
+        ],
+        "onLowConfidence": {
+          "action": "ask_clarification",
+          "clarificationPrompt": "Which cylinder type do you need: differential (single-rod), double-rod, plunger (single-acting), or telescopic?"
+        }
+      }
+    ]
+  },
+  "stage2": {
+    "goal": "Collect only sizing inputs needed for component selection after a v2 skeleton is selected.",
+    "globalQuestions": [
+      {
+        "id": "G1_MAX_PRESSURE",
+        "prompt": "Enter the maximum operating pressure P_max (e.g., 210 bar).",
+        "expects": {
+          "entities": [
+            {
+              "name": "maxOperatingPressure",
+              "type": "quantity_pressure",
+              "required": true
+            }
+          ]
+        },
+        "alignment": {
+          "concept": "maxOperatingPressure"
+        },
+        "onLowConfidence": {
+          "action": "ask_clarification",
+          "clarificationPrompt": "Please provide the maximum operating pressure with unit (e.g., 210 bar)."
+        }
+      },
+      {
+        "id": "G2_RATED_FLOW",
+        "prompt": "Enter the rated flow rate Q_rated (e.g., 25 L/min).",
+        "expects": {
+          "entities": [
+            {
+              "name": "ratedFlowRate",
+              "type": "quantity_flow",
+              "required": true
+            }
+          ]
+        },
+        "alignment": {
+          "concept": "ratedFlowRate"
+        },
+        "onLowConfidence": {
+          "action": "ask_clarification",
+          "clarificationPrompt": "Please provide the rated flow rate with unit (e.g., 25 L/min)."
+        }
+      },
+      {
+        "id": "G3_HYDRAULIC_FLUID",
+        "prompt": "Specify the hydraulic fluid (e.g., HLP 46 or ISO VG 46).",
+        "expects": {
+          "entities": [
+            {
+              "name": "hydraulicFluid",
+              "type": "string",
+              "required": true
+            }
+          ]
+        },
+        "alignment": {
+          "concept": "hydraulicFluid"
+        },
+        "onLowConfidence": {
+          "action": "ask_clarification",
+          "clarificationPrompt": "Please specify the hydraulic fluid grade (e.g., HLP 46)."
+        }
+      }
+    ],
+    "conditionalQuestions": [
+      {
+        "id": "TANK_LEVELS",
+        "when": {
+          "requiresTank": true
+        },
+        "questions": [
+          {
+            "id": "T0_TANK_VOLUME",
+            "prompt": "Enter the required tank volume in L (e.g., 80 L).",
+            "expects": {
+              "entities": [
+                {
+                  "name": "tank_volume",
+                  "type": "quantity_volume",
+                  "required": true
+                }
+              ]
+            },
+            "alignment": {
+              "concept": "tankNominalVolume"
+            },
+            "onLowConfidence": {
+              "action": "ask_clarification",
+              "clarificationPrompt": "Please provide the required tank volume with unit (e.g., 80 L)."
+            }
+          },
+          {
+            "id": "T1_TANK_LEVEL_MAX",
+            "prompt": "Enter the maximum tank level in mm (e.g., 800 mm).",
+            "expects": {
+              "entities": [
+                {
+                  "name": "tank_level_max",
+                  "type": "quantity_length",
+                  "required": true
+                }
+              ]
+            },
+            "alignment": {
+              "concept": "tankLevelMax"
+            },
+            "onLowConfidence": {
+              "action": "ask_clarification",
+              "clarificationPrompt": "Please provide the maximum tank level with unit (e.g., 0.80 m)."
+            }
+          },
+          {
+            "id": "T2_TANK_LEVEL_MIN",
+            "prompt": "Enter the minimum tank level in mm (e.g., 200 mm).",
+            "expects": {
+              "entities": [
+                {
+                  "name": "tank_level_min",
+                  "type": "quantity_length",
+                  "required": true
+                }
+              ]
+            },
+            "alignment": {
+              "concept": "tankLevelMin"
+            },
+            "onLowConfidence": {
+              "action": "ask_clarification",
+              "clarificationPrompt": "Please provide the minimum tank level with unit (e.g., 0.20 m)."
+            }
+          }
+        ]
+      },
+      {
+        "id": "PRV_SETPOINT",
+        "when": {
+          "requiresPrv": true
+        },
+        "questions": [
+          {
+            "id": "PRV1_SETPOINT",
+            "prompt": "Enter the pressure protection setpoint in bar (e.g., 180 bar).",
+            "expects": {
+              "entities": [
+                {
+                  "name": "prv_setpoint",
+                  "type": "quantity_pressure",
+                  "required": true
+                }
+              ]
+            },
+            "alignment": {
+              "concept": "prvSetpoint"
+            },
+            "onLowConfidence": {
+              "action": "ask_clarification",
+              "clarificationPrompt": "Please provide the pressure protection setpoint with unit (e.g., 180 bar)."
+            }
+          }
+        ]
+      },
+      {
+        "id": "ACC_REQUIREMENTS",
+        "when": {
+          "requiresAccumulator": true
+        },
+        "questions": [
+          {
+            "id": "ACC0_BA_REQUIREMENTS",
+            "prompt": "Provide the bladder accumulator requirements as: volume (L) AND pre-charge pressure (bar). Example: 6 L, 2.5 bar.",
+            "expects": {
+              "entities": [
+                {
+                  "name": "acc_volume",
+                  "type": "quantity_volume",
+                  "required": true
+                },
+                {
+                  "name": "acc_precharge",
+                  "type": "quantity_pressure",
+                  "required": true
+                }
+              ]
+            },
+            "alignment": {
+              "concept": "accBARequirements"
+            },
+            "onLowConfidence": {
+              "action": "ask_clarification",
+              "clarificationPrompt": "Please provide BOTH values with units, e.g., 6 L and 2.5 bar."
+            }
+          }
+        ]
+      }
+    ],
+    "actuatorQuestions": {
+      "cylinder": [
+        {
+          "id": "C1_LOAD",
+          "prompt": "Enter the target load as force or mass (e.g., 15 kN or 1.2 t).",
+          "expects": {
+            "entities": [
+              {
+                "name": "load",
+                "type": "quantity_force_or_mass",
+                "required": true
+              }
+            ]
+          },
+          "alignment": {
+            "concept": "cylinderLoad"
+          },
+          "onLowConfidence": {
+            "action": "ask_clarification",
+            "clarificationPrompt": "Please provide a load value as force or mass (e.g., 15 kN or 1.2 t)."
+          }
+        },
+        {
+          "id": "C2_STROKE",
+          "prompt": "Enter the cylinder stroke length (e.g., 0.50 m).",
+          "expects": {
+            "entities": [
+              {
+                "name": "stroke",
+                "type": "quantity_length",
+                "required": true
+              }
+            ]
+          },
+          "alignment": {
+            "concept": "cylinderStroke"
+          },
+          "onLowConfidence": {
+            "action": "ask_clarification",
+            "clarificationPrompt": "Please provide the stroke length with unit (e.g., 0.50 m)."
+          }
+        }
+      ]
+    }
+  }
+}
