@@ -1983,9 +1983,28 @@ def build_network_skeleton(
                 }
             )
 
+    has_tank = any(meta["componentType"] == "Tank" for meta in slot_meta.values())
+    if network_data.get("skeletonId"):
+        skeleton_id = network_data["skeletonId"]
+    elif has_tank:
+        skeleton_id = "external_volume_node_open_circuit"
+    else:
+        required_closed_slots = {"PUMP", "CYL", "PRV_A2B", "PRV_B2A"}
+        if required_closed_slots.issubset(set(slot_meta.keys())):
+            skeleton_id = "skeleton_v2_pc_cc_volume_node_differential_demo"
+        else:
+            skeleton_id = "skeleton_v2_pc_cc_external_volume_node"
+
+    if network_data.get("name"):
+        skeleton_name = network_data["name"]
+    elif has_tank:
+        skeleton_name = "External volume-node topology (open circuit)"
+    else:
+        skeleton_name = "External volume-node topology (closed circuit)"
+
     return {
-        "skeletonId": network_data.get("skeletonId") or "external_volume_node_network",
-        "name": network_data.get("name") or "External volume-node topology",
+        "skeletonId": skeleton_id,
+        "name": skeleton_name,
         "componentSlots": sorted(component_slots, key=lambda item: item["slotId"]),
         "connections": connections,
         "volumeNodes": standardized_volume_nodes,

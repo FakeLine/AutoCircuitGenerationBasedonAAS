@@ -1,0 +1,33 @@
+{
+  "maxOperatingPressure": {
+    "value": 180.0,
+    "unit": "bar"
+  },
+  "ratedFlowRate": {
+    "value": 80.0,
+    "unit": "L/min"
+  },
+  "hydraulicFluid": {
+    "value_text": "HLP 46"
+  },
+  "cylinderLoad": {
+    "value": 1000.0,
+    "unit": "N"
+  },
+  "cylinderStroke": {
+    "value": 100.0,
+    "unit": "mm"
+  },
+  "prvSetpoint": {
+    "value": 170.0,
+    "unit": "bar"
+  },
+  "accNominalVolume": {
+    "value": 6.0,
+    "unit": "L"
+  },
+  "accPreChargePressure": {
+    "value": 2.5,
+    "unit": "bar"
+  }
+}
