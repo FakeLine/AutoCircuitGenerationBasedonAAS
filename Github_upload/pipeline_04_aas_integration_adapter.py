@@ -26,6 +26,7 @@ DEFAULT_AAS_NAMESPACE = 'aas3'
 AAS_NS = AAS_NAMESPACE_OPTIONS[DEFAULT_AAS_NAMESPACE]
 XLINK_NS = 'http://www.w3.org/1999/xlink'
 OPC_CONTENT_TYPES_NS = 'http://schemas.openxmlformats.org/package/2006/content-types'
+OPC_REL_NS = "http://schemas.openxmlformats.org/package/2006/relationships"
 UTF8_BOM = b"\xef\xbb\xbf"
 NS = {'aas': AAS_NS}
 ET.register_namespace('', AAS_NS)
@@ -871,12 +872,16 @@ def write_aasx_with_updates(
         source_xml_raw = source_xml_bytes[len(UTF8_BOM) :] if source_has_bom else source_xml_bytes
         source_has_decl = source_xml_raw.lstrip().startswith(b"<?xml")
         content_types_name = "[Content_Types].xml"
+        aas_rels_name = build_aas_spec_rels_name(xml_name)
         updated_content_types: Optional[bytes] = None
+        updated_aas_rels: Optional[bytes] = None
         if content_types_name in zin.namelist():
             updated_content_types = update_content_types_xml(
                 zin.read(content_types_name),
                 extra_files,
             )
+        existing_aas_rels = zin.read(aas_rels_name) if aas_rels_name in zin.namelist() else None
+        updated_aas_rels = update_aas_spec_relationships_xml(existing_aas_rels, extra_files)
         with zipfile.ZipFile(dest_aasx, "w", compression=zipfile.ZIP_DEFLATED) as zout:
             for item in zin.infolist():
                 if item.filename == xml_name:
@@ -884,6 +889,8 @@ def write_aasx_with_updates(
                 if item.filename in extra_files:
                     continue
                 if updated_content_types is not None and item.filename == content_types_name:
+                    continue
+                if updated_aas_rels is not None and item.filename == aas_rels_name:
                     continue
                 zout.writestr(item, zin.read(item.filename))
             ET.register_namespace("", AAS_NS)
@@ -894,8 +901,75 @@ def write_aasx_with_updates(
             zout.writestr(xml_name, xml_payload)
             if updated_content_types is not None:
                 zout.writestr(content_types_name, updated_content_types)
+            if updated_aas_rels is not None:
+                zout.writestr(aas_rels_name, updated_aas_rels)
             for path, payload in extra_files.items():
                 zout.writestr(path, payload)
+
+def build_aas_spec_rels_name(xml_name: str) -> str:
+    xml_path = Path(xml_name)
+    rels_dir = xml_path.parent / "_rels"
+    return str(rels_dir / f"{xml_path.name}.rels").replace("\\", "/")
+
+def update_aas_spec_relationships_xml(
+    rels_bytes: Optional[bytes],
+    extra_files: Dict[str, bytes],
+) -> Optional[bytes]:
+    if not extra_files:
+        return rels_bytes
+
+    if rels_bytes:
+        has_bom = rels_bytes.startswith(UTF8_BOM)
+        raw = rels_bytes[len(UTF8_BOM):] if has_bom else rels_bytes
+        has_decl = raw.lstrip().startswith(b"<?xml")
+        root = ET.fromstring(raw)
+    else:
+        has_bom = False
+        has_decl = True
+        root = ET.Element(f"{{{OPC_REL_NS}}}Relationships")
+
+    existing_targets = {
+        str(elem.get("Target", "")).strip()
+        for elem in root.findall(f"{{{OPC_REL_NS}}}Relationship")
+    }
+    existing_ids = {
+        str(elem.get("Id", "")).strip()
+        for elem in root.findall(f"{{{OPC_REL_NS}}}Relationship")
+    }
+
+    changed = False
+    for index, file_path in enumerate(sorted(extra_files.keys()), start=1):
+        target = "/" + str(file_path).replace("\\", "/").lstrip("/")
+        if target in existing_targets:
+            continue
+        rel_id = f"RaasSuppl{index}"
+        suffix = index
+        while rel_id in existing_ids:
+            suffix += 1
+            rel_id = f"RaasSuppl{suffix}"
+        ET.SubElement(
+            root,
+            f"{{{OPC_REL_NS}}}Relationship",
+            {
+                "Id": rel_id,
+                "Type": "http://admin-shell.io/aasx/relationships/aas-suppl",
+                "Target": target,
+            },
+        )
+        existing_targets.add(target)
+        existing_ids.add(rel_id)
+        changed = True
+
+    if not changed and rels_bytes is not None:
+        return rels_bytes
+
+    ET.register_namespace("", OPC_REL_NS)
+    payload = ET.tostring(root, encoding="utf-8", xml_declaration=has_decl)
+    ET.register_namespace("", AAS_NS)
+    ET.register_namespace("xlink", XLINK_NS)
+    if has_bom:
+        payload = UTF8_BOM + payload
+    return payload
 
 def update_content_types_xml(content_types_bytes: bytes, extra_files: Dict[str, bytes]) -> bytes:
     has_bom = content_types_bytes.startswith(UTF8_BOM)
@@ -1469,6 +1543,13 @@ def ensure_file_element(
     content_elem.text = content_type
     return file_elem
 
+
+def normalize_package_part_uri(file_path: str) -> str:
+    text = str(file_path or "").replace("\\", "/").strip()
+    if not text:
+        return text
+    return "/" + text.lstrip("/")
+
 def update_global_constraints(xml_root: ET.Element, constraints: Dict[str, Any]) -> None:
     submodel = find_submodel(xml_root, "SystemRequirements")
     if submodel is None:
@@ -1535,7 +1616,7 @@ def update_nlp_result_file(xml_root: ET.Element, file_path: str) -> None:
     value_elem_file = file_elem.find("aas:value", NS)
     if value_elem_file is None:
         value_elem_file = ET.SubElement(file_elem, f"{{{AAS_NS}}}value")
-    value_elem_file.text = file_path
+    value_elem_file.text = normalize_package_part_uri(file_path)
     content_elem = file_elem.find("aas:contentType", NS)
     if content_elem is None:
         content_elem = ET.SubElement(file_elem, f"{{{AAS_NS}}}contentType")
@@ -1553,7 +1634,7 @@ def update_schematic_layout(xml_root: ET.Element, file_path: str) -> None:
     value_elem = file_elem.find("aas:value", NS)
     if value_elem is None:
         value_elem = ET.SubElement(file_elem, f"{{{AAS_NS}}}value")
-    value_elem.text = file_path
+    value_elem.text = normalize_package_part_uri(file_path)
     content_elem = file_elem.find("aas:contentType", NS)
     if content_elem is None:
         content_elem = ET.SubElement(file_elem, f"{{{AAS_NS}}}contentType")
