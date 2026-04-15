@@ -242,6 +242,20 @@ def deterministic_stage1_entities(node: Dict[str, Any], answer: str) -> Optional
     return None
 
 
+def deterministic_stage1_response(node: Dict[str, Any], answer: str) -> Optional[Tuple[Dict[str, Any], OllamaResponse]]:
+    entities = deterministic_stage1_entities(node, answer)
+    if not entities:
+        return None
+    parsed = {
+        "intent": "deterministic_stage1",
+        "entities": entities,
+        "confidence": 1.0,
+        "evidence": answer,
+    }
+    response = OllamaResponse(text=json.dumps(parsed), mode="deterministic", model="deterministic")
+    return parsed, response
+
+
 def _find_lexicon_entry(lexicon_entries: List[Dict[str, Any]], semantic_id: str) -> Optional[Dict[str, Any]]:
     for entry in lexicon_entries:
         if entry.get("semanticId") == semantic_id:
@@ -581,6 +595,389 @@ def build_property_lexicon(
 
     return lexicon_entries, semantic_to_label, concept_index, semantic_to_components
 
+
+def build_stage2_blocks(qa_tree: Dict[str, Any], skeleton: Dict[str, Any]) -> List[Dict[str, Any]]:
+    stage2 = qa_tree.get("stage2", {})
+    actuator_type = infer_actuator_type(skeleton)
+    component_types = {slot.get("componentType") for slot in skeleton.get("componentSlots", [])}
+    has_tank = "Tank" in component_types
+    has_prv = "PressureReliefValve" in component_types
+    has_acc = "BladderAccumulator" in component_types
+    has_check_valve = "CheckValve" in component_types
+    has_pump = bool(component_types.intersection({"ConstantPump", "VariablePump"}))
+    has_dcv = bool(component_types.intersection({"4-3DirectionalControlValve", "3-2DirectionalControlValve"}))
+
+    blocks: List[Dict[str, Any]] = []
+    blocks.extend(stage2.get("globalBlocks", []))
+    blocks.extend(stage2.get("actuatorBlocks", {}).get(actuator_type, []))
+    for block in stage2.get("conditionalBlocks", []):
+        when = block.get("when", {})
+        if when.get("requiresTank") is True and not has_tank:
+            continue
+        if when.get("requiresPrv") is True and not has_prv:
+            continue
+        if when.get("requiresAccumulator") is True and not has_acc:
+            continue
+        if when.get("requiresCheckValve") is True and not has_check_valve:
+            continue
+        if when.get("requiresPump") is True and not has_pump:
+            continue
+        if when.get("requiresDcv") is True and not has_dcv:
+            continue
+        blocks.append(block)
+    return blocks
+
+
+def block_properties_by_concept(block: Dict[str, Any]) -> Dict[str, Dict[str, Any]]:
+    return {
+        str(prop.get("concept", "")): prop
+        for prop in block.get("properties", [])
+        if str(prop.get("concept", ""))
+    }
+
+
+def property_keywords(prop: Dict[str, Any]) -> List[str]:
+    keywords = set()
+    label = str(prop.get("label", "")).strip()
+    concept = str(prop.get("concept", "")).strip()
+    for keyword in prop.get("keywords", []) or []:
+        if keyword:
+            keywords.add(str(keyword).strip())
+    if label:
+        keywords.add(label)
+        keywords.update(normalize_synonyms(label))
+    if concept:
+        keywords.add(concept)
+        keywords.add(" ".join(split_camel(concept)))
+    return sorted({item for item in keywords if item}, key=len, reverse=True)
+
+
+def build_block_lexicon_subset(
+    block: Dict[str, Any],
+    lexicon_entries: List[Dict[str, Any]],
+) -> List[Dict[str, Any]]:
+    semantic_ids = {
+        str(prop.get("semanticId", "")).strip()
+        for prop in block.get("properties", [])
+        if str(prop.get("semanticId", "")).strip()
+    }
+    subset = [entry for entry in lexicon_entries if entry.get("semanticId") in semantic_ids]
+    existing_ids = {entry.get("semanticId") for entry in subset}
+    for prop in block.get("properties", []):
+        semantic_id = str(prop.get("semanticId", "")).strip()
+        if not semantic_id or semantic_id in existing_ids:
+            continue
+        label = str(prop.get("label", "")).strip() or semantic_id
+        subset.append(
+            {
+                "semanticId": semantic_id,
+                "labels": [label],
+                "synonyms": normalize_synonyms(label),
+                "units": [],
+                "componentTypes": list(prop.get("targetComponentTypes", []) or []),
+            }
+        )
+    return subset
+
+
+def build_stage2_block_rule_text(block: Dict[str, Any]) -> str:
+    concepts = [str(prop.get("concept", "")).strip() for prop in block.get("properties", []) if prop.get("concept")]
+    return (
+        "Extract only properties explicitly present in USER_ANSWER. "
+        "Do not invent omitted values. "
+        "Return each extracted item with its matching concept from BLOCK_PROPERTIES. "
+        f"Allowed concepts: {', '.join(concepts)}."
+    )
+
+
+def build_stage2_block_prompt(
+    stage2_template: str,
+    block: Dict[str, Any],
+    lexicon_json: str,
+    answer: str,
+    previous_issue: str = "",
+) -> str:
+    return render_prompt(
+        stage2_template,
+        QUESTION=str(block.get("prompt", "")),
+        BLOCK_ID=str(block.get("id", "")),
+        EXPECTS_JSON=json.dumps(block.get("expects", {}), indent=2),
+        BLOCK_PROPERTIES_JSON=json.dumps(block.get("properties", []), indent=2),
+        PROPERTY_LEXICON_JSON=lexicon_json,
+        STRICT_EXTRA_RULES=build_stage2_block_rule_text(block),
+        PREVIOUS_ISSUE=previous_issue,
+        USER_ANSWER=answer,
+    )
+
+
+def is_skipped_stage2_answer(answer: str) -> bool:
+    return normalize_enum_text(answer) in {
+        "",
+        "skip",
+        "none",
+        "na",
+        "n a",
+        "not applicable",
+        "not specified",
+        "no additional constraints",
+    }
+
+
+def explode_answer_segments(answer: str) -> List[str]:
+    segments: List[str] = []
+    for chunk in re.split(r"[;\n]+", answer):
+        text = chunk.strip()
+        if not text:
+            continue
+        parts = [part.strip() for part in re.split(r",(?=\s*(?:[A-Za-z]|\d))", text) if part.strip()]
+        if len(parts) == 1:
+            segments.append(text)
+        else:
+            segments.extend(parts)
+    return segments
+
+
+def property_type_matches_segment(prop_type: str, segment: str) -> bool:
+    unit = (detect_unit_from_text(segment) or "").lower()
+    if prop_type == "quantity_pressure":
+        return unit in {"bar", "mpa", "kpa", "pa"}
+    if prop_type == "quantity_flow":
+        return unit in {"l/min", "m3/h", "lpm"}
+    if prop_type == "quantity_volume":
+        return unit in {"l", "m3"}
+    if prop_type == "quantity_force_or_mass":
+        return unit in {"n", "kn", "kg", "t"}
+    if prop_type == "quantity_length":
+        return unit in {"mm", "cm", "m"}
+    return False
+
+
+def infer_numeric_operator(segment: str, default_operator: str) -> str:
+    lowered = segment.lower()
+    if " between " in lowered or re.search(r"\b\d+(?:\.\d+)?\s*(?:to|-)\s*\d+(?:\.\d+)?\b", lowered):
+        return "range"
+    if any(token in lowered for token in [">=", "at least", "not less than", "minimum of", "minimum "]):
+        return "ge"
+    if any(token in lowered for token in ["<=", "at most", "not more than", "up to"]):
+        return "le"
+    return default_operator or "eq"
+
+
+def heuristic_stage2_parse(block: Dict[str, Any], answer: str) -> Dict[str, Any]:
+    if is_skipped_stage2_answer(answer):
+        return {
+            "intent": "provide_sizing_constraints",
+            "entities": {"constraints": [], "nonNumericConstraints": []},
+            "confidence": 1.0,
+            "evidence": answer,
+        }
+    properties = list(block.get("properties", []) or [])
+    remaining = {str(prop.get("concept", "")): prop for prop in properties if prop.get("concept")}
+    segments = explode_answer_segments(answer)
+    constraints: List[Dict[str, Any]] = []
+    non_numeric: List[Dict[str, Any]] = []
+    used_segments: set[int] = set()
+
+    def add_from_segment(prop: Dict[str, Any], segment: str) -> bool:
+        concept = str(prop.get("concept", "")).strip()
+        if not concept:
+            return False
+        if prop.get("kind") == "text":
+            value_text = segment.strip()
+            for keyword in property_keywords(prop):
+                value_text = re.sub(re.escape(keyword), "", value_text, flags=re.IGNORECASE)
+            value_text = value_text.strip(" :-")
+            value_text = value_text or segment.strip()
+            non_numeric.append(
+                {
+                    "concept": concept,
+                    "semanticId": str(prop.get("semanticId", "")).strip(),
+                    "propertyLabel": prop.get("label"),
+                    "valueText": value_text,
+                    "confidence": 0.85,
+                    "evidence": segment,
+                }
+            )
+            remaining.pop(concept, None)
+            return True
+
+        operator = infer_numeric_operator(segment, str(prop.get("defaultOperator", "eq")))
+        value_max = None
+        range_match = re.search(
+            r"(-?\d+(?:\.\d+)?)\s*(?:to|-)\s*(-?\d+(?:\.\d+)?)",
+            segment,
+            flags=re.IGNORECASE,
+        )
+        if operator == "range" and range_match:
+            value = parse_float(range_match.group(1))
+            value_max = parse_float(range_match.group(2))
+        else:
+            value = parse_float(segment)
+        if value is None:
+            return False
+        item: Dict[str, Any] = {
+            "concept": concept,
+            "semanticId": str(prop.get("semanticId", "")).strip(),
+            "propertyLabel": prop.get("label"),
+            "operator": operator,
+            "value": value,
+            "unit": detect_unit_from_text(segment),
+            "confidence": 0.8,
+            "evidence": segment,
+        }
+        if value_max is not None:
+            item["valueMax"] = value_max
+        constraints.append(item)
+        remaining.pop(concept, None)
+        return True
+
+    for index, segment in enumerate(segments):
+        segment_norm = normalize_enum_text(segment)
+        matches = [
+            prop
+            for prop in list(remaining.values())
+            if any(normalize_enum_text(keyword) in segment_norm for keyword in property_keywords(prop))
+        ]
+        if len(matches) == 1 and add_from_segment(matches[0], segment):
+            used_segments.add(index)
+
+    for index, segment in enumerate(segments):
+        if index in used_segments:
+            continue
+        numeric_matches = [
+            prop
+            for prop in list(remaining.values())
+            if prop.get("kind") == "numeric" and property_type_matches_segment(str(prop.get("type", "")), segment)
+        ]
+        if len(numeric_matches) == 1 and add_from_segment(numeric_matches[0], segment):
+            used_segments.add(index)
+            continue
+        text_matches = [prop for prop in list(remaining.values()) if prop.get("kind") == "text"]
+        if len(text_matches) == 1 and parse_float(segment) is None and add_from_segment(text_matches[0], segment):
+            used_segments.add(index)
+
+    return {
+        "intent": "provide_sizing_constraints",
+        "entities": {
+            "constraints": constraints,
+            "nonNumericConstraints": non_numeric,
+        },
+        "confidence": 0.8 if constraints or non_numeric else 0.0,
+        "evidence": answer,
+    }
+
+
+def parse_block_constraints(
+    parsed: Dict[str, Any],
+    block: Dict[str, Any],
+) -> Tuple[List[Constraint], List[Constraint]]:
+    property_by_concept = block_properties_by_concept(block)
+    property_by_semantic = {
+        str(prop.get("semanticId", "")).strip(): prop
+        for prop in block.get("properties", [])
+        if str(prop.get("semanticId", "")).strip()
+    }
+    constraints: List[Constraint] = []
+    non_numeric: List[Constraint] = []
+    seen_numeric: set[str] = set()
+    seen_text: set[str] = set()
+
+    entities = parsed.get("entities", {}) if isinstance(parsed, dict) else {}
+    for item in entities.get("constraints", []) or []:
+        if not isinstance(item, dict):
+            continue
+        concept = str(item.get("concept", "")).strip()
+        prop = property_by_concept.get(concept)
+        if prop is None:
+            semantic_id = str(item.get("semanticId", "")).strip()
+            prop = property_by_semantic.get(semantic_id)
+            if prop is not None:
+                concept = str(prop.get("concept", "")).strip()
+        if prop is None or prop.get("kind") != "numeric" or concept in seen_numeric:
+            continue
+        semantic_id = str(prop.get("semanticId", "")).strip()
+        if not semantic_id:
+            continue
+        validate_semantic_id(semantic_id, f"constraint_alignment:{concept or 'unknown'}")
+        operator = str(item.get("operator", "")).strip()
+        if operator not in {"eq", "ge", "le", "range"}:
+            operator = str(prop.get("defaultOperator", "eq")).strip() or "eq"
+            defaulted = True
+        else:
+            defaulted = False
+        value = item.get("value")
+        value_num = value if isinstance(value, (int, float)) else parse_float(str(value))
+        if value_num is None:
+            continue
+        value_max = item.get("valueMax")
+        value_max_num = None
+        if value_max is not None:
+            value_max_num = value_max if isinstance(value_max, (int, float)) else parse_float(str(value_max))
+        constraints.append(
+            Constraint(
+                semantic_id=semantic_id,
+                property_label=str(prop.get("label", "")).strip() or item.get("propertyLabel"),
+                operator=operator,
+                value=value_num,
+                value_max=value_max_num,
+                unit=item.get("unit"),
+                confidence=float(item.get("confidence", 0.0)),
+                evidence=item.get("evidence"),
+                concept=concept,
+                defaulted_operator=defaulted,
+                source_block_id=str(block.get("id", "")).strip() or None,
+                target_component_types=list(prop.get("targetComponentTypes", []) or []),
+            )
+        )
+        seen_numeric.add(concept)
+
+    for item in entities.get("nonNumericConstraints", []) or []:
+        if not isinstance(item, dict):
+            continue
+        concept = str(item.get("concept", "")).strip()
+        prop = property_by_concept.get(concept)
+        if prop is None:
+            semantic_id = str(item.get("semanticId", "")).strip()
+            prop = property_by_semantic.get(semantic_id)
+            if prop is not None:
+                concept = str(prop.get("concept", "")).strip()
+        if prop is None or prop.get("kind") != "text" or concept in seen_text:
+            continue
+        semantic_id = str(prop.get("semanticId", "")).strip()
+        if not semantic_id:
+            continue
+        validate_semantic_id(semantic_id, f"constraint_alignment:{concept or 'unknown'}")
+        value_text = str(item.get("valueText", "")).strip()
+        if not value_text:
+            continue
+        non_numeric.append(
+            Constraint(
+                semantic_id=semantic_id,
+                property_label=str(prop.get("label", "")).strip() or item.get("propertyLabel"),
+                operator="eq",
+                value_text=value_text,
+                confidence=float(item.get("confidence", 0.0)),
+                evidence=item.get("evidence"),
+                concept=concept,
+                source_block_id=str(block.get("id", "")).strip() or None,
+                target_component_types=list(prop.get("targetComponentTypes", []) or []),
+            )
+        )
+        seen_text.add(concept)
+    return constraints, non_numeric
+
+
+def stage2_block_needs_retry(
+    answer: str,
+    extracted_constraints: List[Constraint],
+    extracted_non_numeric: List[Constraint],
+) -> Optional[str]:
+    if is_skipped_stage2_answer(answer):
+        return None
+    if extracted_constraints or extracted_non_numeric:
+        return None
+    return "No properties were extracted. Return only the properties explicitly stated in USER_ANSWER."
+
 def select_skeleton(
     qa_tree: Dict,
     skeletons: Dict[str, Dict[str, Any]],
@@ -606,14 +1003,24 @@ def select_skeleton(
         user_inputs.append({"stage": "stage1", "nodeId": node["id"], "prompt": prompt, "answer": answer})
         expects = json.dumps(node.get("expects", {}), indent=2)
         hints = json.dumps(node.get("nlp", {}).get("entityHints", {}), indent=2)
-        nlp_prompt = render_prompt(
-            stage1_template,
-            QUESTION=prompt,
-            EXPECTS_JSON=expects,
-            ENTITY_HINTS_JSON=hints,
-            USER_ANSWER=answer,
-        )
-        parsed, response = client.extract_json(nlp_prompt)
+        deterministic = deterministic_stage1_response(node, answer)
+        if deterministic is not None:
+            parsed, response = deterministic
+        else:
+            nlp_prompt = render_prompt(
+                stage1_template,
+                QUESTION=prompt,
+                EXPECTS_JSON=expects,
+                ENTITY_HINTS_JSON=hints,
+                USER_ANSWER=answer,
+            )
+            try:
+                parsed, response = client.extract_json(nlp_prompt)
+            except Exception:
+                fallback = deterministic_stage1_response(node, answer)
+                if fallback is None:
+                    raise
+                parsed, response = fallback
         confidence = float(parsed.get("confidence", 0.0))
         nlp_outputs.append(
             {
@@ -632,14 +1039,24 @@ def select_skeleton(
                 user_inputs.append(
                     {"stage": "stage1", "nodeId": node["id"], "prompt": clarification, "answer": answer}
                 )
-                nlp_prompt = render_prompt(
-                    stage1_template,
-                    QUESTION=clarification,
-                    EXPECTS_JSON=expects,
-                    ENTITY_HINTS_JSON=hints,
-                    USER_ANSWER=answer,
-                )
-                parsed, response = client.extract_json(nlp_prompt)
+                deterministic = deterministic_stage1_response(node, answer)
+                if deterministic is not None:
+                    parsed, response = deterministic
+                else:
+                    nlp_prompt = render_prompt(
+                        stage1_template,
+                        QUESTION=clarification,
+                        EXPECTS_JSON=expects,
+                        ENTITY_HINTS_JSON=hints,
+                        USER_ANSWER=answer,
+                    )
+                    try:
+                        parsed, response = client.extract_json(nlp_prompt)
+                    except Exception:
+                        fallback = deterministic_stage1_response(node, answer)
+                        if fallback is None:
+                            raise
+                        parsed, response = fallback
                 nlp_outputs.append(
                     {
                         "stage": "stage1",
@@ -747,200 +1164,82 @@ def run_stage2(
     global_constraints: Dict[str, Any] = {}
     constraints: List[Constraint] = []
     non_numeric: List[Constraint] = []
-
-    actuator_type = infer_actuator_type(skeleton)
-    component_types = {slot.get("componentType") for slot in skeleton.get("componentSlots", [])}
-    has_tank = "Tank" in component_types
-    has_prv = "PressureReliefValve" in component_types
-    has_acc = "BladderAccumulator" in component_types
-
-    questions = []
-    questions.extend(qa_tree.get("stage2", {}).get("globalQuestions", []))
-    questions.extend(qa_tree.get("stage2", {}).get("actuatorQuestions", {}).get(actuator_type, []))
-    for block in qa_tree.get("stage2", {}).get("conditionalQuestions", []):
-        when = block.get("when", {})
-        requires_tank = when.get("requiresTank")
-        requires_prv = when.get("requiresPrv")
-        requires_acc = when.get("requiresAccumulator")
-        if requires_tank is not None and requires_tank != has_tank:
-            continue
-        if requires_prv is not None and requires_prv != has_prv:
-            continue
-        if requires_acc is not None and requires_acc != has_acc:
-            continue
-        questions.extend(block.get("questions", []))
-
-    def extract_entity_quantity(entity_value: Any) -> Tuple[Optional[float], Optional[str]]:
-        if entity_value is None:
-            return None, None
-        if isinstance(entity_value, (int, float)):
-            return float(entity_value), None
-        if isinstance(entity_value, dict):
-            number = entity_value.get("value")
-            if number is None:
-                number = entity_value.get("number")
-            if number is None:
-                number = entity_value.get("amount")
-            unit = entity_value.get("unit") or entity_value.get("uom")
-            value_num = number if isinstance(number, (int, float)) else parse_float(str(number))
-            if value_num is None and isinstance(entity_value.get("text"), str):
-                value_num = parse_float(entity_value["text"])
-            return value_num, str(unit) if unit else None
-        if isinstance(entity_value, str):
-            text = entity_value.strip()
-            return parse_float(text), None
-        return None, None
-
-    for question in questions:
-        prompt = question["prompt"]
+    _ = concept_index
+    promoted_concepts = {
+        "maxOperatingPressure",
+        "ratedFlowRate",
+        "hydraulicFluid",
+        "tankNominalVolume",
+        "prvSetpoint",
+        "accNominalVolume",
+        "accPreChargePressure",
+    }
+    for block in build_stage2_blocks(qa_tree, skeleton):
+        prompt = str(block.get("prompt", "")).strip()
         answer = input(f"{prompt}\n> ").strip()
-        user_inputs.append({"stage": "stage2", "nodeId": question["id"], "prompt": prompt, "answer": answer})
+        user_inputs.append({"stage": "stage2", "nodeId": block["id"], "prompt": prompt, "answer": answer})
 
-        concept = infer_question_concept(question)
-        lexicon_subset = lexicon_entries
-        allowed_semantic_ids = concept_index.get(concept, []) if concept else []
-        if concept and concept in concept_index:
-            lexicon_subset = [
-                entry for entry in lexicon_entries if entry["semanticId"] in concept_index[concept]
-            ]
-        expects = json.dumps(question.get("expects", {}), indent=2)
+        lexicon_subset = build_block_lexicon_subset(block, lexicon_entries)
         lexicon_json = json.dumps(lexicon_subset, indent=2)
-        nlp_prompt = build_stage2_prompt(
-            stage2_template,
-            prompt,
-            concept,
-            expects,
-            lexicon_json,
-            answer,
-            allowed_semantic_ids,
-        )
-        parsed, response = client.extract_json(nlp_prompt)
+        heuristic_parsed = heuristic_stage2_parse(block, answer)
+        heuristic_constraints, heuristic_non_numeric = parse_block_constraints(heuristic_parsed, block)
+        if is_skipped_stage2_answer(answer) or heuristic_constraints or heuristic_non_numeric:
+            parsed = heuristic_parsed
+            response = OllamaResponse(text=json.dumps(parsed), mode="deterministic", model="deterministic")
+        else:
+            nlp_prompt = build_stage2_block_prompt(stage2_template, block, lexicon_json, answer)
+            try:
+                parsed, response = client.extract_json(nlp_prompt)
+            except Exception:
+                parsed = heuristic_parsed
+                response = OllamaResponse(text=json.dumps(parsed), mode="deterministic", model="deterministic")
         nlp_outputs.append(
             {
                 "stage": "stage2",
-                "nodeId": question["id"],
+                "nodeId": block["id"],
                 "output": parsed,
                 "ollamaMode": response.mode,
                 "model": response.model,
             }
         )
 
-        extracted_constraints, extracted_non_numeric = parse_constraints(
-            parsed,
-            concept,
-            allowed_semantic_ids,
-        )
-        retry_issue = stage2_result_needs_retry(
-            concept,
-            answer,
-            extracted_constraints,
-            extracted_non_numeric,
-        )
-        if retry_issue:
-            retry_prompt = build_stage2_prompt(
-                stage2_template,
-                prompt,
-                concept,
-                expects,
-                lexicon_json,
-                answer,
-                allowed_semantic_ids,
-                retry_issue,
-            )
-            parsed, response = client.extract_json(retry_prompt)
+        extracted_constraints, extracted_non_numeric = parse_block_constraints(parsed, block)
+        retry_issue = stage2_block_needs_retry(answer, extracted_constraints, extracted_non_numeric)
+        if retry_issue and response.mode != "deterministic":
+            retry_prompt = build_stage2_block_prompt(stage2_template, block, lexicon_json, answer, retry_issue)
+            try:
+                parsed, response = client.extract_json(retry_prompt)
+                nlp_outputs.append(
+                    {
+                        "stage": "stage2",
+                        "nodeId": block["id"],
+                        "output": parsed,
+                        "ollamaMode": response.mode,
+                        "model": response.model,
+                    }
+                )
+                extracted_constraints, extracted_non_numeric = parse_block_constraints(parsed, block)
+            except Exception:
+                pass
+        if retry_issue and not extracted_constraints and not extracted_non_numeric:
+            parsed = heuristic_stage2_parse(block, answer)
+            response = OllamaResponse(text=json.dumps(parsed), mode="deterministic", model="deterministic")
             nlp_outputs.append(
                 {
                     "stage": "stage2",
-                    "nodeId": question["id"],
+                    "nodeId": block["id"],
                     "output": parsed,
                     "ollamaMode": response.mode,
                     "model": response.model,
                 }
             )
-            extracted_constraints, extracted_non_numeric = parse_constraints(
-                parsed,
-                concept,
-                allowed_semantic_ids,
-            )
+            extracted_constraints, extracted_non_numeric = parse_block_constraints(parsed, block)
+
         constraints.extend(extracted_constraints)
         non_numeric.extend(extracted_non_numeric)
-
-        if concept == "maxOperatingPressure" and extracted_constraints:
-            global_constraints["maxOperatingPressure"] = extracted_constraints[0]
-        if concept == "ratedFlowRate" and extracted_constraints:
-            global_constraints["ratedFlowRate"] = extracted_constraints[0]
-        if concept == "hydraulicFluid" and extracted_non_numeric:
-            global_constraints["hydraulicFluid"] = extracted_non_numeric[0]
-        if concept in {"tankLevelMax", "tankLevelMin"} and extracted_constraints:
-            global_constraints[concept] = extracted_constraints[0]
-        if concept == "tankNominalVolume" and extracted_constraints:
-            global_constraints["tankNominalVolume"] = extracted_constraints[0]
-        if concept == "prvSetpoint" and extracted_constraints:
-            global_constraints["prvSetpoint"] = extracted_constraints[0]
-        if concept == "accNominalVolume" and extracted_constraints:
-            global_constraints["accNominalVolume"] = extracted_constraints[0]
-        if concept == "accPreChargePressure" and extracted_constraints:
-            global_constraints["accPreChargePressure"] = extracted_constraints[0]
-        if concept == "accBARequirements":
-            volume_constraint = next(
-                (item for item in extracted_constraints if item.semantic_id == TANK_VOLUME_IRDI),
-                None,
-            )
-            precharge_constraint = next(
-                (item for item in extracted_constraints if item.semantic_id == ACC_PRECHARGE_SEM),
-                None,
-            )
-            if volume_constraint is None:
-                volume_constraint = next(
-                    (
-                        item
-                        for item in extracted_constraints
-                        if (item.unit or "").strip().lower().replace(" ", "") in {"l", "liter", "litre"}
-                    ),
-                    None,
-                )
-            if precharge_constraint is None:
-                precharge_constraint = next(
-                    (
-                        item
-                        for item in extracted_constraints
-                        if (item.unit or "").strip().lower().replace(" ", "") in {"bar", "mpa", "kpa", "pa"}
-                    ),
-                    None,
-                )
-            if volume_constraint is not None:
-                global_constraints["accNominalVolume"] = volume_constraint
-            if precharge_constraint is not None:
-                global_constraints["accPreChargePressure"] = precharge_constraint
-            entities = parsed.get("entities", {}) if isinstance(parsed, dict) else {}
-            if isinstance(entities, dict):
-                if "accNominalVolume" not in global_constraints:
-                    volume_value, volume_unit = extract_entity_quantity(entities.get("acc_volume"))
-                    if volume_value is not None:
-                        global_constraints["accNominalVolume"] = Constraint(
-                            semantic_id=TANK_VOLUME_IRDI,
-                            property_label="NominalVolume",
-                            operator="ge",
-                            value=volume_value,
-                            unit=volume_unit or "L",
-                            confidence=float(parsed.get("confidence", 0.0)),
-                            evidence=answer,
-                            concept="accNominalVolume",
-                        )
-                if "accPreChargePressure" not in global_constraints:
-                    precharge_value, precharge_unit = extract_entity_quantity(entities.get("acc_precharge"))
-                    if precharge_value is not None:
-                        global_constraints["accPreChargePressure"] = Constraint(
-                            semantic_id=ACC_PRECHARGE_SEM,
-                            property_label="PreChargePressure",
-                            operator="ge",
-                            value=precharge_value,
-                            unit=precharge_unit or "bar",
-                            confidence=float(parsed.get("confidence", 0.0)),
-                            evidence=answer,
-                            concept="accPreChargePressure",
-                        )
-
+        for item in extracted_constraints + extracted_non_numeric:
+            if item.concept in promoted_concepts and item.concept not in global_constraints:
+                global_constraints[item.concept] = item
     return constraints, non_numeric, global_constraints, user_inputs, nlp_outputs
 
 def infer_actuator_type(skeleton: Dict[str, Any]) -> str:

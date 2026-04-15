@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import base64
+import csv
 import datetime as dt
 import json
 import re
@@ -107,12 +108,15 @@ class Constraint:
     property_label: Optional[str]
     operator: str
     value: Optional[float] = None
+    value_max: Optional[float] = None
     unit: Optional[str] = None
     confidence: float = 0.0
     evidence: Optional[str] = None
     value_text: Optional[str] = None
     concept: Optional[str] = None
     defaulted_operator: bool = False
+    source_block_id: Optional[str] = None
+    target_component_types: List[str] = field(default_factory=list)
 
 @dataclass
 class SemanticRecord:
@@ -147,6 +151,7 @@ class IRDIRegistry:
     semantic_to_label: Dict[str, str] = field(default_factory=dict)
     semantic_to_concept: Dict[str, str] = field(default_factory=dict)
     semantic_to_description: Dict[str, str] = field(default_factory=dict)
+    label_to_semantic: Dict[str, str] = field(default_factory=dict)
 
 IRDI_REGISTRY: Optional[IRDIRegistry] = None
 IRDI_WARNED: set[str] = set()
@@ -166,6 +171,10 @@ def render_prompt(template: str, **kwargs: str) -> str:
     for key, value in kwargs.items():
         result = result.replace(f"{{{{{key}}}}}", value)
     return result
+
+
+def normalize_label_key(text: str) -> str:
+    return re.sub(r"[\s_-]+", "", str(text or "").strip().lower())
 
 def _xlsx_col_to_index(col_name: str) -> int:
     value = 0
@@ -435,6 +444,8 @@ def load_irdi_registry(path: Path) -> IRDIRegistry:
             registry.semantic_to_label[semantic_id] = label
             registry.semantic_to_concept[semantic_id] = concept
             registry.semantic_to_description[semantic_id] = description
+        if label:
+            registry.label_to_semantic.setdefault(normalize_label_key(label), semantic_id)
     return registry
 
 def resolve_irdi_registry_path(root_dir: Path) -> Path:
@@ -905,6 +916,182 @@ def write_aasx_with_updates(
                 zout.writestr(aas_rels_name, updated_aas_rels)
             for path, payload in extra_files.items():
                 zout.writestr(path, payload)
+
+
+def iter_technical_data_properties_xml(xml_root: ET.Element) -> List[ET.Element]:
+    submodel = xml_root.find(
+        ".//aas:submodels/aas:submodel[aas:idShort='TechnicalData']",
+        NS,
+    )
+    if submodel is None:
+        return []
+    return list(submodel.findall(".//aas:property", NS))
+
+
+def set_property_semantic_id(prop: ET.Element, semantic_id: str) -> None:
+    validate_semantic_id(semantic_id, "semantic_normalization")
+    sem_val = prop.find("aas:semanticId/aas:keys/aas:key/aas:value", NS)
+    if sem_val is None:
+        sem_elem = prop.find("aas:semanticId", NS)
+        if sem_elem is None:
+            sem_elem = ET.SubElement(prop, f"{{{AAS_NS}}}semanticId")
+        keys_elem = sem_elem.find("aas:keys", NS)
+        if keys_elem is None:
+            keys_elem = ET.SubElement(sem_elem, f"{{{AAS_NS}}}keys")
+        key_elem = keys_elem.find("aas:key", NS)
+        if key_elem is None:
+            key_elem = ET.SubElement(keys_elem, f"{{{AAS_NS}}}key")
+        type_elem = key_elem.find("aas:type", NS)
+        if type_elem is None:
+            type_elem = ET.SubElement(key_elem, f"{{{AAS_NS}}}type")
+        type_elem.text = "GlobalReference"
+        sem_val = key_elem.find("aas:value", NS)
+        if sem_val is None:
+            sem_val = ET.SubElement(key_elem, f"{{{AAS_NS}}}value")
+    sem_val.text = semantic_id
+
+
+def extract_asset_id_from_shell(shell: ET.Element) -> str:
+    asset_info = shell.find("aas:assetInformation", NS)
+    if asset_info is None:
+        return ""
+    direct = asset_info.findtext("aas:globalAssetId", default="", namespaces=NS).strip()
+    if direct:
+        return direct
+    return asset_info.findtext(
+        "aas:globalAssetId/aas:keys/aas:key/aas:value",
+        default="",
+        namespaces=NS,
+    ).strip()
+
+
+def extract_property_summary_rows(
+    aasx_path: Path,
+    asset_type_map: Dict[str, str],
+) -> List[Dict[str, Any]]:
+    xml_root, _ = read_aasx_xml(aasx_path)
+    shell = xml_root.find(".//aas:assetAdministrationShells/aas:assetAdministrationShell", NS)
+    if shell is None:
+        return []
+    aas_id = shell.findtext("aas:id", default="", namespaces=NS).strip()
+    asset_info = shell.find("aas:assetInformation", NS)
+    if asset_info is None:
+        return []
+    asset_type = asset_info.findtext("aas:assetType", default="", namespaces=NS).strip()
+    component_type = asset_type_map.get(asset_type, "")
+    rows: List[Dict[str, Any]] = []
+    for prop in iter_technical_data_properties_xml(xml_root):
+        semantic_id = prop.findtext(
+            "aas:semanticId/aas:keys/aas:key/aas:value",
+            default="",
+            namespaces=NS,
+        ).strip()
+        id_short = prop.findtext("aas:idShort", default="", namespaces=NS).strip()
+        if not semantic_id or not id_short:
+            continue
+        rows.append(
+            {
+                "Supplier": aasx_path.parent.name,
+                "AASFile": aasx_path.name,
+                "ComponentName": component_type,
+                "AASId": aas_id,
+                "AssetId": extract_asset_id_from_shell(shell),
+                "TechnicalPropertyIdShort": id_short,
+                "TechnicalPropertySemanticId": semantic_id,
+                "Value": prop.findtext("aas:value", default="", namespaces=NS).strip(),
+                "ValueType": prop.findtext("aas:valueType", default="", namespaces=NS).strip(),
+                "Unit": extract_unit_from_qualifiers_xml(prop) or "",
+                "UnitId": "",
+                "QuantityKind": "",
+            }
+        )
+    return rows
+
+
+def rebuild_local_technical_property_summary(
+    data_root: Path,
+    asset_type_map: Dict[str, str],
+    summary_path: Path,
+) -> List[Dict[str, Any]]:
+    rows: List[Dict[str, Any]] = []
+    for aasx_path in sorted(data_root.rglob("*.aasx")):
+        rows.extend(extract_property_summary_rows(aasx_path, asset_type_map))
+    summary_path.parent.mkdir(parents=True, exist_ok=True)
+    write_json(summary_path, rows)
+    csv_path = summary_path.with_suffix(".csv")
+    fieldnames = [
+        "Supplier",
+        "AASFile",
+        "ComponentName",
+        "AASId",
+        "AssetId",
+        "TechnicalPropertyIdShort",
+        "TechnicalPropertySemanticId",
+        "Value",
+        "ValueType",
+        "Unit",
+        "UnitId",
+        "QuantityKind",
+    ]
+    with csv_path.open("w", encoding="utf-8", newline="") as fh:
+        writer = csv.DictWriter(fh, fieldnames=fieldnames)
+        writer.writeheader()
+        for row in rows:
+            writer.writerow({name: row.get(name, "") for name in fieldnames})
+    register_known_semantic_ids([str(row.get("TechnicalPropertySemanticId") or "") for row in rows])
+    return rows
+
+
+def normalize_local_supplier_semantics(
+    data_root: Path,
+    asset_type_map: Dict[str, str],
+    summary_path: Path,
+    registry_path: Optional[Path] = None,
+) -> List[Dict[str, Any]]:
+    registry = IRDI_REGISTRY
+    if registry is None:
+        effective_path = registry_path or build_default_paths()["irdi_registry"]
+        registry = load_irdi_registry(effective_path)
+    changes: List[Dict[str, Any]] = []
+    for aasx_path in sorted(data_root.rglob("*.aasx")):
+        xml_root, xml_name = read_aasx_xml(aasx_path)
+        changed = False
+        for prop in iter_technical_data_properties_xml(xml_root):
+            id_short = prop.findtext("aas:idShort", default="", namespaces=NS).strip()
+            if not id_short:
+                continue
+            canonical_semantic_id = registry.label_to_semantic.get(normalize_label_key(id_short), "")
+            if not canonical_semantic_id:
+                continue
+            current_semantic_id = prop.findtext(
+                "aas:semanticId/aas:keys/aas:key/aas:value",
+                default="",
+                namespaces=NS,
+            ).strip()
+            if current_semantic_id == canonical_semantic_id:
+                continue
+            set_property_semantic_id(prop, canonical_semantic_id)
+            changes.append(
+                {
+                    "aasFile": aasx_path.name,
+                    "supplier": aasx_path.parent.name,
+                    "propertyIdShort": id_short,
+                    "oldSemanticId": current_semantic_id,
+                    "newSemanticId": canonical_semantic_id,
+                }
+            )
+            changed = True
+        if not changed:
+            continue
+        temp_path = aasx_path.with_name(f"{aasx_path.stem}.normalized.tmp{aasx_path.suffix}")
+        if temp_path.exists():
+            temp_path.unlink()
+        write_aasx_with_updates(aasx_path, temp_path, xml_name, xml_root, {})
+        temp_path.replace(aasx_path)
+    rebuild_local_technical_property_summary(data_root, asset_type_map, summary_path)
+    print(f"[IRDI] Semantic normalization updated {len(changes)} TechnicalData properties under {data_root}")
+    return changes
+
 
 def build_aas_spec_rels_name(xml_name: str) -> str:
     xml_path = Path(xml_name)
@@ -1721,6 +1908,53 @@ DIRECT_CONSTRAINT_META: Dict[str, Tuple[str, str, str]] = {
     "cylinderStroke": (CYL_STROKE_IRDI, "RatedStroke", "ge"),
 }
 
+ALL_FILTER_COMPONENT_TYPES = [
+    "Tank",
+    "ConstantPump",
+    "VariablePump",
+    "Double-ActingCylinder",
+    "SynchronousCylinder",
+    "PlungerCylinder",
+    "TelescopicCylinder",
+    "4-3DirectionalControlValve",
+    "3-2DirectionalControlValve",
+    "PressureReliefValve",
+    "CheckValve",
+    "BladderAccumulator",
+]
+
+DIRECT_CONSTRAINT_TARGETS: Dict[str, List[str]] = {
+    "maxOperatingPressure": ALL_FILTER_COMPONENT_TYPES,
+    "ratedFlowRate": [
+        "ConstantPump",
+        "VariablePump",
+        "4-3DirectionalControlValve",
+        "3-2DirectionalControlValve",
+        "PressureReliefValve",
+        "CheckValve",
+        "BladderAccumulator",
+    ],
+    "hydraulicFluid": [],
+    "tankNominalVolume": ["Tank"],
+    "tankLevelMax": ["Tank"],
+    "tankLevelMin": ["Tank"],
+    "prvSetpoint": ["PressureReliefValve"],
+    "accNominalVolume": ["BladderAccumulator"],
+    "accPreChargePressure": ["BladderAccumulator"],
+    "cylinderLoad": [
+        "Double-ActingCylinder",
+        "SynchronousCylinder",
+        "PlungerCylinder",
+        "TelescopicCylinder",
+    ],
+    "cylinderStroke": [
+        "Double-ActingCylinder",
+        "SynchronousCylinder",
+        "PlungerCylinder",
+        "TelescopicCylinder",
+    ],
+}
+
 
 def build_default_paths() -> Dict[str, Path]:
     return {
@@ -1773,16 +2007,23 @@ def make_constraint_from_spec(concept: str, spec: Dict[str, Any]) -> Constraint:
             confidence=1.0,
             evidence="direct_constraint_input",
             concept=concept,
+            source_block_id="direct_input",
+            target_component_types=list(DIRECT_CONSTRAINT_TARGETS.get(concept, [])),
         )
+    value_max = spec.get("value_max")
+    value_max_num = None if value_max is None else float(value_max)
     return Constraint(
         semantic_id=semantic_id,
         property_label=property_label,
         operator=str(spec.get("operator", default_operator)),
         value=float(spec["value"]),
+        value_max=value_max_num,
         unit=spec.get("unit"),
         confidence=1.0,
         evidence="direct_constraint_input",
         concept=concept,
+        source_block_id="direct_input",
+        target_component_types=list(DIRECT_CONSTRAINT_TARGETS.get(concept, [])),
     )
 
 
@@ -2255,6 +2496,7 @@ def run_qa_mode(args: argparse.Namespace) -> int:
 
     output_dirs = resolve_output_dirs(args.output_dir)
     qa_tree, library, skeletons = load_runtime_library(args.qa_tree, args.skeleton_library)
+    asset_type_map = build_asset_type_map(library)
     client = nlp.OllamaClient(model=args.model, mode=args.ollama_mode)
     stage1_template = load_prompt_template(PROJECT_ROOT / "prompts" / "stage1_prompt.txt")
     stage2_template = load_prompt_template(PROJECT_ROOT / "prompts" / "stage2_prompt.txt")
@@ -2279,31 +2521,12 @@ def run_qa_mode(args: argparse.Namespace) -> int:
         lexicon_entries,
         concept_index,
     )
-    excluded_filter_concepts = {"tankLevelMax", "tankLevelMin"}
-    selection_constraints = [
-        constraint for constraint in stage2_constraints if constraint.concept not in excluded_filter_concepts
-    ]
-
-    asset_type_map = build_asset_type_map(library)
     candidates_by_asset = load_candidate_components(args, asset_type_map)
-    requirements = {
-        "maxOperatingPressure": selection_module.normalize_constraint_value(global_constraints.get("maxOperatingPressure")),
-        "ratedFlowRate": selection_module.normalize_constraint_value(global_constraints.get("ratedFlowRate")),
-        "tankNominalVolume": selection_module.normalize_constraint_value(global_constraints.get("tankNominalVolume")),
-        "prvSetpoint": selection_module.normalize_constraint_value(global_constraints.get("prvSetpoint")),
-        "accNominalVolume": selection_module.normalize_constraint_value(global_constraints.get("accNominalVolume")),
-        "accPreChargePressure": selection_module.normalize_constraint_value(global_constraints.get("accPreChargePressure")),
-        "cylinderLoad": selection_module.normalize_constraint_value(
-            selection_module.get_constraint_by_concept(selection_constraints, "cylinderLoad")
-        ),
-        "cylinderStroke": selection_module.normalize_constraint_value(
-            selection_module.get_constraint_by_concept(selection_constraints, "cylinderStroke")
-        ),
-    }
-    selection, selection_results, backtracking_log = selection_module.select_components(
+    slot_constraints = selection_module.build_slot_constraints(selected_skeleton, stage2_constraints)
+    selection, selection_results, backtracking_log, filter_audit = selection_module.select_components(
         selected_skeleton,
         candidates_by_asset,
-        requirements,
+        slot_constraints,
     )
     audit = {
         "metadata": {
@@ -2323,10 +2546,13 @@ def run_qa_mode(args: argparse.Namespace) -> int:
                 "operator": c.operator,
                 "value": c.value,
                 "unit": c.unit,
+                "valueMax": c.value_max,
                 "confidence": c.confidence,
                 "evidence": c.evidence,
                 "concept": c.concept,
                 "operatorDefaulted": c.defaulted_operator,
+                "sourceBlockId": c.source_block_id,
+                "targetComponentTypes": c.target_component_types,
             }
             for c in stage2_constraints
         ],
@@ -2338,6 +2564,8 @@ def run_qa_mode(args: argparse.Namespace) -> int:
                 "confidence": c.confidence,
                 "evidence": c.evidence,
                 "concept": c.concept,
+                "sourceBlockId": c.source_block_id,
+                "targetComponentTypes": c.target_component_types,
             }
             for c in stage2_non_numeric
         ],
@@ -2346,11 +2574,29 @@ def run_qa_mode(args: argparse.Namespace) -> int:
                 "semanticId": c.semantic_id,
                 "canonicalLabel": semantic_to_label.get(c.semantic_id, ""),
                 "concept": c.concept,
+                "sourceBlockId": c.source_block_id,
+                "targetComponentTypes": c.target_component_types,
             }
             for c in stage2_constraints
         ],
+        "slotConstraints": {
+            slot_id: [
+                {
+                    "semanticId": c.semantic_id,
+                    "concept": c.concept,
+                    "operator": c.operator,
+                    "value": c.value,
+                    "valueMax": c.value_max,
+                    "unit": c.unit,
+                    "sourceBlockId": c.source_block_id,
+                }
+                for c in items
+            ]
+            for slot_id, items in slot_constraints.items()
+        },
         "selectionResults": selection_results,
         "selectionBacktracking": backtracking_log,
+        "filterExecution": filter_audit,
     }
     symbol_mapping = drawing.load_symbol_mapping(args.symbol_map, PROJECT_ROOT)
     xml_root, _xml_name = read_aasx_xml(system_aasx)
@@ -2381,27 +2627,20 @@ def run_network_mode(args: argparse.Namespace) -> int:
 
     output_dirs = resolve_output_dirs(args.output_dir)
     _qa_tree, library, _skeletons = load_runtime_library(args.qa_tree, args.skeleton_library)
+    asset_type_map = build_asset_type_map(library)
     mapping_semantics = load_component_port_semantics_from_mapping(args.mapping_xlsx)
     network_data, network_input_path = load_network_definition(args)
     selected_skeleton = build_network_skeleton(network_data, mapping_semantics, library.get("componentCatalog", []))
 
-    direct_constraints, global_constraints, requirements = load_constraints_from_json(args.constraints_json)
-    asset_type_map = build_asset_type_map(library)
+    direct_constraints, global_constraints, _requirements = load_constraints_from_json(args.constraints_json)
     candidates_by_asset = load_candidate_components(args, asset_type_map)
-    if requirements:
-        selection, selection_results, backtracking_log = selection_module.select_components(
-            selected_skeleton,
-            candidates_by_asset,
-            requirements,
-        )
-        selection_mode = "constraint_filtered"
-    else:
-        selection, selection_results, backtracking_log = selection_module.select_components_random_by_type(
-            selected_skeleton,
-            candidates_by_asset,
-            seed=args.random_seed,
-        )
-        selection_mode = "random_by_component_type"
+    slot_constraints = selection_module.build_slot_constraints(selected_skeleton, direct_constraints)
+    selection, selection_results, backtracking_log, filter_audit = selection_module.select_components(
+        selected_skeleton,
+        candidates_by_asset,
+        slot_constraints,
+    )
+    selection_mode = "constraint_filtered" if direct_constraints else "deterministic_without_constraints"
     audit = {
         "metadata": {
             "timestamp": dt.datetime.now().isoformat(),
@@ -2425,10 +2664,13 @@ def run_network_mode(args: argparse.Namespace) -> int:
                 "operator": c.operator,
                 "value": c.value,
                 "unit": c.unit,
+                "valueMax": c.value_max,
                 "confidence": c.confidence,
                 "evidence": c.evidence,
                 "concept": c.concept,
                 "operatorDefaulted": c.defaulted_operator,
+                "sourceBlockId": c.source_block_id,
+                "targetComponentTypes": c.target_component_types,
             }
             for c in direct_constraints
             if c.value is not None
@@ -2441,10 +2683,27 @@ def run_network_mode(args: argparse.Namespace) -> int:
                 "confidence": c.confidence,
                 "evidence": c.evidence,
                 "concept": c.concept,
+                "sourceBlockId": c.source_block_id,
+                "targetComponentTypes": c.target_component_types,
             }
             for c in direct_constraints
             if c.value_text
         ],
+        "slotConstraints": {
+            slot_id: [
+                {
+                    "semanticId": c.semantic_id,
+                    "concept": c.concept,
+                    "operator": c.operator,
+                    "value": c.value,
+                    "valueMax": c.value_max,
+                    "unit": c.unit,
+                    "sourceBlockId": c.source_block_id,
+                }
+                for c in items
+            ]
+            for slot_id, items in slot_constraints.items()
+        },
         "mappingSemantics": {
             "mappingFile": str(args.mapping_xlsx),
             "componentCount": len(mapping_semantics),
@@ -2452,6 +2711,7 @@ def run_network_mode(args: argparse.Namespace) -> int:
         "volumeNodeTopology": selected_skeleton.get("volumeNodes", []),
         "selectionResults": selection_results,
         "selectionBacktracking": backtracking_log,
+        "filterExecution": filter_audit,
     }
     symbol_mapping = drawing.load_symbol_mapping(args.symbol_map, PROJECT_ROOT)
     xml_root, _xml_name = read_aasx_xml(system_aasx)

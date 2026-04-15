@@ -740,243 +740,776 @@
     ]
   },
   "stage2": {
-    "goal": "Collect only sizing inputs needed for component selection after a v2 skeleton is selected.",
-    "globalQuestions": [
+    "goal": "Collect block-level filtering inputs after a v2 skeleton is selected. Each active block is asked once, and the user may provide only the properties they want to constrain.",
+    "globalBlocks": [
       {
-        "id": "G1_MAX_PRESSURE",
-        "prompt": "Enter the maximum operating pressure P_max (e.g., 210 bar).",
+        "id": "GLOBAL_FILTERS",
+        "prompt": "Please define the global system parameters you want to constrain (e.g. Maximum operating pressure, Rated flow rate, Hydraulic fluid). You may provide only the properties you want to filter.",
         "expects": {
           "entities": [
             {
-              "name": "maxOperatingPressure",
-              "type": "quantity_pressure",
-              "required": true
+              "name": "global_filters",
+              "type": "block",
+              "required": false
             }
           ]
         },
-        "alignment": {
-          "concept": "maxOperatingPressure"
-        },
+        "properties": [
+          {
+            "concept": "maxOperatingPressure",
+            "label": "MaxOperatingPressure",
+            "kind": "numeric",
+            "type": "quantity_pressure",
+            "semanticId": "0173-1#02-AAZ943#003",
+            "defaultOperator": "ge",
+            "targetComponentTypes": [
+              "Tank",
+              "ConstantPump",
+              "VariablePump",
+              "Double-ActingCylinder",
+              "SynchronousCylinder",
+              "PlungerCylinder",
+              "TelescopicCylinder",
+              "4-3DirectionalControlValve",
+              "3-2DirectionalControlValve",
+              "PressureReliefValve",
+              "CheckValve",
+              "BladderAccumulator"
+            ],
+            "keywords": [
+              "maximum operating pressure",
+              "max operating pressure",
+              "system pressure",
+              "operating pressure"
+            ]
+          },
+          {
+            "concept": "ratedFlowRate",
+            "label": "NominalFlowRate",
+            "kind": "numeric",
+            "type": "quantity_flow",
+            "semanticId": "0173-1#02-ABC551#003",
+            "defaultOperator": "ge",
+            "targetComponentTypes": [
+              "ConstantPump",
+              "VariablePump",
+              "4-3DirectionalControlValve",
+              "3-2DirectionalControlValve",
+              "PressureReliefValve",
+              "CheckValve",
+              "BladderAccumulator"
+            ],
+            "keywords": [
+              "rated flow rate",
+              "nominal flow rate",
+              "flow rate",
+              "flow"
+            ]
+          },
+          {
+            "concept": "hydraulicFluid",
+            "label": "HydraulicFluid",
+            "kind": "text",
+            "type": "string",
+            "semanticId": "0173-1#02-AAR454#003",
+            "defaultOperator": "eq",
+            "targetComponentTypes": [],
+            "keywords": [
+              "hydraulic fluid",
+              "fluid grade",
+              "fluid type",
+              "oil grade",
+              "oil"
+            ]
+          }
+        ],
         "onLowConfidence": {
           "action": "ask_clarification",
-          "clarificationPrompt": "Please provide the maximum operating pressure with unit (e.g., 210 bar)."
-        }
-      },
-      {
-        "id": "G2_RATED_FLOW",
-        "prompt": "Enter the rated flow rate Q_rated (e.g., 25 L/min).",
-        "expects": {
-          "entities": [
-            {
-              "name": "ratedFlowRate",
-              "type": "quantity_flow",
-              "required": true
-            }
-          ]
-        },
-        "alignment": {
-          "concept": "ratedFlowRate"
-        },
-        "onLowConfidence": {
-          "action": "ask_clarification",
-          "clarificationPrompt": "Please provide the rated flow rate with unit (e.g., 25 L/min)."
-        }
-      },
-      {
-        "id": "G3_HYDRAULIC_FLUID",
-        "prompt": "Specify the hydraulic fluid (e.g., HLP 46 or ISO VG 46).",
-        "expects": {
-          "entities": [
-            {
-              "name": "hydraulicFluid",
-              "type": "string",
-              "required": true
-            }
-          ]
-        },
-        "alignment": {
-          "concept": "hydraulicFluid"
-        },
-        "onLowConfidence": {
-          "action": "ask_clarification",
-          "clarificationPrompt": "Please specify the hydraulic fluid grade (e.g., HLP 46)."
+          "clarificationPrompt": "Please answer with labeled global properties, for example: Max operating pressure 210 bar; Rated flow rate 25 L/min; Hydraulic fluid HLP 46."
         }
       }
     ],
-    "conditionalQuestions": [
-      {
-        "id": "TANK_LEVELS",
-        "when": {
-          "requiresTank": true
-        },
-        "questions": [
-          {
-            "id": "T0_TANK_VOLUME",
-            "prompt": "Enter the required tank volume in L (e.g., 80 L).",
-            "expects": {
-              "entities": [
-                {
-                  "name": "tank_volume",
-                  "type": "quantity_volume",
-                  "required": true
-                }
-              ]
-            },
-            "alignment": {
-              "concept": "tankNominalVolume"
-            },
-            "onLowConfidence": {
-              "action": "ask_clarification",
-              "clarificationPrompt": "Please provide the required tank volume with unit (e.g., 80 L)."
-            }
-          },
-          {
-            "id": "T1_TANK_LEVEL_MAX",
-            "prompt": "Enter the maximum tank level in mm (e.g., 800 mm).",
-            "expects": {
-              "entities": [
-                {
-                  "name": "tank_level_max",
-                  "type": "quantity_length",
-                  "required": true
-                }
-              ]
-            },
-            "alignment": {
-              "concept": "tankLevelMax"
-            },
-            "onLowConfidence": {
-              "action": "ask_clarification",
-              "clarificationPrompt": "Please provide the maximum tank level with unit (e.g., 0.80 m)."
-            }
-          },
-          {
-            "id": "T2_TANK_LEVEL_MIN",
-            "prompt": "Enter the minimum tank level in mm (e.g., 200 mm).",
-            "expects": {
-              "entities": [
-                {
-                  "name": "tank_level_min",
-                  "type": "quantity_length",
-                  "required": true
-                }
-              ]
-            },
-            "alignment": {
-              "concept": "tankLevelMin"
-            },
-            "onLowConfidence": {
-              "action": "ask_clarification",
-              "clarificationPrompt": "Please provide the minimum tank level with unit (e.g., 0.20 m)."
-            }
-          }
-        ]
-      },
-      {
-        "id": "PRV_SETPOINT",
-        "when": {
-          "requiresPrv": true
-        },
-        "questions": [
-          {
-            "id": "PRV1_SETPOINT",
-            "prompt": "Enter the pressure protection setpoint in bar (e.g., 180 bar).",
-            "expects": {
-              "entities": [
-                {
-                  "name": "prv_setpoint",
-                  "type": "quantity_pressure",
-                  "required": true
-                }
-              ]
-            },
-            "alignment": {
-              "concept": "prvSetpoint"
-            },
-            "onLowConfidence": {
-              "action": "ask_clarification",
-              "clarificationPrompt": "Please provide the pressure protection setpoint with unit (e.g., 180 bar)."
-            }
-          }
-        ]
-      },
-      {
-        "id": "ACC_REQUIREMENTS",
-        "when": {
-          "requiresAccumulator": true
-        },
-        "questions": [
-          {
-            "id": "ACC0_BA_REQUIREMENTS",
-            "prompt": "Provide the bladder accumulator requirements as: volume (L) AND pre-charge pressure (bar). Example: 6 L, 2.5 bar.",
-            "expects": {
-              "entities": [
-                {
-                  "name": "acc_volume",
-                  "type": "quantity_volume",
-                  "required": true
-                },
-                {
-                  "name": "acc_precharge",
-                  "type": "quantity_pressure",
-                  "required": true
-                }
-              ]
-            },
-            "alignment": {
-              "concept": "accBARequirements"
-            },
-            "onLowConfidence": {
-              "action": "ask_clarification",
-              "clarificationPrompt": "Please provide BOTH values with units, e.g., 6 L and 2.5 bar."
-            }
-          }
-        ]
-      }
-    ],
-    "actuatorQuestions": {
+    "actuatorBlocks": {
       "cylinder": [
         {
-          "id": "C1_LOAD",
-          "prompt": "Enter the target load as force or mass (e.g., 15 kN or 1.2 t).",
+          "id": "ACTUATOR_CYLINDER_FILTERS",
+          "prompt": "Please define the cylinder parameters you want to constrain (e.g. Rated stroke, Piston diameter, Rod diameter, Rated cylinder advancing force, Rated pressure, Maximum operating pressure). You may provide only the properties you want to filter.",
           "expects": {
             "entities": [
               {
-                "name": "load",
-                "type": "quantity_force_or_mass",
-                "required": true
+                "name": "cylinder_filters",
+                "type": "block",
+                "required": false
               }
             ]
           },
-          "alignment": {
-            "concept": "cylinderLoad"
-          },
+          "properties": [
+            {
+              "concept": "cylinderStroke",
+              "label": "RatedStroke",
+              "kind": "numeric",
+              "type": "quantity_length",
+              "semanticId": "0173-1#02-ABC413#003",
+              "defaultOperator": "ge",
+              "targetComponentTypes": [
+                "Double-ActingCylinder",
+                "SynchronousCylinder",
+                "PlungerCylinder",
+                "TelescopicCylinder"
+              ],
+              "keywords": [
+                "rated stroke",
+                "stroke",
+                "stroke length"
+              ]
+            },
+            {
+              "concept": "pistonDiameter",
+              "label": "PistonDiameter",
+              "kind": "numeric",
+              "type": "quantity_length",
+              "semanticId": "0173-1#02-AAZ420#004",
+              "defaultOperator": "eq",
+              "targetComponentTypes": [
+                "Double-ActingCylinder",
+                "SynchronousCylinder",
+                "PlungerCylinder",
+                "TelescopicCylinder"
+              ],
+              "keywords": [
+                "piston diameter",
+                "bore diameter",
+                "bore"
+              ]
+            },
+            {
+              "concept": "rodDiameter",
+              "label": "RodDiameter",
+              "kind": "numeric",
+              "type": "quantity_length",
+              "semanticId": "0173-1#02-BAA151#006",
+              "defaultOperator": "eq",
+              "targetComponentTypes": [
+                "Double-ActingCylinder",
+                "SynchronousCylinder",
+                "PlungerCylinder",
+                "TelescopicCylinder"
+              ],
+              "keywords": [
+                "rod diameter",
+                "rod size"
+              ]
+            },
+            {
+              "concept": "cylinderLoad",
+              "label": "RatedCylinderAdvancingForce",
+              "kind": "numeric",
+              "type": "quantity_force_or_mass",
+              "semanticId": "0173-1#02-AAZ980#003",
+              "defaultOperator": "ge",
+              "targetComponentTypes": [
+                "Double-ActingCylinder",
+                "SynchronousCylinder",
+                "PlungerCylinder",
+                "TelescopicCylinder"
+              ],
+              "keywords": [
+                "rated cylinder advancing force",
+                "target force",
+                "load",
+                "force",
+                "mass"
+              ]
+            },
+            {
+              "concept": "cylinderRatedPressure",
+              "label": "RatedPressure",
+              "kind": "numeric",
+              "type": "quantity_pressure",
+              "semanticId": "0173-1#02-ABL809#001",
+              "defaultOperator": "ge",
+              "targetComponentTypes": [
+                "Double-ActingCylinder",
+                "SynchronousCylinder",
+                "PlungerCylinder",
+                "TelescopicCylinder"
+              ],
+              "keywords": [
+                "rated pressure"
+              ]
+            },
+            {
+              "concept": "cylinderMaxOperatingPressure",
+              "label": "MaxOperatingPressure",
+              "kind": "numeric",
+              "type": "quantity_pressure",
+              "semanticId": "0173-1#02-AAZ943#003",
+              "defaultOperator": "ge",
+              "targetComponentTypes": [
+                "Double-ActingCylinder",
+                "SynchronousCylinder",
+                "PlungerCylinder",
+                "TelescopicCylinder"
+              ],
+              "keywords": [
+                "maximum operating pressure",
+                "max operating pressure"
+              ]
+            }
+          ],
           "onLowConfidence": {
             "action": "ask_clarification",
-            "clarificationPrompt": "Please provide a load value as force or mass (e.g., 15 kN or 1.2 t)."
-          }
-        },
-        {
-          "id": "C2_STROKE",
-          "prompt": "Enter the cylinder stroke length (e.g., 0.50 m).",
-          "expects": {
-            "entities": [
-              {
-                "name": "stroke",
-                "type": "quantity_length",
-                "required": true
-              }
-            ]
-          },
-          "alignment": {
-            "concept": "cylinderStroke"
-          },
-          "onLowConfidence": {
-            "action": "ask_clarification",
-            "clarificationPrompt": "Please provide the stroke length with unit (e.g., 0.50 m)."
+            "clarificationPrompt": "Please answer with labeled cylinder properties, for example: Stroke 800 mm; Piston diameter 120 mm; Rod diameter 60 mm; Force 20 kN; Rated pressure 250 bar."
           }
         }
       ]
-    }
+    },
+    "conditionalBlocks": [
+      {
+        "id": "PUMP_FILTERS",
+        "when": {
+          "requiresPump": true
+        },
+        "prompt": "Please define the pump parameters you want to constrain (e.g. Specified maximum total flow rate, Nominal flow rate, Nominal outlet pressure, Specified maximum outlet pressure, Nominal speed of the drive, Specified maximum mechanical power). You may provide only the properties you want to filter.",
+        "expects": {
+          "entities": [
+            {
+              "name": "pump_filters",
+              "type": "block",
+              "required": false
+            }
+          ]
+        },
+        "properties": [
+          {
+            "concept": "pumpSpecifiedMaximumTotalFlowRate",
+            "label": "SpecifiedMaximumTotalFlowRate",
+            "kind": "numeric",
+            "type": "quantity_flow",
+            "semanticId": "0173-1#02-AAZ826#003",
+            "defaultOperator": "ge",
+            "targetComponentTypes": [
+              "ConstantPump",
+              "VariablePump"
+            ],
+            "keywords": [
+              "specified maximum total flow rate",
+              "maximum total flow rate",
+              "max total flow rate"
+            ]
+          },
+          {
+            "concept": "pumpNominalFlowRate",
+            "label": "NominalFlowRate",
+            "kind": "numeric",
+            "type": "quantity_flow",
+            "semanticId": "0173-1#02-ABC551#003",
+            "defaultOperator": "ge",
+            "targetComponentTypes": [
+              "ConstantPump",
+              "VariablePump"
+            ],
+            "keywords": [
+              "nominal flow rate",
+              "pump flow rate",
+              "flow"
+            ]
+          },
+          {
+            "concept": "pumpNominalOutletPressure",
+            "label": "NominalOutletPressure",
+            "kind": "numeric",
+            "type": "quantity_pressure",
+            "semanticId": "0173-1#02-ABC511#003",
+            "defaultOperator": "ge",
+            "targetComponentTypes": [
+              "ConstantPump",
+              "VariablePump"
+            ],
+            "keywords": [
+              "nominal outlet pressure",
+              "operating pressure"
+            ]
+          },
+          {
+            "concept": "pumpSpecifiedMaximumOutletPressure",
+            "label": "SpecifiedMaximumOutletPressure",
+            "kind": "numeric",
+            "type": "quantity_pressure",
+            "semanticId": "0173-1#02-ABC510#003",
+            "defaultOperator": "ge",
+            "targetComponentTypes": [
+              "ConstantPump",
+              "VariablePump"
+            ],
+            "keywords": [
+              "specified maximum outlet pressure",
+              "maximum outlet pressure",
+              "maximum operating pressure"
+            ]
+          },
+          {
+            "concept": "pumpNominalSpeedOfTheDrive",
+            "label": "NominalSpeedOfTheDrive",
+            "kind": "numeric",
+            "type": "quantity_scalar",
+            "semanticId": "0173-1#02-AAC881#008",
+            "defaultOperator": "ge",
+            "targetComponentTypes": [
+              "ConstantPump",
+              "VariablePump"
+            ],
+            "keywords": [
+              "nominal speed of the drive",
+              "maximum speed",
+              "speed"
+            ]
+          },
+          {
+            "concept": "pumpSpecifiedMaximumMechanicalPower",
+            "label": "SpecifiedMaximumMechanicalPower",
+            "kind": "numeric",
+            "type": "quantity_scalar",
+            "semanticId": "0173-1#02-ABC709#003",
+            "defaultOperator": "ge",
+            "targetComponentTypes": [
+              "ConstantPump",
+              "VariablePump"
+            ],
+            "keywords": [
+              "specified maximum mechanical power",
+              "maximum mechanical power",
+              "maximum power"
+            ]
+          },
+          {
+            "concept": "pumpSpecifiedMaximumHydraulicPower",
+            "label": "SpecifiedMaximumHydraulicPower",
+            "kind": "numeric",
+            "type": "quantity_scalar",
+            "semanticId": "0173-1#02-ABC686#003",
+            "defaultOperator": "ge",
+            "targetComponentTypes": [
+              "ConstantPump",
+              "VariablePump"
+            ],
+            "keywords": [
+              "specified maximum hydraulic power",
+              "maximum hydraulic power",
+              "hydraulic power"
+            ]
+          }
+        ],
+        "onLowConfidence": {
+          "action": "ask_clarification",
+          "clarificationPrompt": "Please answer with labeled pump properties, for example: Maximum total flow rate 30 L/min; Maximum outlet pressure 250 bar; Maximum mechanical power 5 kW."
+        }
+      },
+      {
+        "id": "DCV_FILTERS",
+        "when": {
+          "requiresDcv": true
+        },
+        "prompt": "Please define the directional control valve parameters you want to constrain (e.g. Nominal flow rate, Specified maximum total flow rate, Maximum operating pressure, Normal operating pressure, Pressure difference). You may provide only the properties you want to filter.",
+        "expects": {
+          "entities": [
+            {
+              "name": "dcv_filters",
+              "type": "block",
+              "required": false
+            }
+          ]
+        },
+        "properties": [
+          {
+            "concept": "dcvNominalFlowRate",
+            "label": "NominalFlowRate",
+            "kind": "numeric",
+            "type": "quantity_flow",
+            "semanticId": "0173-1#02-ABC551#003",
+            "defaultOperator": "ge",
+            "targetComponentTypes": [
+              "4-3DirectionalControlValve",
+              "3-2DirectionalControlValve"
+            ],
+            "keywords": [
+              "nominal flow rate",
+              "flow rate",
+              "flow"
+            ]
+          },
+          {
+            "concept": "dcvSpecifiedMaximumTotalFlowRate",
+            "label": "SpecifiedMaximumTotalFlowRate",
+            "kind": "numeric",
+            "type": "quantity_flow",
+            "semanticId": "0173-1#02-AAZ826#003",
+            "defaultOperator": "ge",
+            "targetComponentTypes": [
+              "4-3DirectionalControlValve",
+              "3-2DirectionalControlValve"
+            ],
+            "keywords": [
+              "specified maximum total flow rate",
+              "maximum total flow rate"
+            ]
+          },
+          {
+            "concept": "dcvMaxOperatingPressure",
+            "label": "MaxOperatingPressure",
+            "kind": "numeric",
+            "type": "quantity_pressure",
+            "semanticId": "0173-1#02-AAZ943#003",
+            "defaultOperator": "ge",
+            "targetComponentTypes": [
+              "4-3DirectionalControlValve",
+              "3-2DirectionalControlValve"
+            ],
+            "keywords": [
+              "maximum operating pressure",
+              "max operating pressure"
+            ]
+          },
+          {
+            "concept": "dcvNormalOperatingPressure",
+            "label": "NormalOperatingPressure",
+            "kind": "numeric",
+            "type": "quantity_pressure",
+            "semanticId": "0173-1#02-ABI704#002",
+            "defaultOperator": "ge",
+            "targetComponentTypes": [
+              "4-3DirectionalControlValve",
+              "3-2DirectionalControlValve"
+            ],
+            "keywords": [
+              "normal operating pressure",
+              "operating pressure"
+            ]
+          },
+          {
+            "concept": "dcvPressureDifference",
+            "label": "NominalPressureDifference",
+            "kind": "numeric",
+            "type": "quantity_pressure",
+            "semanticId": "0173-1#02-ABC539#003",
+            "defaultOperator": "le",
+            "targetComponentTypes": [
+              "4-3DirectionalControlValve",
+              "3-2DirectionalControlValve"
+            ],
+            "keywords": [
+              "pressure difference",
+              "pressure drop"
+            ]
+          }
+        ],
+        "onLowConfidence": {
+          "action": "ask_clarification",
+          "clarificationPrompt": "Please answer with labeled DCV properties, for example: Nominal flow rate 20 L/min; Maximum operating pressure 250 bar; Pressure difference 0.6 bar."
+        }
+      },
+      {
+        "id": "TANK_FILTERS",
+        "when": {
+          "requiresTank": true
+        },
+        "prompt": "Please define the tank parameters you want to constrain (e.g. Nominal volume, Maximum operating pressure, maximum allowed length, maximum allowed width, maximum allowed height). You may provide only the properties you want to filter.",
+        "expects": {
+          "entities": [
+            {
+              "name": "tank_filters",
+              "type": "block",
+              "required": false
+            }
+          ]
+        },
+        "properties": [
+          {
+            "concept": "tankNominalVolume",
+            "label": "NominalVolume",
+            "kind": "numeric",
+            "type": "quantity_volume",
+            "semanticId": "0173-1#02-AAR733#005",
+            "defaultOperator": "ge",
+            "targetComponentTypes": [
+              "Tank"
+            ],
+            "keywords": [
+              "nominal volume",
+              "tank volume",
+              "volume"
+            ]
+          },
+          {
+            "concept": "tankMaxOperatingPressure",
+            "label": "MaxOperatingPressure",
+            "kind": "numeric",
+            "type": "quantity_pressure",
+            "semanticId": "0173-1#02-AAZ943#003",
+            "defaultOperator": "ge",
+            "targetComponentTypes": [
+              "Tank"
+            ],
+            "keywords": [
+              "maximum operating pressure",
+              "max operating pressure"
+            ]
+          },
+          {
+            "concept": "tankLength",
+            "label": "Length",
+            "kind": "numeric",
+            "type": "quantity_length",
+            "semanticId": "0173-1#02-AAA128#009",
+            "defaultOperator": "le",
+            "targetComponentTypes": [
+              "Tank"
+            ],
+            "keywords": [
+              "maximum allowed length",
+              "length"
+            ]
+          },
+          {
+            "concept": "tankWidth",
+            "label": "Width",
+            "kind": "numeric",
+            "type": "quantity_length",
+            "semanticId": "0173-1#02-AAE604#007",
+            "defaultOperator": "le",
+            "targetComponentTypes": [
+              "Tank"
+            ],
+            "keywords": [
+              "maximum allowed width",
+              "width"
+            ]
+          },
+          {
+            "concept": "tankHeight",
+            "label": "High",
+            "kind": "numeric",
+            "type": "quantity_length",
+            "semanticId": "0173-1#02-AAC850#008",
+            "defaultOperator": "le",
+            "targetComponentTypes": [
+              "Tank"
+            ],
+            "keywords": [
+              "maximum allowed height",
+              "height",
+              "high"
+            ]
+          }
+        ],
+        "onLowConfidence": {
+          "action": "ask_clarification",
+          "clarificationPrompt": "Please answer with labeled tank properties, for example: Nominal volume 80 L; Maximum operating pressure 20 bar; Length 800 mm; Width 500 mm; Height 900 mm."
+        }
+      },
+      {
+        "id": "PRV_FILTERS",
+        "when": {
+          "requiresPrv": true
+        },
+        "prompt": "Please define the PRV parameters you want to constrain (e.g. Protection setpoint, Nominal flow rate, Pressure difference). You may provide only the properties you want to filter.",
+        "expects": {
+          "entities": [
+            {
+              "name": "prv_filters",
+              "type": "block",
+              "required": false
+            }
+          ]
+        },
+        "properties": [
+          {
+            "concept": "prvSetpoint",
+            "label": "NominalCrackingPressure",
+            "kind": "numeric",
+            "type": "quantity_pressure",
+            "semanticId": "0173-1#02-ABC527#003",
+            "defaultOperator": "le",
+            "targetComponentTypes": [
+              "PressureReliefValve"
+            ],
+            "keywords": [
+              "protection setpoint",
+              "setpoint",
+              "cracking pressure"
+            ]
+          },
+          {
+            "concept": "prvNominalFlowRate",
+            "label": "NominalFlowRate",
+            "kind": "numeric",
+            "type": "quantity_flow",
+            "semanticId": "0173-1#02-ABC551#003",
+            "defaultOperator": "ge",
+            "targetComponentTypes": [
+              "PressureReliefValve"
+            ],
+            "keywords": [
+              "nominal flow rate",
+              "flow rate",
+              "flow"
+            ]
+          },
+          {
+            "concept": "prvPressureDifference",
+            "label": "NominalPressureDifference",
+            "kind": "numeric",
+            "type": "quantity_pressure",
+            "semanticId": "0173-1#02-ABC539#003",
+            "defaultOperator": "le",
+            "targetComponentTypes": [
+              "PressureReliefValve"
+            ],
+            "keywords": [
+              "pressure difference",
+              "pressure drop"
+            ]
+          }
+        ],
+        "onLowConfidence": {
+          "action": "ask_clarification",
+          "clarificationPrompt": "Please answer with labeled PRV properties, for example: Setpoint 180 bar; Nominal flow rate 25 L/min; Pressure difference 1 bar."
+        }
+      },
+      {
+        "id": "ACC_FILTERS",
+        "when": {
+          "requiresAccumulator": true
+        },
+        "prompt": "Please define the accumulator parameters you want to constrain (e.g. Nominal volume, Pre-charge pressure, Dead volume). You may provide only the properties you want to filter.",
+        "expects": {
+          "entities": [
+            {
+              "name": "accumulator_filters",
+              "type": "block",
+              "required": false
+            }
+          ]
+        },
+        "properties": [
+          {
+            "concept": "accNominalVolume",
+            "label": "NominalVolume",
+            "kind": "numeric",
+            "type": "quantity_volume",
+            "semanticId": "0173-1#02-AAR733#005",
+            "defaultOperator": "ge",
+            "targetComponentTypes": [
+              "BladderAccumulator"
+            ],
+            "keywords": [
+              "nominal volume",
+              "volume"
+            ]
+          },
+          {
+            "concept": "accPreChargePressure",
+            "label": "PreChargePressure",
+            "kind": "numeric",
+            "type": "quantity_pressure",
+            "semanticId": "urn:sdf:cd:hydraulic:PreChargePressure:1.1",
+            "defaultOperator": "ge",
+            "targetComponentTypes": [
+              "BladderAccumulator"
+            ],
+            "keywords": [
+              "pre-charge pressure",
+              "precharge pressure"
+            ]
+          },
+          {
+            "concept": "accDeadVolume",
+            "label": "DeadVolume",
+            "kind": "numeric",
+            "type": "quantity_volume",
+            "semanticId": "urn:sdf:cd:hydraulic:DeadVolume:1.0",
+            "defaultOperator": "le",
+            "targetComponentTypes": [
+              "BladderAccumulator"
+            ],
+            "keywords": [
+              "dead volume"
+            ]
+          }
+        ],
+        "onLowConfidence": {
+          "action": "ask_clarification",
+          "clarificationPrompt": "Please answer with labeled accumulator properties, for example: Nominal volume 6 L; Pre-charge pressure 2.5 bar; Dead volume 0.5 L."
+        }
+      },
+      {
+        "id": "CHECK_VALVE_FILTERS",
+        "when": {
+          "requiresCheckValve": true
+        },
+        "prompt": "Please define the check valve parameters you want to constrain (e.g. Nominal flow rate, Cracking pressure, Pressure difference). You may provide only the properties you want to filter.",
+        "expects": {
+          "entities": [
+            {
+              "name": "check_valve_filters",
+              "type": "block",
+              "required": false
+            }
+          ]
+        },
+        "properties": [
+          {
+            "concept": "checkValveNominalFlowRate",
+            "label": "NominalFlowRate",
+            "kind": "numeric",
+            "type": "quantity_flow",
+            "semanticId": "0173-1#02-ABC551#003",
+            "defaultOperator": "ge",
+            "targetComponentTypes": [
+              "CheckValve"
+            ],
+            "keywords": [
+              "nominal flow rate",
+              "flow rate",
+              "flow"
+            ]
+          },
+          {
+            "concept": "checkValveCrackingPressure",
+            "label": "NominalCrackingPressure",
+            "kind": "numeric",
+            "type": "quantity_pressure",
+            "semanticId": "0173-1#02-ABC527#003",
+            "defaultOperator": "le",
+            "targetComponentTypes": [
+              "CheckValve"
+            ],
+            "keywords": [
+              "cracking pressure",
+              "setpoint"
+            ]
+          },
+          {
+            "concept": "checkValvePressureDifference",
+            "label": "NominalPressureDifference",
+            "kind": "numeric",
+            "type": "quantity_pressure",
+            "semanticId": "0173-1#02-ABC539#003",
+            "defaultOperator": "le",
+            "targetComponentTypes": [
+              "CheckValve"
+            ],
+            "keywords": [
+              "pressure difference",
+              "pressure drop"
+            ]
+          }
+        ],
+        "onLowConfidence": {
+          "action": "ask_clarification",
+          "clarificationPrompt": "Please answer with labeled check valve properties, for example: Nominal flow rate 20 L/min; Cracking pressure 3 bar; Pressure difference 0.1 bar."
+        }
+      }
+    ]
   }
 }
